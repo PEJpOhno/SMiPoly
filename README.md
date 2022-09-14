@@ -54,7 +54,7 @@ requirements
 
 ## 3. Module contents  
 
-m2p.**monc.moncls**(*df, smiColn, minFG = 2, maxFG = 4, dsp_rsl=False*)  
+smip.**monc.moncls**(*df, smiColn, minFG = 2, maxFG = 4, dsp_rsl=False*)  
 
 ARGUMENTS:  
 
@@ -65,7 +65,7 @@ ARGUMENTS:
   - dsp_rsl: display classified result (default False)  
 
 
-m2p.**polg.biplym**(*df, targ = \['all'\], Pmode = 'a', dsp_rsl=False*)  
+smip.**polg.biplym**(*df, targ = \['all'\], Pmode = 'a', dsp_rsl=False*)  
 
 ARGUMENTS:  
 
@@ -87,15 +87,15 @@ To install this package, run as follows.
 $pip install smipoly
 ```
 ### 5-2. Quick start
-Download 'sample_data/202207_m2p_monset.csv' and 'sample_script/sample_m2p_demo.ipynb' from [Mon2Polym repository](https://github.com/PEJpOhno/Mon2Polym) to the same directry on your computer.
+Download 'sample_data/202207_smip_monset.csv' and 'sample_script/sample_smip_demo.ipynb' from [SMiPoly repository](https://github.com/PEJpOhno/SMiPoly) to the same directry on your computer.
 Then run sample_smip_demo.ipynb. To run this demo script, Jupyter Notebook is required.
 
 ## 6. Sample dataset
-The sample dataset './sample_data/202207_m2p_monset.csv' includes common 1,083 monomers collected from published documents such as scientific articles, catalogues and so on.
+The sample dataset './sample_data/202207_smip_monset.csv' includes common 1,083 monomers collected from published documents such as scientific articles, catalogues and so on.
 
 ## 7. Utilities  
 By using the files in './utilities' directory, one can modify or add the definition of monomers, the rules of polymerization reactions and polymer classes.  
-To apply the new rule(s), replace the old './mon2polym/rules' directory by the new one. The files must be run according to the number assigned the head of the each filename.  
+To apply the new rule(s), replace the old './smipoly/rules' directory by the new one. The files must be run according to the number assigned the head of the each filename.  
 
   - 1_MonomerDefiner.ipynb: definitions of monomers  
   - 2_Ps_rxnL.ipynb: rules of polymerization reactions    
@@ -104,7 +104,7 @@ To apply the new rule(s), replace the old './mon2polym/rules' directory by the n
 ## 8. Directry configuration  
 
 ```sh
-Mon2Polym
+SMiPoly
 ├── smipoly
 │   ├── __init__.py
 │   ├── _version.py

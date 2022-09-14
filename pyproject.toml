@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+[build-system]
+requires = ["wheel", "setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
