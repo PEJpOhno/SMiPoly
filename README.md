@@ -105,22 +105,23 @@ To apply the new rule(s), replace the old './smipoly/rules' directory by the new
 
 ```sh
 SMiPoly
-├── smipoly
-│   ├── __init__.py
-│   ├── _version.py
-│   ├── smip
-│   │   ├── __init__.py
-│   │   ├── funclib.py
-│   │   ├── monc.py
-│   │   └── polg.py
-│   └── rules
-│       ├── excl_lst.json
-│       ├── mon_dic_inv.json
-│       ├── mon_dic.json
-│       ├── mon_lst.json
-│       ├── ps_class.json
-│       ├── ps_gen.pkl
-│       └── ps.rxn.pkl
+├── src
+│   └── smipoly
+│       ├── __init__.py
+│       ├── _version.py
+│       ├── smip
+│       │   ├── __init__.py
+│       │   ├── funclib.py
+│       │   ├── monc.py
+│       │   └── polg.py
+│       └── rules
+│           ├── excl_lst.json
+│           ├── mon_dic_inv.json
+│           ├── mon_dic.json
+│           ├── mon_lst.json
+│           ├── ps_class.json
+│           ├── ps_gen.pkl
+│           └── ps.rxn.pkl
 ├── LICENSE
 ├── pyproject.toml
 ├── setup.py
