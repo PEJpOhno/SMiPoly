@@ -149,7 +149,10 @@ def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
     #drpo duplicated polymerization reaction
     DF_gendP2 = DF_gendP.copy()
     DF_gendP2=DF_gendP2.dropna(subset=['polym'])
-    DF_gendP2 = DF_gendP2[~DF_gendP2.duplicated(subset=['mon1', 'mon2', 'polym'])]
+    DF_gendP2=DF_gendP2[DF_gendP2['mon1']!=DF_gendP2['mon2']]
+    DF_gendP2['reactset']=np.sort(DF_gendP2.loc[:,['mon1', 'mon2']].values).tolist()
+    DF_gendP2['reactset']=DF_gendP2['reactset'].apply(set).apply(tuple)
+    DF_gendP2 = DF_gendP2.drop_duplicates(subset=['reactset', 'polym'])
     if dsp_rsl == True:
         if Pmode == 'a':
             print('run at advanced mode')
