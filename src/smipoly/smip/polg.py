@@ -79,7 +79,7 @@ def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
     else:
         raise Exception('invalid mode!')
 
-    DF_Pgen = pd.DataFrame(columns=['mon1', 'mon2', 'polym', 'ROMol1', 'ROMol2', 'ROPolym', 'reactant'])
+    DF_Pgen = pd.DataFrame(columns=['mon1', 'mon2', 'polym', 'polymer_class', 'ROMol1', 'ROMol2', 'ROPolym', 'reactant'])
 
 
     #generate polymer
@@ -107,6 +107,7 @@ def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
                                 temp21.append(comb[1])
                         DF_temp = pd.DataFrame()
                         DF_temp = pd.DataFrame(data={'mon1':temp11, 'mon2':temp21}, columns=['mon1', 'mon2'])
+                        DF_temp['polymer_class'] = str(P_class)
                         DF_temp['ROMol1'] = DF_temp['mon1'].apply(Chem.MolFromSmiles)
                         DF_temp['ROMol2'] = DF_temp['mon2'].apply(Chem.MolFromSmiles)
                         DF_temp['reactant']=DF_temp.loc[:,['ROMol1','ROMol2']].values.tolist()
@@ -121,6 +122,7 @@ def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
                     temp2 = ['' for i in range(len(temp1))]
                     DF_temp = pd.DataFrame()
                     DF_temp = pd.DataFrame(data={'mon1':temp1, 'mon2':temp2}, columns=['mon1', 'mon2'])
+                    DF_temp['polymer_class'] = str(P_class)
                     DF_temp['ROMol1'] = DF_temp['mon1'].apply(Chem.MolFromSmiles)
                     mons=monL[mon_dic[targ_mon1]]
                     excls=exclL[mon_dic[targ_mon1]]
