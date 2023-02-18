@@ -6,7 +6,7 @@
 
 ### 1-1. monc.py  
 The functions of monc.py is as follows.  
-  - extract monomers from a list of low molecule compounds.
+  - extract monomers from a list of listed compounds.
   - classify extracted monomers into each monomer class.
 
 The chemical structure of the small molecule compounds should be expressed in simplified molecular input line entry system (SMILES) and given as pandas DataFrame.  
