@@ -2,7 +2,7 @@
 
 ## 1. What is SMiPoly?  
 "SMiPoly (**S**mall **M**olecules **i**nto **Poly**mers)" is rule-based virtual library generator for discovery of functional polymers. It is consist of two submodules, "monc.py" and "polg.py".  
-"monc.py" is a monomer classifier from a list of small molecule compounds, and "polg.py" is a polymer repeating unit generator from the classified monomer list.  
+"monc.py" is a monomer classifier from a list of small molecules, and "polg.py" is a polymer repeating unit generator from the classified monomer list.  
 
 ### 1-1. monc.py  
 The functions of monc.py is as follows.  
