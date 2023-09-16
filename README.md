@@ -144,11 +144,7 @@ SMiPoly
     └── rules/
 ```
 
-## 9. Revision history
-ver. 0.0.1: relased  
-ver. 0.0.3: revised the code to reduse memory consumption
-
-## 10. Reference  
+## 9. Reference  
 https://future-chem.com/rdkit-chemical-rxn/  
 https://www.daylight.com/dayhtml_tutorials/languages/smarts/smarts_examples.html  
 https://www.daylight.com/dayhtml/doc/theory/theory.smarts.html  
