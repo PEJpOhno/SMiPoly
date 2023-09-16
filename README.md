@@ -42,12 +42,17 @@ Defined polymer class
   - polyoxazolidone (diepoxide + diisocyanate)  
 
 ### 1-3. Publications  
-*in preparation*  
+SMiPoly: Generation of a Synthesizable Polymer Virtual Library Using Rule-Based Polymerization Reactions  
+Mitsuru Ohno, Yoshihiro Hayashi, Qi Zhang, Yu Kaneko, and Ryo Yoshida  
+*Journal of Chemical Information and Modeling* **2023** *63* (17), 5539-5548  
+DOI: 10.1021/acs.jcim.3c00329  
+https://doi.org/10.1021/acs.jcim.3c00329  
+(version 0.0.1 was used)
 
 ## 2. Current version and requirements
-current version = 0.0.1  
+current version = 0.0.3  
 requirements
-  - pyhon 3.7, 3.8, 3.9, 3.10  
+  - pyhon 3.7, 3.8, 3.9, 3.10, 3.11  
   - rdkit >= 2020.09.1.0 #(2019.09.3 is unavailable)  
   - numpy >= 1.20.2  
   - pandas >= 1.2.4  
@@ -119,6 +124,7 @@ SMiPoly
 │           ├── mon_dic_inv.json
 │           ├── mon_dic.json
 │           ├── mon_lst.json
+│           ├── mon_vals.json
 │           ├── ps_class.json
 │           ├── ps_gen.pkl
 │           └── ps.rxn.pkl
@@ -138,7 +144,11 @@ SMiPoly
     └── rules/
 ```
 
-## 9. Reference  
+## 9. Revision history
+ver. 0.0.1: relased  
+ver. 0.0.3: revised the code to reduse memory consumption
+
+## 10. Reference  
 https://future-chem.com/rdkit-chemical-rxn/  
 https://www.daylight.com/dayhtml_tutorials/languages/smarts/smarts_examples.html  
 https://www.daylight.com/dayhtml/doc/theory/theory.smarts.html  

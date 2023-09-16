@@ -14,20 +14,18 @@
 # https://www.daylight.com/dayhtml_tutorials/languages/smarts/smarts_examples.html
 # https://www.daylight.com/dayhtml/doc/theory/theory.smarts.html
 
+import os
+from pathlib import Path
+import numpy as np
+import pandas as pd
+import json
+from rdkit import rdBase, Chem
+from rdkit.Chem import AllChem, Draw
+from .funclib import genmol, gencSMI, monomer_sel_MFG, monomer_sel_PFG
 
 def moncls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
     # #The default number of the samle class of FG were limited 2 to 4 in the same molecule for poly functionalized monomer.
     # (dataframe, smiColn, minFG = 2, maxFG = 4)
-
-    import os
-    from pathlib import Path
-    import numpy as np
-    import pandas as pd
-    import json
-    from rdkit import rdBase, Chem
-    from rdkit.Chem import AllChem, Draw
-    from .funclib import genmol, gencSMI, monomer_sel_MFG, monomer_sel_PFG
-
     if minFG == None:
         minFG = 2
     if maxFG == None:
@@ -57,6 +55,8 @@ def moncls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
 
 
     db_file = os.path.join(str(Path(__file__).resolve().parent.parent), 'rules')
+    with open(os.path.join(db_file, 'mon_vals.json'), 'r') as f:
+        mon_vals = json.load(f) 
     with open(os.path.join(db_file, 'mon_dic.json'), 'r') as f:
         mon_dic = json.load(f)
     with open(os.path.join(db_file, 'mon_dic_inv.json'), 'r') as f:
@@ -66,7 +66,6 @@ def moncls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
     with open(os.path.join(db_file, 'excl_lst.json'), 'r') as f:
         exclL = json.load(f)
 
-
     monL = {int(k): v for k, v in monL.items()}
     exclL = {int(k): v for k, v in exclL.items()}
     mon_dic_inv = {int(k): v for k, v in mon_dic_inv.items()}
@@ -74,7 +73,7 @@ def moncls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
 
     #classification for mono-functionalized monomer
     #count functional groupe, remove exclude compounds andjudge targetted monomer or not.
-    for i in range(1,14): #fix the range if the monomer defination was modified
+    for i in mon_vals[0]: 
         mons=()
         excls=()
         chk=[]
@@ -90,7 +89,7 @@ def moncls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
 
 
     #classification for poly-functionalized monomer
-    for i in range(51, 59):  #fix the range if the monomer defination was modified
+    for i in mon_vals[1]:
         mons=()
         excls=()
         mons=monL[i]
