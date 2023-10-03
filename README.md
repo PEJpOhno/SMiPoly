@@ -84,13 +84,43 @@ Copyright (c) 2022 Mitsuru Ohno
 Released under the BSD-3 license, license that can be found in the LICENSE file.  
 
 ## 5. Installation and usage
-### 5-1. Installatin
+### 5-1. Installatin  
+SMiPoly can be installed with pip or conda. 
+### 5-1-1. Install with pip  
 Create new virtual environment and activate it.
 To install this package, run as follows.
 
 ```sh
 $pip install smipoly
 ```
+### 5-1-2. Install with conda  
+
+Add the channel "conda-forge" if it have not been enable.  
+
+```sh
+$conda config --add channels conda-forge
+```
+
+Create a new environment. 
+```sh
+$conda create -n "YOUR_NEW_ENVIRONMNT_NAME" python
+or 
+$conda create -n "YOUR_NEW_ENVIRONMNT_NAME" python="required version (ex. 3.10)"
+```
+Then activate it. 
+```sh
+$conda activate "YOUR_NEW_ENVIRONMNT_NAME"
+```
+And install SMiPoly. 
+```sh
+$conda install smipoly
+```
+
+Or after create and activate a new environment, 
+```sh
+$conda install -c conda-forge smipoly
+```
+
 ### 5-2. Quick start
 Download 'sample_data/202207_smip_monset.csv' and 'sample_script/sample_smip_demo.ipynb' from [SMiPoly repository](https://github.com/PEJpOhno/SMiPoly) to the same directry on your computer.
 Then run sample_smip_demo.ipynb. To run this demo script, Jupyter Notebook is required.
