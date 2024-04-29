@@ -151,8 +151,6 @@ DOI: 10.1021/acs.jcim.3c00329
 https://doi.org/10.1021/acs.jcim.3c00329  
 (version 0.0.1 was used)    
 selected as the cover art for JCIM: 
-![cover_art](https://pubs.acs.org/cms/10.1021/jcisd8.2023.63.issue-17/asset/jcisd8.2023.63.issue-17.largecover-2.jpg)
-<img src="https://pubs.acs.org/cms/10.1021/jcisd8.2023.63.issue-17/asset/jcisd8.2023.63.issue-17.largecover-2.jpg" width="20%">
 
 ## 7. Related projects  
 RadonPy (Fully automated calculation for a comprehensive set of polymer properties)  
