@@ -21,22 +21,41 @@ def genmol(s):
     return m
 
 
-def gencSMI(m):
+def genc_smi(m):
     try:
         cS = Chem.MolToSmiles(m)
     except:
         cS = np.nan
     return cS
 
+#count the number of the targetted functional group
+def count_fg(m, patt):
+  numFG = 0
+  matchs = m.GetSubstructMatches(patt)
+  if len(matchs)>=2:
+    not_match = []
+    for i in range(0, len(matchs)-1):
+      if len(set(matchs[i])^set(matchs[i+1]))!=2:
+        pass
+      else:
+        not_match.append(i+1)
+      numFG = len([matchs[i] for i in range(0, len(matchs)) if i not in not_match])
+  else:
+    numFG = len(matchs)
+  return numFG
 
 #classify candidate compounds for mono-FG monomer
-def monomer_sel_MFG(m, mons, excls):
+def monomer_sel_mfg(m, mons, excls):
     if pd.notna(m):
+        chk_c = 0
+        fchk_c = 0
         chk = []
         if len(mons)!=0:
             for mon in mons:
                 patt = Chem.MolFromSmarts(mon)
                 if m.HasSubstructMatch(patt):
+                    chk_c = len(m.GetSubstructMatches(patt))
+                    fchk_c = fchk_c+chk_c
                     chk_excl=[]
                     for excl in excls:
                         excl_patt=Chem.MolFromSmarts(excl)
@@ -58,19 +77,19 @@ def monomer_sel_MFG(m, mons, excls):
             fchk = False
     else:
         fchk = False
-    return fchk
+    return [fchk, fchk_c]
 
 
 #classify candidate compounds for poly-FG monomer
 #count objective FGs
-def monomer_sel_PFG(m, mons, excls, minFG, maxFG):
+def monomer_sel_pfg(m, mons, excls, minFG, maxFG):
     if pd.notna(m):
         chk_c = 0
         fchk_c = 0
         if len(mons)!=0:
             for mon in mons:
                 patt = Chem.MolFromSmarts(mon)
-                chk_c = len(m.GetSubstructMatches(patt))
+                chk_c = count_fg(m, patt)
                 fchk_c = fchk_c + chk_c
             if minFG <= fchk_c <= maxFG:
                 chk=[]
@@ -90,7 +109,7 @@ def monomer_sel_PFG(m, mons, excls, minFG, maxFG):
             fchk = (False)
     else:
         fchk = (False)
-    return fchk
+    return [fchk, fchk_c]
 
 
 #define sequential polymerization for chain polymerization except polyolefine
@@ -177,7 +196,7 @@ def seq_successive(prod_P, targ_rxn, monL, Ps_rxnL, P_class):
 #homopolymerization
 def homopolymR(mon1,mons,excls, targ_mon1, Ps_rxnL, mon_dic, monL):
     prod_P=mon1
-    while monomer_sel_MFG(prod_P, mons, excls)== True: #生成したポリマーがさらに重合可能な場合、再度反応
+    while monomer_sel_mfg(prod_P, mons, excls)[0]== True: #生成したポリマーがさらに重合可能な場合、再度反応
         prods = Ps_rxnL[mon_dic[targ_mon1]].RunReactants([prod_P])
         try:
             prod_P = prods[0][0]
@@ -185,7 +204,7 @@ def homopolymR(mon1,mons,excls, targ_mon1, Ps_rxnL, mon_dic, monL):
             prod_P = seq_chain(prod_P, targ_mon1=targ_mon1, Ps_rxnL=Ps_rxnL, mon_dic=mon_dic, monL=monL)
         except:
             pass
-    return [gencSMI(prod_P)] #20230904 revised returned Molobject to SMILES
+    return [genc_smi(prod_P)] #20230904 revised returned Molobject to SMILES
 
 
 #binarypolymerization
@@ -198,13 +217,13 @@ def bipolymR(reactant, targ_rxn, monL, Ps_rxnL, P_class):
         prod_P = seq_successive(prod_P, targ_rxn=targ_rxn, monL=monL, Ps_rxnL=Ps_rxnL, P_class=P_class)
     except:
         pass
-    return [gencSMI(prod_P)] #20230904 revised returned Molobject to SMILES
+    return [genc_smi(prod_P)] #20230904 revised returned Molobject to SMILES
 
 
 #homopolymerization
 def homopolymA(mon1,mons,excls, targ_mon1, Ps_rxnL, mon_dic, monL):
     prod_P=mon1
-    while monomer_sel_MFG(prod_P, mons, excls)== True: #生成したポリマーがさらに重合可能な場合、再度反応
+    while monomer_sel_mfg(prod_P, mons, excls)[0]== True: #生成したポリマーがさらに重合可能な場合、再度反応
         prods = Ps_rxnL[mon_dic[targ_mon1]].RunReactants([prod_P])
         prod_Ps = []
         for prod_P in prods:
@@ -215,7 +234,7 @@ def homopolymA(mon1,mons,excls, targ_mon1, Ps_rxnL, mon_dic, monL):
                 prod_Ps.append(prod_P)
             except:
                 pass
-    return [gencSMI(m) for m in prod_Ps]
+    return [genc_smi(m) for m in prod_Ps]
 
 
 #binarypolymerization
@@ -231,5 +250,5 @@ def bipolymA(reactant, targ_rxn, monL, Ps_rxnL, P_class):
             prod_Ps.append(prod_P)
         except:
             pass
-    return [gencSMI(m) for m in prod_Ps]
+    return [genc_smi(m) for m in prod_Ps]
 # end

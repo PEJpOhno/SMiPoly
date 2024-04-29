@@ -15,7 +15,27 @@ import json
 import pickle
 from rdkit import rdBase, Chem
 from rdkit.Chem import AllChem, Draw
-from .funclib import monomer_sel_MFG, monomer_sel_PFG, seq_chain, seq_successive, genmol, gencSMI
+from .funclib import monomer_sel_mfg, monomer_sel_pfg, seq_chain, seq_successive, genmol, genc_smi
+
+
+db_file = os.path.join(str(Path(__file__).resolve().parent.parent), 'rules')
+with open(os.path.join(db_file, 'mon_vals.json'), 'r') as f:
+    mon_vals = json.load(f) 
+with open(os.path.join(db_file, 'mon_dic.json'), 'r') as f:
+    mon_dic = json.load(f)
+with open(os.path.join(db_file, 'mon_lst.json'), 'r') as f:
+    monL = json.load(f)
+with open(os.path.join(db_file, 'excl_lst.json'), 'r') as f:
+    exclL = json.load(f)
+with open(os.path.join(db_file, 'ps_rxn.pkl'), 'rb') as f:
+    Ps_rxnL = pickle.load(f)
+with open(os.path.join(db_file, 'ps_class.json'), 'r') as f:
+    Ps_classL = json.load(f)
+with open(os.path.join(db_file, 'ps_gen.pkl'), 'rb') as f:
+    Ps_GenL = pickle.load(f)
+
+monLg = {int(k): v for k, v in monL.items()}
+exclLg = {int(k): v for k, v in exclL.items()}
 
 def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
     if targ == None:
@@ -25,25 +45,9 @@ def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
     if dsp_rsl == None:
         dsp_rsl = False
 
-
-    db_file = os.path.join(str(Path(__file__).resolve().parent.parent), 'rules')
-    with open(os.path.join(db_file, 'mon_dic.json'), 'r') as f:
-        mon_dic = json.load(f)
-    with open(os.path.join(db_file, 'mon_lst.json'), 'r') as f:
-        monL = json.load(f)
-    with open(os.path.join(db_file, 'excl_lst.json'), 'r') as f:
-        exclL = json.load(f)
-    with open(os.path.join(db_file, 'ps_rxn.pkl'), 'rb') as f:
-        Ps_rxnL = pickle.load(f)
-    with open(os.path.join(db_file, 'ps_class.json'), 'r') as f:
-        Ps_classL = json.load(f)
-    with open(os.path.join(db_file, 'ps_gen.pkl'), 'rb') as f:
-        Ps_GenL = pickle.load(f)
-
-
-    monL = {int(k): v for k, v in monL.items()}
-    exclL = {int(k): v for k, v in exclL.items()}
-
+    #FOR FUTURE WORKS!! temporary reduced the dictionaly on 04/21/2004  
+    monL = {k: v for k, v in monLg.items() if k in mon_vals[0]+mon_vals[1]+mon_vals[2]}
+    exclL = {k: v for k, v in exclLg.items() if k in mon_vals[0]+mon_vals[1]+mon_vals[2]}
 
     #set the generated polymer class
     targL = []
@@ -58,17 +62,24 @@ def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
         else:
             pass
 
-    #export fixed form DataFrame as pickle for next step
-    DF =df.drop('ROMol', axis=1).dropna(subset=['smip_cand_mons'])
+    #treat source DataFrame
+    
+    if 'ROMol' in df.columns: #2024/01 modified
+        DF =df.drop('ROMol', axis=1).dropna(subset=['smip_cand_mons'])
+    else:
+        DF =df.dropna(subset=['smip_cand_mons'])
+   
     DF_L = ['smip_cand_mons', ]
-    for mon_class in mon_dic.keys():
-        DF_L.append(mon_class)
+    for col_nam in DF.columns.values:
+        if col_nam in list(mon_dic):
+            DF_L.append(col_nam)
+        else:
+            pass
     DF = DF[DF_L]
     DF_L = DF_L[1:]
     for col_nam in DF_L:
         DF[col_nam] = DF[col_nam].replace('False', '')
         DF[col_nam] = DF[col_nam].astype('bool')
-
 
     #select mode
     if Pmode == 'r':
@@ -134,7 +145,7 @@ def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
     DF_gendP = DF_gendP.dropna(subset=['polym'])
 
     #adjust DataFrame
-    DF_gendP['polym'].replace('', np.nan, inplace=True)
+    DF_gendP.replace({'polym':{'':np.nan}}, inplace=True)
 
     #drpo duplicated polymerization reaction
     DF_gendP=DF_gendP.dropna(subset=['polym'])
