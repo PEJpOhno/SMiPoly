@@ -9,7 +9,7 @@
 ## 2. Current version and requirements
 current version = 0.1.0  
 requirements
-  - pyhon 3.7, 3.8, 3.9, 3.10, 3.11  
+  - pyhon 3.7, 3.8, 3.9, 3.10, 3.11, 3.12  
   - rdkit >= 2020.09.1.0 #(2019.09.3 is unavailable)  
   - numpy >= 1.20.2  
   - pandas >= 1.2.4  
