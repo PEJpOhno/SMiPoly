@@ -34,7 +34,7 @@ $conda config --add channels conda-forge
 
 Create a new environment. 
 ```sh
-$conda create -n "YOUR_NEW_ENVIRONMNT_NAME" python=3.11
+$conda create -n "YOUR_NEW_ENVIRONMNT_NAME" python  
 or 
 $conda create -n "YOUR_NEW_ENVIRONMNT_NAME" python="required version (ex. 3.10)"
 ```
