@@ -1,6 +1,9 @@
 # SMiPoly
 
-![license](https://anaconda.org/conda-forge/smipoly/badges/license.svg)
+![license](https://anaconda.org/conda-forge/smipoly/badges/license.svg)  
+|PePy.tech (pip)|conda-forge:|  
+|:---:|:---:|  
+|[![Downloads](https://static.pepy.tech/badge/smipoly)](https://pepy.tech/project/smipoly)|![conda](https://anaconda.org/conda-forge/smipoly/badges/downloads.svg)|  
 
 ## 1. What is SMiPoly?  
 "SMiPoly (**S**mall **M**olecules **i**nto **Poly**mers)" is rule-based virtual library generator for discovery of functional polymers. It is consist of two submodules, "monc.py" and "polg.py".  
@@ -53,7 +56,7 @@ $conda install -c conda-forge smipoly
 ```
 
 ### 3-2. Quick start
-Download 'sample_data/202207_smip_monset.csv' and 'sample_script/sample_smip_demo.ipynb' from [SMiPoly repository](https://github.com/PEJpOhno/SMiPoly) to the same directry on your computer.
+Download 'sample_data/202207_smip_monset.csv' and 'sample_script/sample_smip_demo2.ipynb' from [SMiPoly repository](https://github.com/PEJpOhno/SMiPoly) to the same directry on your computer.
 Then run sample_smip_demo.ipynb. To run this demo script, Jupyter Notebook is required.
 
 ## 4. Module contents  
@@ -185,7 +188,7 @@ SMiPoly
 ├── sample_data
 │   └── 202207_smip_monset.csv
 ├── sample_script
-│   └── sample_smip_demo.ipynb
+│   └── sample_smip_demo2.ipynb
 └── utilities
     ├── 1_MonomerDefiner.ipynb
     ├── 2_Ps_rxnL.ipynb

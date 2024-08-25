@@ -21,7 +21,7 @@ import pandas as pd
 import json
 from rdkit import rdBase, Chem
 from rdkit.Chem import AllChem, Draw
-from .funclib import genmol, genc_smi, monomer_sel_mfg, monomer_sel_pfg
+from .funclib import genmol, genc_smi, monomer_sel_mfg, monomer_sel_pfg, ole_cru_gen, ole_sel_cru, update_nested_dict
 
 db_file = os.path.join(str(Path(__file__).resolve().parent.parent), 'rules')
 with open(os.path.join(db_file, 'mon_vals.json'), 'r') as f:
@@ -105,6 +105,7 @@ def moncls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
 
     #classification for olefinic monomer **UNDER THE CONSTRUCTION**
     #count functional groupe, remove exclude compounds andjudge targetted monomer or not.
+# monc.py改訂
 def olecls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
     if minFG == None:
         minFG = 1
@@ -116,24 +117,39 @@ def olecls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
     monL = {k: v for k, v in monLg.items() if k in mon_vals[3]}
     exclL = {k: v for k, v in exclLg.items() if k in mon_vals[3]}
 
+    template_ole_keys = [mon_dic_inv[i] for i in mon_vals[3]]
+    print(template_ole_keys)
+
     #read source file
     DF02 = df
     smiColn = smiColn
     #drop NA of smiles, and add chemical structure
     DF02['ROMol'] = DF02[smiColn].apply(genmol)
     DF02['smip_cand_mons'] = DF02['ROMol'].apply(genc_smi)
+    #create null column for olefin classification
+    DF02['ole_cls'] = [{k:v for k, v in zip(template_ole_keys, [np.nan for x in range(len(template_ole_keys))])} for y in range(len(DF02))]
 
-    for i in mon_vals[3]: 
+    for i in mon_vals[3]:
         mons=()
         excls=()
         mons = monL[i]
         excls = list(exclL[i])
-        DF02[mon_dic_inv[i]] = [e[0] for e in DF02['ROMol'].apply(monomer_sel_pfg, mons=mons, excls=excls, minFG=minFG, maxFG=maxFG)]
+        DF02['temp'] = ['' for e in range(len(DF02))]
+        #DF02[mon_dic_inv[i]] = DF02['ROMol'].apply(ole_sel_cru, mons=mons, excls=excls, minFG=minFG, maxFG=maxFG) #ver0.1 style
+        DF02['temp'] = DF02['ROMol'].apply(ole_sel_cru, mons=mons, excls=excls, minFG=minFG, maxFG=maxFG)
+        DF02 = DF02.apply(update_nested_dict, axis=1, args=('ole_cls', 'temp', mon_dic_inv[i]))
+
         if dsp_rsl==True:
-            print(mon_dic_inv[i], ' = ', len(DF02[DF02[mon_dic_inv[i]]==True]), ' / ', len(DF02))
+            print(mon_dic_inv[i], ' = ',
+                  #list(DF02[mon_dic_inv[i]].apply(lambda x : x[0]==True)).count(True), #ver0.1 style
+                  list(DF02['ole_cls'].apply(lambda x : x[mon_dic_inv[i]][0]==True)).count(True),
+                  ' / ', len(DF02))
+
         else:
             pass
 
     DF02 = DF02.drop('ROMol', axis=1)
+    DF02 = DF02.drop('temp', axis=1)
     return DF02
+
 #end
