@@ -89,7 +89,7 @@ def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
     else:
         raise Exception('invalid mode!')
 
-    DF_Pgen = pd.DataFrame(columns=['mon1', 'mon2', 'polym', 'polymer_class'])
+    DF_Pgen = pd.DataFrame(columns=['mon1', 'mon2', 'polym', 'polymer_class', 'Ps_rxnL']) #20240826added
 
     #generate polymer
     for P_class in targL:
@@ -100,6 +100,11 @@ def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
             targ_mon2 = P_set[1]
             temp1 = []
             temp2 = []
+
+            #20240826 addded
+            Ps_rxnL_key = []
+            Ps_rxnL_key = [k for k,v in Ps_rxnL.items() if AllChem.ReactionToSmarts(v)==AllChem.ReactionToSmarts(P_set[2])]
+
             DF10 = DF[DF[targ_mon1]]
             temp1 = list(DF10['smip_cand_mons'])
             if len(temp1) != 0:
@@ -118,6 +123,7 @@ def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
                         DF_temp = pd.DataFrame()
                         DF_temp = pd.DataFrame(data={'mon1':temp11, 'mon2':temp21}, columns=['mon1', 'mon2'])
                         DF_temp['polymer_class'] = str(P_class)
+                        DF_temp['Ps_rxnL'] = int(Ps_rxnL_key[0]) #20240826added
                         targ_rxn=P_set[2]
                         if Pmode == 'r':
                             DF_temp['polym'] = DF_temp.apply(lambda x: [genmol(x['mon1']), genmol(x['mon2'])], axis=1).apply(bipolymR, targ_rxn=targ_rxn, monL=monL, Ps_rxnL=Ps_rxnL, P_class=P_class)
@@ -130,6 +136,7 @@ def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
                     DF_temp = pd.DataFrame()
                     DF_temp = pd.DataFrame(data={'mon1':temp1, 'mon2':temp2}, columns=['mon1', 'mon2'])
                     DF_temp['polymer_class'] = str(P_class)
+                    DF_temp['Ps_rxnL'] = int(Ps_rxnL_key[0]) #20240826added
                     mons=monL[mon_dic[targ_mon1]]
                     excls=exclL[mon_dic[targ_mon1]]
                     if Pmode == 'r':

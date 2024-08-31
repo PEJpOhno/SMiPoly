@@ -10,7 +10,7 @@
 "monc.py" is a monomer classifier from a list of small molecules, and "polg.py" is a polymer repeating unit generator from the classified monomer list.  
 
 ## 2. Current version and requirements
-current version = 0.1.0  
+current version = 0.2.0  
 requirements
   - pyhon 3.7, 3.8, 3.9, 3.10, 3.11, 3.12  
   - rdkit >= 2020.09.1.0 #(2019.09.3 is unavailable)  
