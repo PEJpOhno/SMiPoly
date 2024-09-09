@@ -234,9 +234,9 @@ def ole_copolym(df, targ = None, ncomp = None, dsp_rsl = None, drop_dupl = None)
       pass
 
   #Export as Pandas DataFrame
-  DF_Pgen = pd.DataFrame(columns=['mon1', 'mon2', 'polym', 'polymer_class', 'Ps_rxnL'])
-  DF_Pgen[['polymer_class', 'polym', 'mon2']] = pd.DataFrame(copoly_cru)
-  DF_Pgen = DF_Pgen.fillna({'mon1':''})
+  DF_Pgen = pd.DataFrame(columns=['mon1', 'mon2', 'polym', 'polymer_class', 'Ps_rxnL', 'reactset'])
+  DF_Pgen[['polymer_class', 'polym', 'reactset']] = pd.DataFrame(copoly_cru)
+  DF_Pgen = DF_Pgen.fillna({'mon1':'', 'mon2':''})
 
   #Drop duplicated copolymer, if necessary. It takes long time when the DataFrame (DF_Pgen) was large.
   if drop_dupl == True:
