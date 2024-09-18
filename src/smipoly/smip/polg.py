@@ -89,7 +89,7 @@ def biplym(df, targ = None, Pmode = None, dsp_rsl = None):
 
     #select mode
     if Pmode == 'r':
-        warnings.warn("This mode will be denited in the future. Plz use mode 'a' instead. ")
+        warnings.warn("Mode 'r' will be deprecated and merged into mode 'a'. Use mode 'a' instead. ")
         from .funclib import bipolymR, homopolymR
     elif Pmode == 'a':
         from .funclib import bipolymA, homopolymA

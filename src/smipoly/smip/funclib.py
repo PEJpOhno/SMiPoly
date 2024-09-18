@@ -271,15 +271,15 @@ def ole_rxnsmarts_gen(reactant):
   prod2 = ''
   prod3 = ''
   prod4 = ''
-  rev_reactant = reactant[::-1]
-  C1_i = rev_reactant.find(':1]'[::-1])
-  C1_j = rev_reactant.find('[CX3'[::-1], C1_i)
-  C2_i = rev_reactant.find(':2]'[::-1])
-  C2_j = rev_reactant.find('=[CX3'[::-1], C2_i)
-  prod1 = rev_reactant[:C2_i]+'(-*)'[::-1]
-  prod2 = rev_reactant[C2_i:C2_j]+'-[CX4'[::-1]
-  prod3 = rev_reactant[C2_j+5:C1_i]+'(-*)'[::-1]
-  prod4 = rev_reactant[C1_i:C1_j]+'[CX4'[::-1]+rev_reactant[C1_j+4:]
+  inv_reactant = reactant[::-1]
+  C1_i = inv_reactant.find(':1]'[::-1])
+  C1_j = inv_reactant.find('[CX3'[::-1], C1_i)
+  C2_i = inv_reactant.find(':2]'[::-1])
+  C2_j = inv_reactant.find('=[CX3'[::-1], C2_i)
+  prod1 = inv_reactant[:C2_i]+'(-*)'[::-1]
+  prod2 = inv_reactant[C2_i:C2_j]+'-[CX4'[::-1]
+  prod3 = inv_reactant[C2_j+5:C1_i]+'(-*)'[::-1]
+  prod4 = inv_reactant[C1_i:C1_j]+'[CX4'[::-1]+inv_reactant[C1_j+4:]
   prod = prod4[::-1] + prod3[::-1] + prod2[::-1] + prod1[::-1]
   rxn_smarts = reactant + '>>' + prod
   return rxn_smarts
