@@ -8,7 +8,6 @@
 # 08/02/2021, M. Ohno
 # functions for MonomerClassifier and PolymerGenerator.
 
-import sys
 import re
 import itertools
 import numpy as np
