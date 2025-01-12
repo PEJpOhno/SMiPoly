@@ -19,9 +19,10 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 import json
+import pickle
 from rdkit import rdBase, Chem
 from rdkit.Chem import AllChem, Draw
-from .funclib import genmol, genc_smi, monomer_sel_mfg, monomer_sel_pfg, ole_cru_gen, ole_sel_cru, update_nested_dict
+from .funclib import genmol, genc_smi, monomer_sel_mfg, monomer_sel_pfg, ole_sel_cru, diene_14, update_nested_dict
 
 db_file = os.path.join(str(Path(__file__).resolve().parent.parent), 'rules')
 with open(os.path.join(db_file, 'mon_vals.json'), 'r') as f:
@@ -34,6 +35,8 @@ with open(os.path.join(db_file, 'mon_lst.json'), 'r') as f:
     monL = json.load(f)
 with open(os.path.join(db_file, 'excl_lst.json'), 'r') as f:
     exclL = json.load(f)
+with open(os.path.join(db_file, 'ps_rxn.pkl'), 'rb') as f:
+    Ps_rxnL = pickle.load(f)
 
 monLg = {int(k): v for k, v in monL.items()}
 exclLg = {int(k): v for k, v in exclL.items()}
@@ -147,7 +150,7 @@ def olecls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
 
         else:
             pass
-
+    DF02['ole_cls'] = df['ole_cls'].apply(diene_14, rxn=Ps_rxnL[209]) #refine conjugated diene CRU
     DF02 = DF02.drop('ROMol', axis=1)
     DF02 = DF02.drop('temp', axis=1)
     return DF02

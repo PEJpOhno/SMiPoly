@@ -5,12 +5,20 @@
 |:---:|:---:|  
 |[![Downloads](https://static.pepy.tech/badge/smipoly)](https://pepy.tech/project/smipoly)|![conda](https://anaconda.org/conda-forge/smipoly/badges/downloads.svg)|  
 
-## 1. What is SMiPoly?  
+## 1. About SMiPoly  
 "SMiPoly (**S**mall **M**olecules **i**nto **Poly**mers)" is rule-based virtual library generator for discovery of functional polymers. It is consist of two submodules, "monc.py" and "polg.py".  
 "monc.py" is a monomer classifier from a list of small molecules, and "polg.py" is a polymer repeating unit generator from the classified monomer list.  
 
+**How To Cite (publications)**    
+SMiPoly: Generation of a Synthesizable Polymer Virtual Library Using Rule-Based Polymerization Reactions  
+Mitsuru Ohno, Yoshihiro Hayashi, Qi Zhang, Yu Kaneko, and Ryo Yoshida  
+*Journal of Chemical Information and Modeling* **2023** *63* (17), 5539-5548  
+DOI: 10.1021/acs.jcim.3c00329  
+https://doi.org/10.1021/acs.jcim.3c00329  
+(version 0.0.1 was used)    
+
 ## 2. Current version and requirements
-current version = 0.2.1  
+current version = 1.0.1  
 requirements
   - pyhon 3.9, 3.10, 3.11, 3.12  
   - rdkit >= 2023.9.1  
@@ -18,7 +26,7 @@ requirements
   - pandas >= 2.1.0  
 
 ## 3. Installation and usage
-### 3-1. Installatin  
+### 3-1. Installation  
 SMiPoly can be installed with pip or conda. 
 ### 3-1-1. Install with pip  
 Create new virtual environment and activate it.
@@ -160,20 +168,11 @@ To apply the new rule(s), replace the old './smipoly/rules' directory by the new
 Copyright (c) 2022 Mitsuru Ohno  
 Released under the BSD-3 license, license that can be found in the LICENSE file.  
 
-
-## 6. Publications  
-SMiPoly: Generation of a Synthesizable Polymer Virtual Library Using Rule-Based Polymerization Reactions  
-Mitsuru Ohno, Yoshihiro Hayashi, Qi Zhang, Yu Kaneko, and Ryo Yoshida  
-*Journal of Chemical Information and Modeling* **2023** *63* (17), 5539-5548  
-DOI: 10.1021/acs.jcim.3c00329  
-https://doi.org/10.1021/acs.jcim.3c00329  
-(version 0.0.1 was used)    
-
-## 7. Related projects  
+## 6. Related projects  
 RadonPy (Fully automated calculation for a comprehensive set of polymer properties)  
 https://github.com/RadonPy/RadonPy  
 
-## 8. Directry configuration  
+## 7. Directry configuration  
 
 ```sh
 SMiPoly
