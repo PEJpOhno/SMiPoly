@@ -116,7 +116,7 @@ By the function "olecls"
   - maleic imide derivatives  
   - conjugated dienes  
   - vinyl ether  
-  - berta-disubstituded aliphatic olefin  
+  - beta-disubstituded aliphatic olefin  
   - alycyclic olefin  
   - aliphhatic olefin  
 
