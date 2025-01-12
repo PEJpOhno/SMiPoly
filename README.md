@@ -108,12 +108,17 @@ By the function "moncls"
 By the function "olecls"  
 (The following class of compounds are also belong to the class "vinylidene" and / or "cyclic olefin".)  
   - acryl  
+  - beta-ectron withdrawing group substituted olefin  
   - styryl  
   - allyl  
-  - conjugated dienes  
-  - vinyl ether  
+  - haloCH  
   - vinyl ester  
   - maleic imide derivatives  
+  - conjugated dienes  
+  - vinyl ether  
+  - berta-disubstituded aliphatic olefin  
+  - alycyclic olefin  
+  - aliphhatic olefin  
 
 ### 4-2. polg.py  
 The library "polg.py" has two functions, "bipolym" and "ole_copolym".  
