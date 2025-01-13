@@ -8,6 +8,8 @@
 # 08/02/2021, M. Ohno
 # functions for MonomerClassifier and PolymerGenerator.
 
+#import re
+#import itertools
 import numpy as np
 import pandas as pd
 from rdkit import rdBase, Chem
@@ -251,4 +253,113 @@ def bipolymA(reactant, targ_rxn, monL, Ps_rxnL, P_class):
         except:
             pass
     return [genc_smi(m) for m in prod_Ps]
+
+
+# Copyright (c) 2024 Mitsuru Ohno
+# Use of this source code is governed by a BSD-3-style
+# (license that can be found in the LICENSE file. )
+
+# 08/15/2024, M. Ohno
+# generate CRU of olefinic polymers
+# NEED def ole_rxnsmarts_gen(reactant)
+
+def ole_cru_gen(m, mon):
+    def ole_rxnsmarts_gen(reactant):
+        prod = ''
+        prod1 = ''
+        prod2 = ''
+        prod3 = ''
+        prod4 = ''
+        inv_reactant = reactant[::-1]
+        C1_i = inv_reactant.find(':1]'[::-1])
+        C1_j = inv_reactant.find('[CX3'[::-1], C1_i)
+        C2_i = inv_reactant.find(':2]'[::-1])
+        C2_j = inv_reactant.find('=[CX3'[::-1], C2_i)
+        prod1 = inv_reactant[:C2_i]+'(-*)'[::-1]
+        prod2 = inv_reactant[C2_i:C2_j]+'-[CX4'[::-1]
+        prod3 = inv_reactant[C2_j+5:C1_i]+'(-*)'[::-1]
+        prod4 = inv_reactant[C1_i:C1_j]+'[CX4'[::-1]+inv_reactant[C1_j+4:]
+        prod = prod4[::-1] + prod3[::-1] + prod2[::-1] + prod1[::-1]
+        rxn_smarts = reactant + '>>' + prod
+        return rxn_smarts
+    
+    #m = genmol(smi)
+    reactant = [m, ]
+    patt = Chem.MolFromSmarts(mon)
+    targ_rxn = AllChem.ReactionFromSmarts(ole_rxnsmarts_gen(mon))
+    targ_rxn.Initialize() #need initialization
+    while m.HasSubstructMatch(patt):
+    #while targ_rxn.IsMoleculeReactant(m):
+        prod_P = Chem.MolFromSmiles('')
+        prods = targ_rxn.RunReactants(reactant)
+        prod_Ps = []
+        for prod_P in prods:
+            try:
+                Chem.SanitizeMol(prod_P[0])
+                prod_P = prod_P[0]
+                prod_Ps.append(prod_P)
+            except:
+                pass
+        m = prod_Ps[0]
+        reactant = [m, ]
+    return [m, [genc_smi(m) for m in prod_Ps]]
+
+def diene_14(x,rxn):
+    def diene_12to14(smi, rxn):
+        #rxn == Ps_rxnL[209]
+        # Replace all asterisks with [3H] in the SMILES string:
+        repl_smi = smi.replace("*", "[3H]")
+        new_m = Chem.MolFromSmiles(repl_smi)
+        Chem.SanitizeMol(new_m)
+        prods = rxn.RunReactants([new_m])
+        for m in prods:
+            Chem.SanitizeMol(m[0])
+        new_smi = Chem.MolToSmiles(prods[0][0]).replace("[3H]", "*")
+        return new_smi
+    if 'conjdiene' in x and x['conjdiene'][0]:
+        x['conjdiene'][2] = diene_12to14(x['conjdiene'][2], rxn)
+    return x
+
+# Copyright (c) 2024 Mitsuru Ohno
+# Use of this source code is governed by a BSD-3-style
+# (license that can be found in the LICENSE file. )
+
+# 08/15/2024, M. Ohno
+# classify olefinic monomers and generate CRU
+
+def ole_sel_cru(m, mons, excls, minFG, maxFG):
+  judge = monomer_sel_pfg(m, mons, excls, minFG, maxFG)
+  if judge[0] == True:
+    for mon in mons:
+      patt = Chem.MolFromSmarts(mon)
+      if m.HasSubstructMatch(patt):
+        CRU = ole_cru_gen(m, mon)
+        m = CRU[0]
+      else:
+        pass
+  else:
+    m = np.nan
+  smi_p = genc_smi(m)
+  judge.append(smi_p)
+  return judge
+
+def update_nested_dict(row, dict_col, new_val, updated_k):
+  row[dict_col][updated_k] = row[new_val]
+  return row
+
+
+
+def coord_polym(smi, targ_rxn):
+    prods = targ_rxn.RunReactants([genmol(smi),])
+    prod_Ps = []
+    for prod_P in prods:
+        try:
+            Chem.SanitizeMol(prod_P[0])
+            prod_P = prod_P[0]
+            prod_Ps.append(prod_P)
+        except:
+            pass
+    rsl = set([genc_smi(m) for m in prod_Ps])
+    return list(rsl)
+
 # end
