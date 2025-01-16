@@ -35,7 +35,7 @@ To install this package, run as follows.
 ```sh
 $pip install smipoly
 ```
-### 3-1-2. Install with conda  
+### 3-1-2. Install with conda **(caution : ver 1.0.1 unsupported)**    
 
 Add the channel "conda-forge" if it have not been enable.  
 
@@ -207,7 +207,7 @@ SMiPoly
 ├── sample_data
 │   └── 202207_smip_monset.csv
 ├── sample_script
-│   └── sample_smip_demo2.ipynb
+│   └── sample_smip_demo3.ipynb
 └── utilities
     ├── 1_MonomerDefiner.ipynb
     ├── 2_Ps_rxnL.ipynb
