@@ -207,7 +207,7 @@ SMiPoly
 ├── sample_data
 │   └── 202207_smip_monset.csv
 ├── sample_script
-│   └── sample_smip_demo2.ipynb
+│   └── sample_smip_demo3.ipynb
 └── utilities
     ├── 1_MonomerDefiner.ipynb
     ├── 2_Ps_rxnL.ipynb
