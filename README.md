@@ -35,8 +35,7 @@ To install this package, run as follows.
 ```sh
 $pip install smipoly
 ```
-### 3-1-2. Install with conda **(caution : ver 1.0.1 unsupported)**    
-
+### 3-1-2. Install with conda  
 Add the channel "conda-forge" if it have not been enable.  
 
 ```sh
@@ -60,7 +59,7 @@ $conda install smipoly
 
 Or after create and activate a new environment, 
 ```sh
-$conda install -c conda-forge smipoly
+$conda install conda-forge::smipoly
 ```
 
 ### 3-2. Quick start
