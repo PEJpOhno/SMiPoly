@@ -7,7 +7,9 @@ Use of this source code is governed by a BSD-3-style
 license that can be found in the LICENSE file.
 
 07/27/2021, M. Ohno
+
 monomer categolization system of the compound list in SMILES
+
 """
 import os
 from pathlib import Path
@@ -49,24 +51,29 @@ def moncls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
     """
     Select monomers from given dataset of small molecule compounds and 
     categolize them into a monomer class. 
+
     Args:
         df (pd.DataFrame): Input DataFrame containing chemical data.
-        smiColn (str): Column name in the DataFrame containing 
-        SMILES strings.
+            smiColn (str): Column name in the DataFrame containing 
+            SMILES strings.
         minFG (int, optional): Minimum number of functional groups 
-        for poly-functionalized monomers. Defaults to 2.
+            for poly-functionalized monomers. Defaults to 2.
         maxFG (int, optional): Maximum number of functional groups 
-        for poly-functionalized monomers. Defaults to 4.
+            for poly-functionalized monomers. Defaults to 4.
         dsp_rsl (bool, optional): Whether to display classification 
-        results. Defaults to False.
+            results. Defaults to False.
+
     Returns:
         pd.DataFrame: A modified DataFrame with classification 
         results appended.
+
     Raises:
         ValueError: If the specified SMILES column name is invalid.
+
     Notes:
-        - The function appends additional rows for carbonate 
-        structures.
+        - The function appends additional rows for carbonate
+          structures.
+
     """
     # #The default number of the samle class of FG were limited
     # 2 to 4 in the same molecule for poly functionalized monomer.
@@ -151,31 +158,35 @@ def olecls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
     """
     Select olefinic monomers from given dataset of small molecule 
     compounds and categolize them into a olefinic monomer class. 
+
     Args:
         df (pd.DataFrame): The input DataFrame containing chemical data.
-        Must include the structure of a compound written in SMILES.
+            Must include the structure of a compound written in SMILES.
         smiColn (str): The column name in the DataFrame containing 
-        SMILES strings.
+            SMILES strings.
         minFG (int, optional): Minimum number of functional groups 
-        to consider. Defaults to 1.
+            to consider. Defaults to 1.
         maxFG (int, optional): Maximum number of functional groups 
-        to consider. Defaults to 4.
+            to consider. Defaults to 4.
         dsp_rsl (bool, optional): Whether to display results 
-        during processing. Defaults to False.
+            during processing. Defaults to False.
+
     Returns:
         pd.DataFrame: The updated DataFrame with olefin classification 
         results.
+        
     Notes:
-        - The function assumes the existence of several global 
-        variables such as `monLg`, `exclLg`, 
+        - The function assumes the existence of several global
+          variables such as `monLg`, `exclLg`,
           `mon_vals`, `mon_dic_inv`, and `Ps_rxnL`.
-        - The function modifies the input DataFrame by adding 
-        new columns for olefin classification.
-        - The `genmol`, `genc_smi`, `ole_sel_cru`, 
-        `update_nested_dict` and `diene_14` functions 
-        are defined in 'funclib.py'.
-        - The `ole_cls` column is refined for conjugated 
-        diene classification using a specific reaction.
+        - The function modifies the input DataFrame by adding
+          new columns for olefin classification.
+        - The `genmol`, `genc_smi`, `ole_sel_cru`,
+          `update_nested_dict` and `diene_14` functions
+          are defined in 'funclib.py'.
+        - The `ole_cls` column is refined for conjugated
+          diene classification using a specific reaction.
+
     """
     if minFG is None:
         minFG = 1

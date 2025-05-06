@@ -3,10 +3,12 @@
 
 """
 Copyright (c) 2021 Mitsuru Ohno
+
 Use of this source code is governed by a BSD-3-style
 license that can be found in the LICENSE file.
 
 polymer generator from classfied monomers.
+
 """
 import os
 import warnings  # for warning
@@ -53,15 +55,15 @@ def biplym(df, targ=None, dsp_rsl=None):
     """
     Generates polymers based on the input DataFrame and 
     specified target polymer classes.
+
     Args:
-        df (pd.DataFrame): Input DataFrame containing 
-        monomer information. 
-            Must include a column named 'smip_cand_mons' 
-            and optionally 'ROMol'.
+        df (pd.DataFrame): Input DataFrame containing monomer information.
+            Must include a column named 'smip_cand_mons'.
         targ (list, optional): List of targetted polymer classes to 
-        generate. Defaults to ['all', ] to include all available classes.
+            generate. Defaults to ['all', ] to include all available classes.
         dsp_rsl (bool, optional): Whether to display the results summary. 
             Defaults to False.
+
     Returns:
         pd.DataFrame: A DataFrame containing the generated polymers 
         with the following columns:
@@ -70,17 +72,20 @@ def biplym(df, targ=None, dsp_rsl=None):
             - 'polym': Generated polymer.
             - 'polymer_class': Class of the polymer.
             - 'Ps_rxnL': Reaction key for the polymerization.
+
     Notes:
-        - The function filters and processes the input DataFrame 
-        to identify valid monomers.
-        - Polymers are generated based on predefined polymerization rules 
-        and target classes.
-        - Duplicate polymerization reactions are removed, 
-        and the resulting DataFrame is adjusted.
-        - If `dsp_rsl` is True, the function prints the number 
-        of polymerization reactions and generated polymers.
+        - The function filters and processes the input DataFrame
+          to identify valid monomers.
+        - Polymers are generated based on predefined polymerization rules
+          and target classes.
+        - Duplicate polymerization reactions are removed,
+          and the resulting DataFrame is adjusted.
+        - If `dsp_rsl` is True, the function prints the number
+          of polymerization reactions and generated polymers.
+
     Raises:
         ValueError: If an invalid polymer class is specified in `targ`.
+
     """
     if targ == None:
         targ = ['all', ]
@@ -238,17 +243,19 @@ def ole_copolym(df, targ=None, ncomp=None, dsp_rsl=None, drop_dupl=None):
     """
     Generates a DataFrame of copolymers based on the provided 
     olefin classes and parameters.
+
     Args:
         df (pd.DataFrame): Input DataFrame containing olefin classification 
-        and candidate monomers.
+            and candidate monomers.
         targ (list, optional): List of target olefin classes. 
-        Must be provided as a list. Defaults to None.
+            Must be provided as a list. Defaults to None.
         ncomp (int, optional): Number of components for copolymerization. 
-        Defaults to 1.
+            Defaults to 1.
         dsp_rsl (bool, optional): If True, displays the number of 
-        generated copolymers. Defaults to False.
+            generated copolymers. Defaults to False.
         drop_dupl (bool, optional): If True, drops duplicate copolymers 
-        from the resulting DataFrame. Defaults to True.
+            from the resulting DataFrame. Defaults to True.
+
     Returns:
         pd.DataFrame: A DataFrame containing the generated copolymers 
         with columns:
@@ -258,18 +265,21 @@ def ole_copolym(df, targ=None, ncomp=None, dsp_rsl=None, drop_dupl=None):
             - 'polymer_class': Polymer classification.
             - 'Ps_rxnL': Reaction conditions or initiators.
             - 'reactset': Reactant set.
+
     Raises:
         ValueError: If `targ` is not provided or is not a list.
         ValueError: If `targ` contains invalid olefin classes.
         ValueError: If `ncomp` is less than the number of components in `targ`.
         ValueError: If incompatible olefin classes are used together 
-        (e.g., ROMP with other classes).
+            (e.g., ROMP with other classes).
+            
     Notes:
-        - Valid olefin classes are displayed when the function is 
-        called without valid `targ`.
+        - Valid olefin classes are displayed when the function is
+          called without valid `targ`.
         - Special handling is applied for ROMP, ROMPH, and COC classes.
-        - The function may take longer to execute if the input DataFrame 
-        is large and `drop_dupl` is True.
+        - The function may take longer to execute if the input DataFrame
+          is large and `drop_dupl` is True.
+
     """
 
     if targ is None or len(targ) == 0:
