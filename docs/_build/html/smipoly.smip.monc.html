@@ -1,0 +1,203 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>smipoly.smip.monc module &mdash; SMiPoly_docs 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="smipoly.smip.polg module" href="smipoly.smip.polg.html" />
+    <link rel="prev" title="3. Installing SMiPoly" href="Installing%20SMiPoly.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SMiPoly_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about%20SMiPoly.html">1. About SMiPoly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about%20SMiPoly.html#current-version-and-requirements">2. Current version and requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Installing%20SMiPoly.html">3. Installing SMiPoly</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">smipoly.smip.monc module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.monc.moncls"><code class="docutils literal notranslate"><span class="pre">moncls()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.monc.olecls"><code class="docutils literal notranslate"><span class="pre">olecls()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="smipoly.smip.polg.html">smipoly.smip.polg module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smipoly.smip.funclib.html">smipoly.smip.funclib module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SMiPoly_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">smipoly.smip.monc module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/smipoly.smip.monc.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-smipoly.smip.monc">
+<span id="smipoly-smip-monc-module"></span><h1>smipoly.smip.monc module<a class="headerlink" href="#module-smipoly.smip.monc" title="Link to this heading"></a></h1>
+<p>Copyright (c) 2021 Mitsuru Ohno
+Use of this source code is governed by a BSD-3-style
+license that can be found in the LICENSE file.</p>
+<p>07/27/2021, M. Ohno</p>
+<p>monomer categolization system of the compound list in SMILES</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.monc.moncls">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.monc.</span></span><span class="sig-name descname"><span class="pre">moncls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smiColn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minFG</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxFG</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp_rsl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.monc.moncls" title="Link to this definition"></a></dt>
+<dd><p>Select monomers from given dataset of small molecule compounds and
+categolize them into a monomer class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – Input DataFrame containing chemical data.
+smiColn (str): Column name in the DataFrame containing
+SMILES strings.</p></li>
+<li><p><strong>minFG</strong> (<em>int</em><em>, </em><em>optional</em>) – Minimum number of functional groups
+for poly-functionalized monomers. Defaults to 2.</p></li>
+<li><p><strong>maxFG</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of functional groups
+for poly-functionalized monomers. Defaults to 4.</p></li>
+<li><p><strong>dsp_rsl</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to display classification
+results. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A modified DataFrame with classification
+results appended.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the specified SMILES column name is invalid.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The function appends additional rows for carbonate
+structures.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.monc.olecls">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.monc.</span></span><span class="sig-name descname"><span class="pre">olecls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smiColn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minFG</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxFG</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp_rsl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.monc.olecls" title="Link to this definition"></a></dt>
+<dd><p>Select olefinic monomers from given dataset of small molecule
+compounds and categolize them into a olefinic monomer class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The input DataFrame containing chemical data.
+Must include the structure of a compound written in SMILES.</p></li>
+<li><p><strong>smiColn</strong> (<em>str</em>) – The column name in the DataFrame containing
+SMILES strings.</p></li>
+<li><p><strong>minFG</strong> (<em>int</em><em>, </em><em>optional</em>) – Minimum number of functional groups
+to consider. Defaults to 1.</p></li>
+<li><p><strong>maxFG</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of functional groups
+to consider. Defaults to 4.</p></li>
+<li><p><strong>dsp_rsl</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to display results
+during processing. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The updated DataFrame with olefin classification
+results.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The function assumes the existence of several global
+variables such as <cite>monLg</cite>, <cite>exclLg</cite>,
+<cite>mon_vals</cite>, <cite>mon_dic_inv</cite>, and <cite>Ps_rxnL</cite>.</p></li>
+<li><p>The function modifies the input DataFrame by adding
+new columns for olefin classification.</p></li>
+<li><p>The <cite>genmol</cite>, <cite>genc_smi</cite>, <cite>ole_sel_cru</cite>,
+<cite>update_nested_dict</cite> and <cite>diene_14</cite> functions
+are defined in ‘funclib.py’.</p></li>
+<li><p>The <cite>ole_cls</cite> column is refined for conjugated
+diene classification using a specific reaction.</p></li>
+</ul>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Installing%20SMiPoly.html" class="btn btn-neutral float-left" title="3. Installing SMiPoly" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="smipoly.smip.polg.html" class="btn btn-neutral float-right" title="smipoly.smip.polg module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Mitsuru Ohno.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
