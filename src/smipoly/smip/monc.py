@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# Copyright (c) 2021 Mitsuru Ohno
+# Use of this source code is governed by a BSD-3-style
+# license that can be found in the LICENSE file.
+
+# 07/27/2021, M. Ohno
+
 """
-Copyright (c) 2021 Mitsuru Ohno
-Use of this source code is governed by a BSD-3-style
-license that can be found in the LICENSE file.
-
-07/27/2021, M. Ohno
-
 monomer categolization system of the compound list in SMILES
 
 """

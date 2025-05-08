@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# Copyright (c) 2021 Mitsuru Ohno
+
+# Use of this source code is governed by a BSD-3-style
+# license that can be found in the LICENSE file.
+
 """
-Copyright (c) 2021 Mitsuru Ohno
-
-Use of this source code is governed by a BSD-3-style
-license that can be found in the LICENSE file.
-
 polymer generator from classfied monomers.
 
 """

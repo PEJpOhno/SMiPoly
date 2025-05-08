@@ -6,9 +6,8 @@
 SMiPoly documentation
 ==========================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+WARNING: Please note that this document is located in the develop branch
+and is still in progress
 
 
 .. toctree::

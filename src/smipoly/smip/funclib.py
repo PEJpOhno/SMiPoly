@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# Copyright (c) 2021 Mitsuru Ohno
+
+# Use of this source code is governed by a BSD-3-style
+# license that can be found in the LICENSE file.
+
+# 08/02/2021, M. Ohno
+
 """
-Copyright (c) 2021 Mitsuru Ohno
-
-Use of this source code is governed by a BSD-3-style
-license that can be found in the LICENSE file.
-
-08/02/2021, M. Ohno
-
 functions for MonomerClassifier (monc.py) and 
 PolymerGenerator (polyg.py).
 
