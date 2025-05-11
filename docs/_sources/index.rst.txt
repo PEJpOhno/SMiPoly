@@ -14,8 +14,9 @@ and is still in progress
    :maxdepth: 2
    :caption: Contents:
 
-   about SMiPoly
+   About SMiPoly
    Installing SMiPoly
+   Getting start
    smipoly.smip.monc
    smipoly.smip.polg
    smipoly.smip.funclib
