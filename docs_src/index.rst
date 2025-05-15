@@ -8,16 +8,18 @@ SMiPoly documentation
 
 WARNING: Please note that this document is located in the develop branch
 and is still in progress
-
-
+   
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   About SMiPoly
-   Installing SMiPoly
-   Getting start
+   1_About_SMiPoly
+   3_Installing_SMiPoly
+   4_Getting_start
+   5_Modlues_Overview
    smipoly.smip.monc
    smipoly.smip.polg
    smipoly.smip.funclib
+   6_utilities
+
 

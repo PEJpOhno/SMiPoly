@@ -11,7 +11,7 @@ DOI: 10.1021/acs.jcim.3c00329
 (version 0.0.1 was used)    
 
 # 2. Current version and requirements
-current version = 1.0.1  
+current version = 1.1.0  
 requirements
   - pyhon 3.9, 3.10, 3.11, 3.12  
   - rdkit >= 2023.9.1  

@@ -8,7 +8,13 @@
 # 07/27/2021, M. Ohno
 
 """
-monomer categolization system of the compound list in SMILES
+Monomer categolization system of the compound list in SMILES. 
+
+Classifies monomers based on functional groups and other criteria.
+This function processes a DataFrame containing SMILES strings, 
+extracts and classifies  monomers, and appends the results 
+to the DataFrame. It also supports optional 
+display of classification results.
 
 """
 import os
@@ -174,7 +180,7 @@ def olecls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
     Returns:
         pd.DataFrame: The updated DataFrame with olefin classification 
         results.
-        
+
     Notes:
         - The function assumes the existence of several global
           variables such as `monLg`, `exclLg`,

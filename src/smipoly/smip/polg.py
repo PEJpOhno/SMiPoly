@@ -272,7 +272,7 @@ def ole_copolym(df, targ=None, ncomp=None, dsp_rsl=None, drop_dupl=None):
         ValueError: If `ncomp` is less than the number of components in `targ`.
         ValueError: If incompatible olefin classes are used together 
             (e.g., ROMP with other classes).
-            
+
     Notes:
         - Valid olefin classes are displayed when the function is
           called without valid `targ`.

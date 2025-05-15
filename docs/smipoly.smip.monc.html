@@ -20,7 +20,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="smipoly.smip.polg module" href="smipoly.smip.polg.html" />
-    <link rel="prev" title="4. Getting Start" href="Getting%20start.html" /> 
+    <link rel="prev" title="5. Modlues Overview" href="5_Modlues_Overview.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,10 +44,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="About%20SMiPoly.html">1. About SMiPoly</a></li>
-<li class="toctree-l1"><a class="reference internal" href="About%20SMiPoly.html#current-version-and-requirements">2. Current version and requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Installing%20SMiPoly.html">3. Installing SMiPoly</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Getting%20start.html">4. Getting Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_About_SMiPoly.html">1. About SMiPoly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_About_SMiPoly.html#current-version-and-requirements">2. Current version and requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Installing_SMiPoly.html">3. Installing SMiPoly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Getting_start.html">4. Getting Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Modlues_Overview.html">5. Modlues Overview</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">smipoly.smip.monc module</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.monc.moncls"><code class="docutils literal notranslate"><span class="pre">moncls()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.monc.olecls"><code class="docutils literal notranslate"><span class="pre">olecls()</span></code></a></li>
@@ -55,6 +56,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.polg.html">smipoly.smip.polg module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.funclib.html">smipoly.smip.funclib module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_utilities.html">6. utilities</a></li>
 </ul>
 
         </div>
@@ -83,7 +85,12 @@
              
   <section id="module-smipoly.smip.monc">
 <span id="smipoly-smip-monc-module"></span><h1>smipoly.smip.monc module<a class="headerlink" href="#module-smipoly.smip.monc" title="Link to this heading"></a></h1>
-<p>monomer categolization system of the compound list in SMILES</p>
+<p>Monomer categolization system of the compound list in SMILES.</p>
+<p>Classifies monomers based on functional groups and other criteria.
+This function processes a DataFrame containing SMILES strings,
+extracts and classifies  monomers, and appends the results
+to the DataFrame. It also supports optional
+display of classification results.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="smipoly.smip.monc.moncls">
 <span class="sig-prename descclassname"><span class="pre">smipoly.smip.monc.</span></span><span class="sig-name descname"><span class="pre">moncls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smiColn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minFG</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxFG</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp_rsl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.monc.moncls" title="Link to this definition"></a></dt>
@@ -170,7 +177,7 @@ diene classification using a specific reaction.</p></li>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Getting%20start.html" class="btn btn-neutral float-left" title="4. Getting Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="5_Modlues_Overview.html" class="btn btn-neutral float-left" title="5. Modlues Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="smipoly.smip.polg.html" class="btn btn-neutral float-right" title="smipoly.smip.polg module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
