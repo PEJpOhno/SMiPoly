@@ -14,6 +14,7 @@ and is still in progress
    :caption: Contents:
 
    1_About_SMiPoly
+   2_Current_version
    3_Installing_SMiPoly
    4_Getting_start
    5_Modlues_Overview
@@ -21,5 +22,8 @@ and is still in progress
    smipoly.smip.polg
    smipoly.smip.funclib
    6_utilities
+   61_MonomerDefiner
+   62_Ps_rxnL
+   63_Ps_GenL
 
 

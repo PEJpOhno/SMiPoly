@@ -214,7 +214,3 @@ SMiPoly
     └── rules/
 ```
 
-## Reference  
-https://future-chem.com/rdkit-chemical-rxn/  
-https://www.daylight.com/dayhtml_tutorials/languages/smarts/smarts_examples.html  
-https://www.daylight.com/dayhtml/doc/theory/theory.smarts.html  

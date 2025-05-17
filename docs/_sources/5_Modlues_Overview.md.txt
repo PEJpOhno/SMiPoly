@@ -3,10 +3,6 @@
 ## 5-1. monc.py
 The monc.py module is part of the SMiPoly project and is responsible for categorizing monomers based on their functional groups (FGs) and other chemical properties. It processes a dataset of chemical compounds (in SMILES format) and classifies them into predefined monomer classes. The module also supports olefinic monomer classification and provides utilities for handling functional group patterns.  
 
-**compare draft**  
-Classifies monomers based on functional groups and other criteria.
-This function processes a DataFrame containing SMILES strings, extracts and classifies  monomers, and appends the results to the DataFrame. It also supports optional display of classification results.
-
 ### 5-1-1. Loading Rules and Data
 The module loads several pre-defined rules and data files from the rules directory:
 

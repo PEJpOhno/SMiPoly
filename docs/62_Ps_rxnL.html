@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>6. utilities; Overview &mdash; SMiPoly_docs 1.0 documentation</title>
+  <title>6-2. 2_Ps_rxnL.ipynb &mdash; SMiPoly_docs 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="6-1. 1_MonomerDefiner.ipynb" href="61_MonomerDefiner.html" />
-    <link rel="prev" title="smipoly.smip.funclib module" href="smipoly.smip.funclib.html" /> 
+    <link rel="next" title="6-3. 3_Ps_GenL" href="63_Ps_GenL.html" />
+    <link rel="prev" title="6-1. 1_MonomerDefiner.ipynb" href="61_MonomerDefiner.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,9 +52,12 @@
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.monc.html">smipoly.smip.monc module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.polg.html">smipoly.smip.polg module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.funclib.html">smipoly.smip.funclib module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">6. utilities; Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_utilities.html">6. utilities; Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="61_MonomerDefiner.html">6-1. 1_MonomerDefiner.ipynb</a></li>
-<li class="toctree-l1"><a class="reference internal" href="62_Ps_rxnL.html">6-2. 2_Ps_rxnL.ipynb</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6-2. 2_Ps_rxnL.ipynb</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#correspondence-table-of-numbers-and-content">Correspondence Table of Numbers and Content</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="63_Ps_GenL.html">6-3. 3_Ps_GenL</a></li>
 </ul>
 
@@ -72,9 +75,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">6. utilities; Overview</li>
+      <li class="breadcrumb-item active">6-2. 2_Ps_rxnL.ipynb</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/6_utilities.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/62_Ps_rxnL.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -82,139 +85,187 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="utilities-overview">
-<h1>6. utilities; Overview<a class="headerlink" href="#utilities-overview" title="Link to this heading"></a></h1>
-<p>.ipynb files in directiry “utirities” are tools to imprementing the rules of monomer extraction-sllasification (1_MonomerDefiner.ipynb), polymerization reaction definition (2_Ps_rxnL.ipynb) and polymer generation (3_Ps_GenL.ipynb).</p>
-<p>Each definations were written by <a class="reference external" href="https://www.daylight.com/dayhtml_tutorials/languages/smarts/">SMARTS (SMiles ARbitrary Target Specification</a>) strings.</p>
+  <section id="ps-rxnl-ipynb">
+<h1>6-2. 2_Ps_rxnL.ipynb<a class="headerlink" href="#ps-rxnl-ipynb" title="Link to this heading"></a></h1>
+<section id="correspondence-table-of-numbers-and-content">
+<h2>Correspondence Table of Numbers and Content<a class="headerlink" href="#correspondence-table-of-numbers-and-content" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Polymer Class</p></th>
+<th class="head"><p>Reaction_Class</p></th>
 <th class="head"><p>Monomer Class 1</p></th>
 <th class="head"><p>Monomer Class 2</p></th>
 <th class="head"><p>Reaction Type</p></th>
+<th class="head"><p>Product</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Polyolefin</p></td>
+<td><p>0</p></td>
 <td><p>Vinyl</p></td>
 <td><p></p></td>
 <td><p>Addition Chain Polymerization</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-odd"><td><p>Polyolefin</p></td>
+<td><p>0</p></td>
 <td><p>Cyclic Olefin</p></td>
 <td><p></p></td>
 <td><p>Addition Chain Polymerization</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-even"><td><p>Polyolefin</p></td>
+<td><p>0</p></td>
 <td><p>Vinyl</p></td>
 <td><p>Vinyl</p></td>
 <td><p>Addition Chain Polymerization</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-odd"><td><p>Polyolefin</p></td>
+<td><p>0</p></td>
 <td><p>Vinyl</p></td>
 <td><p>Cyclic Olefin</p></td>
 <td><p>Addition Chain Polymerization</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-even"><td><p>Polyolefin</p></td>
+<td><p>0</p></td>
 <td><p>Cyclic Olefin</p></td>
 <td><p>Cyclic Olefin</p></td>
 <td><p>Addition Chain Polymerization</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-odd"><td><p>Polyester</p></td>
+<td><p>0</p></td>
 <td><p>Lactone</p></td>
 <td><p></p></td>
 <td><p>Ring-Opening Chain Polymerization</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-even"><td><p>Polyester</p></td>
+<td><p>0</p></td>
 <td><p>Hydroxy Carboxylic Acidc</p></td>
 <td><p></p></td>
 <td><p>Polycondensation</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-odd"><td><p>Polyester</p></td>
+<td><p>0</p></td>
 <td><p>Hydroxy Carboxylic Acidc</p></td>
 <td><p>Hydroxy Carboxylic Acidc</p></td>
 <td><p>Polycondensation</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-even"><td><p>Polyester</p></td>
+<td><p>0</p></td>
 <td><p>Di/Polycarboxylic Acid</p></td>
 <td><p>Di/Polyol</p></td>
 <td><p>Polycondensation</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-odd"><td><p>Polyester</p></td>
+<td><p>0</p></td>
 <td><p>Di/Polyol</p></td>
 <td><p>Carbon Monoxidee</p></td>
 <td><p>Polycondensationf</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-even"><td><p>Polyester</p></td>
+<td><p>0</p></td>
 <td><p>Cyclic Anhydride</p></td>
 <td><p>Epoxide</p></td>
 <td><p>Ring-Opening Chain Polymerization</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-odd"><td><p>Polyether</p></td>
+<td><p>0</p></td>
 <td><p>Epoxide</p></td>
 <td><p></p></td>
 <td><p>Ring-Opening Chain Polymerization</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-even"><td><p>Polyether</p></td>
+<td><p>0</p></td>
 <td><p>Hindered Phenol</p></td>
 <td><p></p></td>
 <td><p>Polycondensationg</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-odd"><td><p>Polyetherh</p></td>
+<td><p>0</p></td>
 <td><p>Bis(p-Halogenated Aryl)Sulfone</p></td>
 <td><p>Di/Polyol (Without Thiol)</p></td>
 <td><p>Polycondensation</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-even"><td><p>Polyetheri</p></td>
+<td><p>0</p></td>
 <td><p>Bis(p-Fluoroaryl)Ketone</p></td>
 <td><p>Di/Polyol (Without Thiol)</p></td>
 <td><p>Polycondensation</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-odd"><td><p>Polyamide</p></td>
+<td><p>0</p></td>
 <td><p>Lactam</p></td>
 <td><p></p></td>
 <td><p>Ring-Opening Chain Polymerization</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-even"><td><p>Polyamide</p></td>
+<td><p>0</p></td>
 <td><p>Amino Acidc</p></td>
 <td><p></p></td>
 <td><p>Polycondensation</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-odd"><td><p>Polyamide</p></td>
+<td><p>0</p></td>
 <td><p>Amino Acidc</p></td>
 <td><p>Amino Acidc</p></td>
 <td><p>Polycondensation</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-even"><td><p>Polyamide</p></td>
+<td><p>0</p></td>
 <td><p>Di/Polycarboxylic Acid</p></td>
 <td><p>Di/Polyamine</p></td>
 <td><p>Polycondensation</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-odd"><td><p>Polyimide</p></td>
+<td><p>0</p></td>
 <td><p>Di/Polycyclic Anhydride</p></td>
 <td><p>Primary Di/Polyamine</p></td>
 <td><p>Polycondensation</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-even"><td><p>Polyurethane</p></td>
+<td><p>0</p></td>
 <td><p>Di/Polyisocyanate</p></td>
 <td><p>Di/Polyol</p></td>
 <td><p>Polyaddition</p></td>
+<td><p>Polymer</p></td>
 </tr>
 <tr class="row-odd"><td><p>Polyoxazolidone</p></td>
+<td><p>0</p></td>
 <td><p>Di/Polyepoxide</p></td>
 <td><p>Di/Polyisocyanate</p></td>
 <td><p>Polyaddition</p></td>
+<td><p>Polymer</p></td>
 </tr>
 </tbody>
 </table>
+<p>Ps_rxnL</p>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="smipoly.smip.funclib.html" class="btn btn-neutral float-left" title="smipoly.smip.funclib module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="61_MonomerDefiner.html" class="btn btn-neutral float-right" title="6-1. 1_MonomerDefiner.ipynb" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="61_MonomerDefiner.html" class="btn btn-neutral float-left" title="6-1. 1_MonomerDefiner.ipynb" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="63_Ps_GenL.html" class="btn btn-neutral float-right" title="6-3. 3_Ps_GenL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

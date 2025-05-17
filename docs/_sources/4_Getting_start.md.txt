@@ -1,8 +1,3 @@
----
-title: "getting start"
-free: false
----
-
 # 4. Getting Start
 
 This guide will walk you through the steps to prepare input files, classify monomers, and generate polymers using the SMiPoly framework.  

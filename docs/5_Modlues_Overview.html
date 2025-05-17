@@ -45,7 +45,7 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="1_About_SMiPoly.html">1. About SMiPoly</a></li>
-<li class="toctree-l1"><a class="reference internal" href="1_About_SMiPoly.html#current-version-and-requirements">2. Current version and requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Current_version.html">2. Current version and requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_Installing_SMiPoly.html">3. Installing SMiPoly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_Getting_start.html">4. Getting Start</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">5. Modlues Overview</a><ul>
@@ -70,7 +70,10 @@
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.monc.html">smipoly.smip.monc module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.polg.html">smipoly.smip.polg module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.funclib.html">smipoly.smip.funclib module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_utilities.html">6. utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_utilities.html">6. utilities; Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="61_MonomerDefiner.html">6-1. 1_MonomerDefiner.ipynb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="62_Ps_rxnL.html">6-2. 2_Ps_rxnL.ipynb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="63_Ps_GenL.html">6-3. 3_Ps_GenL</a></li>
 </ul>
 
         </div>
@@ -102,9 +105,6 @@
 <section id="monc-py">
 <h2>5-1. monc.py<a class="headerlink" href="#monc-py" title="Link to this heading"></a></h2>
 <p>The monc.py module is part of the SMiPoly project and is responsible for categorizing monomers based on their functional groups (FGs) and other chemical properties. It processes a dataset of chemical compounds (in SMILES format) and classifies them into predefined monomer classes. The module also supports olefinic monomer classification and provides utilities for handling functional group patterns.</p>
-<p><strong>compare draft</strong><br />
-Classifies monomers based on functional groups and other criteria.
-This function processes a DataFrame containing SMILES strings, extracts and classifies  monomers, and appends the results to the DataFrame. It also supports optional display of classification results.</p>
 <section id="loading-rules-and-data">
 <h3>5-1-1. Loading Rules and Data<a class="headerlink" href="#loading-rules-and-data" title="Link to this heading"></a></h3>
 <p>The module loads several pre-defined rules and data files from the rules directory:</p>

@@ -60,8 +60,9 @@ def biplym(df, targ=None, dsp_rsl=None):
         df (pd.DataFrame): Input DataFrame containing monomer information.
             Must include a column named 'smip_cand_mons'.
         targ (list, optional): List of targetted polymer classes to 
-            generate. Defaults to ['all', ] to include all available classes.
-        dsp_rsl (bool, optional): Whether to display the results summary. 
+            generate. Defaults to ['all', ] to include all available
+            classes. Use ['exc_ole'] to exclude polyolefins.
+        dsp_rsl (bool, optional): Whether to display the results summary.
             Defaults to False.
 
     Returns:
@@ -102,6 +103,8 @@ def biplym(df, targ=None, dsp_rsl=None):
     targL = []
     if targ == ['all', ]:
         targL = Ps_classL.keys()
+    elif targ == ['exc_ole', ]:
+        targL = Ps_classL.keys()-['polyolefin',]
     else:
         targL.extend(targ)
     for x in targL:
