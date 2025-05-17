@@ -1,0 +1,394 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5-1. 1_MonomerDefiner.ipynb &mdash; SMiPoly_docs 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5-2. 2_Ps_rxnL.ipynb" href="52_Ps_rxnL.html" />
+    <link rel="prev" title="5. utilities; Overview" href="5_utilities.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SMiPoly_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_Current_version.html">1. Current version and requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Installing_SMiPoly.html">2. Installing SMiPoly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Getting_start.html">3. Getting Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Modlues_Overview.html">4. Modlues Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smipoly.smip.monc.html">smipoly.smip.monc module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smipoly.smip.polg.html">smipoly.smip.polg module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smipoly.smip.funclib.html">smipoly.smip.funclib module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_utilities.html">5. utilities; Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5-1. 1_MonomerDefiner.ipynb</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#key-components">Key Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#correspondence-table-of-numbers-and-content">Correspondence Table of Numbers and Content</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="52_Ps_rxnL.html">5-2. 2_Ps_rxnL.ipynb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="53_Ps_GenL.html">5-3. 3_Ps_GenL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Directory_config.html">6. Directry configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SMiPoly_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">5-1. 1_MonomerDefiner.ipynb</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/51_MonomerDefiner.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="monomerdefiner-ipynb">
+<h1>5-1. 1_MonomerDefiner.ipynb<a class="headerlink" href="#monomerdefiner-ipynb" title="Link to this heading"></a></h1>
+<p>The notebook 1_MonomerDefiner.ipynb is a utility script for defining and categorizing monomers based on their functional groups (FGs). It creates dictionaries and lists that define monomer types, their objective functional groups, and incompatible functional groups. These definitions are exported as JSON files for use in other parts of the project.</p>
+<section id="key-components">
+<h2>Key Components<a class="headerlink" href="#key-components" title="Link to this heading"></a></h2>
+<p><strong>1. Metadata</strong><br />
+The notebook includes metadata about its purpose and references:</p>
+<ul class="simple">
+<li><p>Purpose: Define monomers and their functional groups.</p></li>
+<li><p>References: Links to SMARTS theory and examples for understanding chemical patterns.</p></li>
+</ul>
+<p><strong>2. Functional Group (FG) Definitions</strong><br />
+The notebook defines objective and incompatible functional groups for each monomer type. These definitions are stored in two dictionaries:</p>
+<ul class="simple">
+<li><p>monL: Contains SMARTS patterns for objective functional groups.</p></li>
+<li><p>exclL: Contains SMARTS patterns for incompatible functional groups.</p></li>
+</ul>
+<p><strong>3. Monomer Dictionaries</strong><br />
+The notebook defines dictionaries to map monomer names to numerical identifiers:</p>
+<ul class="simple">
+<li><p>mon_dic:
+Python dictionary of the monomer classes. Categorizes the values of “mon_dic.json” into self-polymerizable monomer systems, binary-monomer systems, post-polymerization reactions, and olefinic monomer systems.</p>
+<ul>
+<li><p>key : monomer class</p></li>
+<li><p>value : Allocated int.</p>
+<ul>
+<li><p>1 - 50 : for self-polymerizable system; <em>eg.</em> addition, ring-opening polymerization and self-condensation.</p></li>
+<li><p>51- 100 : for the polymerization system that require bi-monomer classes; <em>eg.</em> poly condensation, polyadditin and addition-condensation.</p></li>
+<li><p>1000 - : detailed classification for olefinic monomers.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>mon_dic_inv: Inverse mapping of mon_dic (from integers to names).</p></li>
+<li><p>mon_vals: A tuple categorized mon_dic values according to the corresponding polymerization reactions (see Table 5-1, 2, 3).</p></li>
+</ul>
+<p><strong>4. Monomer Definitions</strong><br />
+Each monomer type is defined with:</p>
+<ul class="simple">
+<li><p>mon_lst.json (monL)<br />
+List of the definition of the polymerization site for each monomer class. Contains SMARTS patterns for objective functional groups.</p>
+<ul>
+<li><p>1 - 50 : for self-polymerizable system; <em>eg.</em> addition, ring-opening polymerization and self-condensation.</p></li>
+<li><p>51- 100 : for the polymerization system that require bi-monomer classes; <em>eg.</em> poly condensation, polyadditin and addition-condensation.</p></li>
+<li><p>200 -  post-polymerization reactions of residual polymerizable functional grous(s).</p></li>
+<li><p>1000 - for olefinic monomer systems.</p></li>
+</ul>
+</li>
+<li><p>excl_lst.json (exclL)<br />
+List of the definition of functional groups that should not coexist in a monomer molecule for each monomer class. Contains SMARTS patterns for incompatible functional groups.</p></li>
+</ul>
+<p><strong>5. Exporting Definitions</strong><br />
+The monomer definitions are exported as JSON files for use in other scripts.</p>
+</section>
+<section id="correspondence-table-of-numbers-and-content">
+<h2>Correspondence Table of Numbers and Content<a class="headerlink" href="#correspondence-table-of-numbers-and-content" title="Link to this heading"></a></h2>
+<p>In following tables,</p>
+<ul class="simple">
+<li><p>Allocated numbers are corresponding to</p>
+<ul>
+<li><p>values of mon_dic except 200-999</p></li>
+<li><p>key of mon_dic_inv except 200-999</p></li>
+<li><p>key of mon_lst and excl_lst</p></li>
+</ul>
+</li>
+<li><p>Monomer classes are corresponding to corresponding to key of mon_dic and values of mon_dic_inv.</p></li>
+</ul>
+<p><strong>Table 5-1. Allocated numbers and defined monomer classes for self-polymerizable system</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No.</p></th>
+<th class="head"><p>monomer class</p></th>
+<th class="head"><p>compounds</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>vinyl</p></td>
+<td><p>vinylidene</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>epo</p></td>
+<td><p>epoxide</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>cOle</p></td>
+<td><p>cyclic olefin</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>lactone</p></td>
+<td><p>lactone</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>lactam</p></td>
+<td><p>lactam</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>hydCOOH</p></td>
+<td><p>hydroxy carboxylic acid</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>aminCOOH</p></td>
+<td><p>amino acid</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>hindPhenol</p></td>
+<td><p>hindered phenol</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>cAnhyd</p></td>
+<td><p>cyclic carboxylic acid anhydride</p></td>
+</tr>
+<tr class="row-odd"><td><p>10</p></td>
+<td><p>CO</p></td>
+<td><p>carbon monoxide. Forced addition to synthesize carbonates</p></td>
+</tr>
+<tr class="row-even"><td><p>11</p></td>
+<td><p>HCHO</p></td>
+<td><p>form aldehyde. Forced addition for addition-condensation (future works)</p></td>
+</tr>
+<tr class="row-odd"><td><p>12</p></td>
+<td><p>sfonediX</p></td>
+<td><p>bis(p-halo aryl)sulfone</p></td>
+</tr>
+<tr class="row-even"><td><p>13</p></td>
+<td><p>BzodiF</p></td>
+<td><p>bis(p-fluoro aryl)ketone</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5-2. Allocated numbers and defined monomer classes for the polymerization system that require bi-monomer classes</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No.</p></th>
+<th class="head"><p>monomer class</p></th>
+<th class="head"><p>compounds</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>51</p></td>
+<td><p>diepo</p></td>
+<td><p>di/polyepoxide</p></td>
+</tr>
+<tr class="row-odd"><td><p>52</p></td>
+<td><p>diCOOH</p></td>
+<td><p>di/polycarboxylic acid and acid halide</p></td>
+</tr>
+<tr class="row-even"><td><p>53</p></td>
+<td><p>diol</p></td>
+<td><p>primary and secodary di/polyol, di/polythiol and /polyphenol</p></td>
+</tr>
+<tr class="row-odd"><td><p>54</p></td>
+<td><p>diamin</p></td>
+<td><p>di/polyamine</p></td>
+</tr>
+<tr class="row-even"><td><p>55</p></td>
+<td><p>diNCO</p></td>
+<td><p>di/polyisocyanate</p></td>
+</tr>
+<tr class="row-odd"><td><p>56</p></td>
+<td><p>dicAnhyd</p></td>
+<td><p>bis/poly(cyclic carboxylic acid anhydride)</p></td>
+</tr>
+<tr class="row-even"><td><p>57</p></td>
+<td><p>pridiamin</p></td>
+<td><p>di/polyprimary diamine</p></td>
+</tr>
+<tr class="row-odd"><td><p>58</p></td>
+<td><p>diol_b</p></td>
+<td><p>primary and secodary di/polyol, di/polyphenol</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5-3. Allocated numbers and defined monomer classes for olefinic monomers</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No.</p></th>
+<th class="head"><p>monomer class</p></th>
+<th class="head"><p>compounds</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1001</p></td>
+<td><p>acryl</p></td>
+<td><p>acrylate</p></td>
+</tr>
+<tr class="row-odd"><td><p>1002</p></td>
+<td><p>bEWole</p></td>
+<td><p>beta-ectron withdrawing group substituted olefin</p></td>
+</tr>
+<tr class="row-even"><td><p>1003</p></td>
+<td><p>styryl</p></td>
+<td><p>styryl</p></td>
+</tr>
+<tr class="row-odd"><td><p>1004</p></td>
+<td><p>allyl</p></td>
+<td><p>allyl</p></td>
+</tr>
+<tr class="row-even"><td><p>1005</p></td>
+<td><p>haloCH</p></td>
+<td><p>halogenated olefin</p></td>
+</tr>
+<tr class="row-odd"><td><p>1006</p></td>
+<td><p>vinylester</p></td>
+<td><p>vinyl ester</p></td>
+</tr>
+<tr class="row-even"><td><p>1007</p></td>
+<td><p>malei</p></td>
+<td><p>maleic imide derivatives</p></td>
+</tr>
+<tr class="row-odd"><td><p>1020</p></td>
+<td><p>conjdiene</p></td>
+<td><p>conjugated dienes</p></td>
+</tr>
+<tr class="row-even"><td><p>1030</p></td>
+<td><p>vinylether</p></td>
+<td><p>vinyl ether</p></td>
+</tr>
+<tr class="row-odd"><td><p>1031</p></td>
+<td><p>tertcatCH</p></td>
+<td><p>beta-disubstituded aliphatic olefin</p></td>
+</tr>
+<tr class="row-even"><td><p>1050</p></td>
+<td><p>cycCH</p></td>
+<td><p>alycyclic olefin</p></td>
+</tr>
+<tr class="row-odd"><td><p>1052</p></td>
+<td><p>aliphCH</p></td>
+<td><p>aliphatic olefin</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 5-4. post-polymerization reactions of residual polymerizable functional grous(s)</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No.</p></th>
+<th class="head"><p>SMARTS</p></th>
+<th class="head"><p>Residual functional group</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>200</p></td>
+<td><p>[CX3]=[CX3]</p></td>
+<td><p>olefin</p></td>
+</tr>
+<tr class="row-odd"><td><p>201</p></td>
+<td><p>[CX4;R]1[OX2;R][CX4;R]1</p></td>
+<td><p>epoxide</p></td>
+</tr>
+<tr class="row-even"><td><p>202</p></td>
+<td><p>[CX3] (=[O])[OX2H1,F,Cl,Br,I]</p></td>
+<td><p>carboxylic acid and acyl halide</p></td>
+</tr>
+<tr class="row-odd"><td><p>203</p></td>
+<td><p>[C,c][OX2,SX2;H1;!$([O,S]C=*)]</p></td>
+<td><p>hydroxyl in alcohol and phenol</p></td>
+</tr>
+<tr class="row-even"><td><p>204</p></td>
+<td><p>[C,c][NX3;H2;!$(N[C,S]=*)]</p></td>
+<td><p>amine</p></td>
+</tr>
+<tr class="row-odd"><td><p>205</p></td>
+<td><p>[NX2]=[CX2]=[OX1,SX1]</p></td>
+<td><p>isocyanate</p></td>
+</tr>
+<tr class="row-even"><td><p>206</p></td>
+<td><p>[C,c][CX3,c;R] (=[OX1])[OX2,o;R][CX3,c;R] (=[OX1])[C,c]</p></td>
+<td><p>carboxylic acid anhydride</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="5_utilities.html" class="btn btn-neutral float-left" title="5. utilities; Overview" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="52_Ps_rxnL.html" class="btn btn-neutral float-right" title="5-2. 2_Ps_rxnL.ipynb" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Mitsuru Ohno.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

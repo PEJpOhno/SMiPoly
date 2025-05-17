@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4. Modlues Overview &mdash; SMiPoly_docs 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="smipoly.smip.monc module" href="smipoly.smip.monc.html" />
+    <link rel="prev" title="3. Getting Start" href="3_Getting_start.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SMiPoly_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="1_Current_version.html">1. Current version and requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Installing_SMiPoly.html">2. Installing SMiPoly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Getting_start.html">3. Getting Start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Modlues Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#monc-py">4-1. monc.py</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#loading-rules-and-data">Loading Rules and Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#key-features">Key Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#polg-py">4-2. polg.py</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#key-components">Key Components</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#data-loading">Data Loading</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#helper-variables">Helper Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Key Features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="smipoly.smip.monc.html">smipoly.smip.monc module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smipoly.smip.polg.html">smipoly.smip.polg module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smipoly.smip.funclib.html">smipoly.smip.funclib module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_utilities.html">5. utilities; Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="51_MonomerDefiner.html">5-1. 1_MonomerDefiner.ipynb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="52_Ps_rxnL.html">5-2. 2_Ps_rxnL.ipynb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="53_Ps_GenL.html">5-3. 3_Ps_GenL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Directory_config.html">6. Directry configuration</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SMiPoly_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">4. Modlues Overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/4_Modlues_Overview.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="modlues-overview">
+<h1>4. Modlues Overview<a class="headerlink" href="#modlues-overview" title="Link to this heading"></a></h1>
+<section id="monc-py">
+<h2>4-1. monc.py<a class="headerlink" href="#monc-py" title="Link to this heading"></a></h2>
+<p>The monc.py module is part of the SMiPoly project and is responsible for categorizing monomers based on their functional groups (FGs) and other chemical properties. It processes a dataset of chemical compounds (in SMILES format) and classifies them into predefined monomer classes. The module also supports olefinic monomer classification and provides utilities for handling functional group patterns.</p>
+<section id="loading-rules-and-data">
+<h3>Loading Rules and Data<a class="headerlink" href="#loading-rules-and-data" title="Link to this heading"></a></h3>
+<p>The module loads several pre-defined rules and data files from the rules directory:</p>
+<ul class="simple">
+<li><p>mon_vals.json:<br />
+Categorizes the values of “mon_dic.json” into self-polymerizable monomer systems, binary-monomer systems, post-polymerization reactions, and olefinic monomer systems.</p></li>
+<li><p>mon_dic.json: Maps monomer class to numerical identifiers.</p></li>
+<li><p>mon_dic_inv.json: Inverse mapping of mon_dic.</p></li>
+<li><p>mon_lst.json: Contains SMARTS patterns for objective functional groups.</p></li>
+<li><p>excl_lst.json: Contains SMARTS patterns for incompatible functional groups.</p></li>
+<li><p>ps_rxn.pkl:Contains SMARTS patterns for incompatible functional groups. ContainsPython dictionary with mon_dic’s key and value swapped polymerization reaction definitions.</p></li>
+</ul>
+<p>These files are loaded into dictionaries (mon_vals, mon_dic, mon_dic_inv, monL, exclL, Ps_rxnL) and converted to integer-keyed dictionaries (monLg, exclLg).</p>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>moncls</strong><br />
+Purpose: Classifies monomers into predefined classes based on functional groups.</p></li>
+<li><p><strong>olecls</strong><br />
+Purpose: Classifies olefinic monomers into predefined classes.</p></li>
+</ul>
+</section>
+<section id="key-features">
+<h3>Key Features<a class="headerlink" href="#key-features" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Monomer Classification:</p>
+<ul>
+<li><p>Uses SMARTS patterns to identify functional groups in molecules.</p></li>
+<li><p>Supports both mono-functionalized and poly-functionalized monomers.</p></li>
+</ul>
+</li>
+<li><p>Olefin Classification:</p>
+<ul>
+<li><p>Handles olefinic monomers, including conjugated dienes.</p></li>
+<li><p>Refines classification results using polymerization reactions.</p></li>
+</ul>
+</li>
+<li><p>Integration with Rules:</p>
+<ul>
+<li><p>Relies on external JSON and pickle files for functional group definitions and reaction rules.</p></li>
+<li><p>Modular design allows easy updates to rules and patterns.</p></li>
+</ul>
+</li>
+<li><p>DataFrame Processing:</p>
+<ul>
+<li><p>Processes chemical data stored in pandas DataFrames.</p></li>
+<li><p>Appends classification results as new columns.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="polg-py">
+<h2>4-2. polg.py<a class="headerlink" href="#polg-py" title="Link to this heading"></a></h2>
+<p>The module polg.py is a Python script designed for generating polymers from classified monomers. It is part of a larger project and relies on external data files and helper functions from other modules, such as funclib.py.<br />
+The primary purpose of polg.py is to generate polymers based on input monomer data and predefined polymerization rules.  Below is a deContains SMARTS patterns for incompatible functional groups.tailed explanation of its components and functionality:</p>
+<section id="key-components">
+<h3>Key Components<a class="headerlink" href="#key-components" title="Link to this heading"></a></h3>
+<section id="data-loading">
+<h4>Data Loading<a class="headerlink" href="#data-loading" title="Link to this heading"></a></h4>
+<p>The module loads several JSON and pickle files from a rules directory. These files contain essential data for polymer generation:</p>
+<ul class="simple">
+<li><p>mon_vals.json: Contains categorized monomer values.</p></li>
+<li><p>mon_dic.json and mon_dic_inv.json: Dictionaries mapping monomer classes and their inverse mappings.</p></li>
+<li><p>mon_lst.json and excl_lst.json: Lists of monomers and exclusion rules.</p></li>
+<li><p>ps_rxn.pkl: Contains reaction rules for polymerization.</p></li>
+<li><p>ps_class.json: Defines polymer classes.</p></li>
+<li><p>ps_gen.pkl: Contains polymer generation rules.</p></li>
+</ul>
+<p>The data is loaded into variables like mon_vals, mon_dic, monL, exclL, Ps_rxnL, Ps_classL, and Ps_GenL.</p>
+</section>
+<section id="helper-variables">
+<h4>Helper Variables<a class="headerlink" href="#helper-variables" title="Link to this heading"></a></h4>
+<p>The module processes the loaded data into dictionaries like monLg and exclLg, which map integer keys to monomer and exclusion lists.</p>
+</section>
+</section>
+<section id="id1">
+<h3>Functions<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p><strong>biplym(df, targ=None, dsp_rsl=None)</strong><br />
+This function generates polymer CRU based on an input DataFrame and specified target polymer classes.</p>
+<ul class="simple">
+<li><p>Key Steps:</p>
+<ol class="arabic simple">
+<li><p>Filters and processes the input DataFrame to identify valid monomers.</p></li>
+<li><p>Generates polymers based on predefined polymerization rules and target classes.</p></li>
+<li><p>Removes duplicate polymerization reactions and adjusts the resulting DataFrame.</p></li>
+<li><p>Optionally displays the number of polymerization reactions and generated polymers.</p></li>
+</ol>
+</li>
+<li><p>Notes:</p>
+<ul>
+<li><p>Uses helper functions like bipolymA and homopolymA from funclib.py for polymer generation.</p></li>
+<li><p>Handles both binary polymerization and homopolymerization.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>ole_copolym(df, targ=None, ncomp=None, dsp_rsl=None, drop_dupl=None)</strong><br />
+This function generates olefinic (co)polymers based on olefin classes and parameters.</p>
+<ul class="simple">
+<li><p>Key Steps:</p>
+<ol class="arabic simple">
+<li><p>Validates the input olefin classes and parameters.</p></li>
+<li><p>Reconstructs the list of classified olefin monomers for polymerization.</p></li>
+<li><p>Generates (co)polymers by combining monomers based on the specified number of components (ncomp).</p></li>
+<li><p>Optionally drops duplicate copolymers and displays the results summary.</p></li>
+</ol>
+</li>
+<li><p>Special Handling:</p>
+<ul>
+<li><p>Handles specific olefin classes like ROMP, ROMPH, and COC with unique logic.</p></li>
+<li><p>Uses helper functions like coord_polym from funclib.py.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id2">
+<h3>Key Features<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Rule-based Polymer Generation:</p>
+<ul class="simple">
+<li><p>The module relies heavily on external data files (JSON, pickle) to define monomer structure and polymerization rules.</p></li>
+</ul>
+</li>
+<li><p>Integration with RDKit:</p>
+<ul class="simple">
+<li><p>RDKit is used for chemical structure handling, including molecule generation, substructure matching, and reaction processing.</p></li>
+</ul>
+</li>
+<li><p>Customizability:</p>
+<ul class="simple">
+<li><p>Users can specify target polymer classes, olefin classes, and other parameters to customize the polymer generation process.</p></li>
+<li><p>User can custermize the rules in advanced usage.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="3_Getting_start.html" class="btn btn-neutral float-left" title="3. Getting Start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="smipoly.smip.monc.html" class="btn btn-neutral float-right" title="smipoly.smip.monc module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Mitsuru Ohno.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
