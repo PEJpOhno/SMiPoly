@@ -31,17 +31,16 @@ About SMiPoly
    :caption: Contents:
    :hidden:
 
-   1_Current_version
-   2_Installing_SMiPoly
-   3_Getting_start
-   4_Modlues_Overview
+   1_Installing_SMiPoly
+   2_Getting_start
+   3_Modlues_Overview
    smipoly.smip.monc
    smipoly.smip.polg
    smipoly.smip.funclib
-   5_utilities
-   51_MonomerDefiner
-   52_Ps_rxnL
-   53_Ps_GenL
-   6_Directory_config
+   4_utilities
+   41_MonomerDefiner
+   42_Ps_rxnL
+   43_Ps_GenL
+   5_Directory_config
 
 

@@ -25,21 +25,29 @@ requirements
   - numpy >= 1.26.0  
   - pandas >= 2.1.0  
 
-## 3. Installation  
-SMiPoly can be installed with pip or conda. 
+## 3. Getting start  
 
-## 4. Getting start  
-## SMiPoly documentation  
+### SMiPoly documentation  
 https://pejpohno.github.io/SMiPoly/  
 
-## Sample script
+### Installation  
+SMiPoly can be installed with pip or conda. 
+```sh
+$pip install smipoly
+```  
+or
+```sh
+$conda install conda-forge::smipoly
+```  
+
+### Sample script
 Download 'sample_data/202207_smip_monset.csv' and 'sample_script/sample_smip_demo2.ipynb' from [SMiPoly repository](https://github.com/PEJpOhno/SMiPoly) to the same directry on your computer.
 Then run sample_smip_demo.ipynb. To run this demo script, Jupyter Notebook is required.
 
-## Sample data
+### Sample data
 The sample dataset './sample_data/202207_smip_monset.csv' includes common 1,083 monomers collected from published documents such as scientific articles, catalogues and so on.
 
-## Utilities  
+### Utilities  
 By using the files in './utilities' directory, one can modify or add the definition of monomers, the rules of polymerization reactions and polymer classes.  
 To apply the new rule(s), replace the old './smipoly/rules' directory by the new one. The files must be run according to the number assigned the head of the each filename.  
 
