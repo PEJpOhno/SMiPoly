@@ -1,0 +1,137 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMiPoly documentation &mdash; SMiPoly_docs 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Installing SMiPoly" href="1_Installing_SMiPoly.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            SMiPoly_docs
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1_Installing_SMiPoly.html">1. Installing SMiPoly</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_Getting_start.html">2. Getting Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_Modlues_Overview.html">3. Modlues Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smipoly.smip.monc.html">smipoly.smip.monc module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smipoly.smip.polg.html">smipoly.smip.polg module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="smipoly.smip.funclib.html">smipoly.smip.funclib module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_utilities.html">4. utilities; Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="41_MonomerDefiner.html">4-1. 1_MonomerDefiner.ipynb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="42_Ps_rxnL.html">4-2. 2_Ps_rxnL.ipynb</a></li>
+<li class="toctree-l1"><a class="reference internal" href="43_Ps_GenL.html">4-3. 3_Ps_GenL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Directory_config.html">5. Directry configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Postface.html">6. Postface</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">SMiPoly_docs</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">SMiPoly documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="smipoly-documentation">
+<h1>SMiPoly documentation<a class="headerlink" href="#smipoly-documentation" title="Link to this heading"></a></h1>
+<p><strong>WARNING:</strong> Please note that this document is located in the develop branch
+and is still in progress</p>
+</section>
+<section id="about-smipoly">
+<h1>About SMiPoly<a class="headerlink" href="#about-smipoly" title="Link to this heading"></a></h1>
+<p>“SMiPoly (<strong>S</strong>mall <strong>M</strong>olecules <strong>i</strong>nto <strong>Poly</strong>mers)” is rule-based virtual library generator for discovery of functional polymers. It is consist of two submodules, “monc.py” and “polg.py”.
+“monc.py” is a monomer classifier from a list of small molecules, and “polg.py” is a polymer repeating unit generator from the classified monomer list.</p>
+<div class="line-block">
+<div class="line"><strong>How To Cite (publications)</strong></div>
+<div class="line">SMiPoly: Generation of a Synthesizable Polymer Virtual Library Using Rule-Based Polymerization Reactions</div>
+<div class="line">Mitsuru Ohno, Yoshihiro Hayashi, Qi Zhang, Yu Kaneko, and Ryo Yoshida</div>
+<div class="line"><em>Journal of Chemical Information and Modeling</em> <strong>2023</strong> <em>63</em> (17), 5539-5548</div>
+<div class="line">DOI: 10.1021/acs.jcim.3c00329</div>
+<div class="line"><a class="reference external" href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00329">https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00329</a></div>
+<div class="line">(version 0.0.1 was used)</div>
+</div>
+<p><strong>Project Link</strong> <a class="reference external" href="https://github.com/PEJpOhno/SMiPoly">https://github.com/PEJpOhno/SMiPoly</a></p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="1_Installing_SMiPoly.html" class="btn btn-neutral float-right" title="1. Installing SMiPoly" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Mitsuru Ohno.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
