@@ -53,11 +53,13 @@
 <li class="toctree-l1"><a class="reference internal" href="4_utilities.html">4. utilities; Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="41_MonomerDefiner.html">4-1. 1_MonomerDefiner.ipynb</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">4-2. 2_Ps_rxnL.ipynb</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#key-components">Key Components</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#correspondence-table-of-numbers-and-content">Correspondence Table of Numbers and Content</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="43_Ps_GenL.html">4-3. 3_Ps_GenL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_Directory_config.html">5. Directry configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Postface.html">6. Postface</a></li>
 </ul>
 
         </div>
@@ -86,12 +88,65 @@
              
   <section id="ps-rxnl-ipynb">
 <h1>4-2. 2_Ps_rxnL.ipynb<a class="headerlink" href="#ps-rxnl-ipynb" title="Link to this heading"></a></h1>
+<p>The notebook 2_Ps_rxnL.ipynb is a utility script for defining a list of polymerization reactions using RDKit’s SMARTS-based reaction definitions. It creates a dictionary Ps_rxnL that maps monomer types or reaction types to their corresponding chemical reactions. These reactions are later serialized into a pickle file (ps_rxn.pkl) for use in other parts of the project.</p>
+<section id="key-components">
+<h2>Key Components<a class="headerlink" href="#key-components" title="Link to this heading"></a></h2>
+<p><strong>Metadata</strong><br />
+The notebook includes metadata about its purpose and references:</p>
+<ul class="simple">
+<li><p>Purpose: Define a list of polymerization reactions.</p></li>
+<li><p>References: Links to RDKit documentation and SMARTS theory for understanding reaction definitions.</p></li>
+</ul>
+<p><strong>Imports</strong><br />
+The following libraries are imported:</p>
+<ul class="simple">
+<li><p>json: For loading monomer dictionary (mon_dic.json).</p></li>
+<li><p>pickle: For saving the reaction dictionary (Ps_rxnL) to a file.</p></li>
+<li><p>rdkit.Chem.AllChem: For creating chemical reactions from SMARTS strings.</p></li>
+</ul>
+<p><strong>Loading Monomer Dictionary</strong><br />
+The monomer dictionary (mon_dic.json) is loaded to map monomer types (e.g., vinyl, epo) to numerical identifiers:</p>
+<p><strong>Reaction Definitions</strong><br />
+The notebook defines a series of polymerization reactions using RDKit’s AllChem.ReactionFromSmarts function. These reactions are stored in the Ps_rxnL dictionary, where the keys are either numerical identifiers or descriptive names, and the values are RDKit reaction objects.　　
+Note that polymerization reactions SMARS using detailed olefinic monomer classification except ROMP(H) and COC were automatically generated from corrsponding monomer by the function “smipoly.smip.funclib.ole_rxnsmarts_gen”.</p>
+<p><strong>Reaction Categories</strong></p>
+<ol class="arabic simple">
+<li><p>Self-polymerizable Monomer Systems:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Self-polymerization reactions to form homopolymers for monomers like vinyl, epoxide, cyclic olefins, lactones, lactams, etc.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Binary Monomer Systems:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Olefin copolymerization reactions to form altanating copolymers by combinations of monomers (e.g., vinyl-vinyl, vinyl-cyclic olefin).</p></li>
+<li><p>Polymerization reaction which require essentialy bi-monomer classes (e.g. dicarboxylic acid + diol)</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>Sequential Reactions:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Post-polymerization reactions for residual specific functional groups (e.g., epoxide, hydroxyl, carboxyl, amine).</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Olefinic Monomers:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Polymerization reactions using detailed olefinic monomer classification</p></li>
+<li><p>Reactions for cyclic olefins (e.g., ROMP, COC).</p></li>
+</ul>
+<p><strong>Saving the Reaction Dictionary</strong><br />
+The Ps_rxnL dictionary is serialized and saved to a pickle file (ps_rxn.pkl) for later use.</p>
+</section>
 <section id="correspondence-table-of-numbers-and-content">
 <h2>Correspondence Table of Numbers and Content<a class="headerlink" href="#correspondence-table-of-numbers-and-content" title="Link to this heading"></a></h2>
+<p>The alocated number of polymerization reaction are key of Ps_rxnL.<br />
+The numbers within the square brackets in the monomer class correspond to the values of mon_dic and key of mon_dic_inv.</p>
+<p><strong>Table 4-5. Assigned polymerization reactions and corresponding monomer classes.</strong></p>
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>Polymer Class</p></th>
-<th class="head"><p>Reaction_Class</p></th>
+<tr class="row-odd"><th class="head"><p>No. of Polymerization Reaction</p></th>
 <th class="head"><p>Monomer Class 1</p></th>
 <th class="head"><p>Monomer Class 2</p></th>
 <th class="head"><p>Reaction Type</p></th>
@@ -99,163 +154,218 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Polyolefin</p></td>
-<td><p>0</p></td>
-<td><p>Vinyl</p></td>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Vinyl [1]</p></td>
 <td><p></p></td>
 <td><p>Addition Chain Polymerization</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyolefin</p></td>
-<td><p>0</p></td>
-<td><p>Cyclic Olefin</p></td>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Cyclic Olefin [3]</p></td>
 <td><p></p></td>
 <td><p>Addition Chain Polymerization</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyolefin</p></td>
-<td><p>0</p></td>
-<td><p>Vinyl</p></td>
-<td><p>Vinyl</p></td>
+<tr class="row-even"><td><p>101</p></td>
+<td><p>Vinyl [1]</p></td>
+<td><p>Vinyl [1]</p></td>
 <td><p>Addition Chain Polymerization</p></td>
-<td><p>Polymer</p></td>
+<td><p>Alternating copolymer</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyolefin</p></td>
-<td><p>0</p></td>
-<td><p>Vinyl</p></td>
-<td><p>Cyclic Olefin</p></td>
+<tr class="row-odd"><td><p>102</p></td>
+<td><p>Vinyl [1]</p></td>
+<td><p>Cyclic Olefin [3]</p></td>
 <td><p>Addition Chain Polymerization</p></td>
-<td><p>Polymer</p></td>
+<td><p>Alternating copolymer</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyolefin</p></td>
-<td><p>0</p></td>
-<td><p>Cyclic Olefin</p></td>
-<td><p>Cyclic Olefin</p></td>
+<tr class="row-even"><td><p>103</p></td>
+<td><p>Cyclic Olefin [3]</p></td>
+<td><p>Cyclic Olefin [3]</p></td>
 <td><p>Addition Chain Polymerization</p></td>
-<td><p>Polymer</p></td>
+<td><p>Alternating copolymer</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyester</p></td>
-<td><p>0</p></td>
-<td><p>Lactone</p></td>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Lactone [4]</p></td>
 <td><p></p></td>
 <td><p>Ring-Opening Chain Polymerization</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyester</p></td>
-<td><p>0</p></td>
-<td><p>Hydroxy Carboxylic Acidc</p></td>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>Hydroxy Carboxylic Acid [6]</p></td>
 <td><p></p></td>
 <td><p>Polycondensation</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyester</p></td>
-<td><p>0</p></td>
-<td><p>Hydroxy Carboxylic Acidc</p></td>
-<td><p>Hydroxy Carboxylic Acidc</p></td>
+<tr class="row-odd"><td><p>105</p></td>
+<td><p>Hydroxy Carboxylic Acid [6]</p></td>
+<td><p>Hydroxy Carboxylic Acid [6]</p></td>
 <td><p>Polycondensation</p></td>
-<td><p>Polymer</p></td>
+<td><p>Alternating copolymer</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyester</p></td>
-<td><p>0</p></td>
-<td><p>Di/Polycarboxylic Acid</p></td>
-<td><p>Di/Polyol</p></td>
+<tr class="row-even"><td><p>104</p></td>
+<td><p>Di/Polycarboxylic Acid [52]</p></td>
+<td><p>Di/Polyol [53]</p></td>
 <td><p>Polycondensation</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyester</p></td>
-<td><p>0</p></td>
-<td><p>Di/Polyol</p></td>
-<td><p>Carbon Monoxidee</p></td>
-<td><p>Polycondensationf</p></td>
-<td><p>Polymer</p></td>
+<tr class="row-odd"><td><p>106</p></td>
+<td><p>Di/Polyol [53]</p></td>
+<td><p>Carbon Monoxide [10]</p></td>
+<td><p>Polycondensation</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyester</p></td>
-<td><p>0</p></td>
-<td><p>Cyclic Anhydride</p></td>
-<td><p>Epoxide</p></td>
+<tr class="row-even"><td><p>112</p></td>
+<td><p>Cyclic Anhydride [9]</p></td>
+<td><p>Epoxide [2]</p></td>
 <td><p>Ring-Opening Chain Polymerization</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyether</p></td>
-<td><p>0</p></td>
-<td><p>Epoxide</p></td>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>Epoxide [2]</p></td>
 <td><p></p></td>
 <td><p>Ring-Opening Chain Polymerization</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyether</p></td>
-<td><p>0</p></td>
-<td><p>Hindered Phenol</p></td>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>Hindered Phenol [8]</p></td>
 <td><p></p></td>
-<td><p>Polycondensationg</p></td>
-<td><p>Polymer</p></td>
-</tr>
-<tr class="row-odd"><td><p>Polyetherh</p></td>
-<td><p>0</p></td>
-<td><p>Bis(p-Halogenated Aryl)Sulfone</p></td>
-<td><p>Di/Polyol (Without Thiol)</p></td>
 <td><p>Polycondensation</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyetheri</p></td>
-<td><p>0</p></td>
-<td><p>Bis(p-Fluoroaryl)Ketone</p></td>
-<td><p>Di/Polyol (Without Thiol)</p></td>
+<tr class="row-odd"><td><p>114</p></td>
+<td><p>Bis(p-Halogenated Aryl)Sulfone [12]</p></td>
+<td><p>Di/Polyol (Without Thiol) [58]</p></td>
 <td><p>Polycondensation</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyamide</p></td>
-<td><p>0</p></td>
-<td><p>Lactam</p></td>
+<tr class="row-even"><td><p>115</p></td>
+<td><p>Bis(p-Fluoroaryl)Ketone [13]</p></td>
+<td><p>Di/Polyol (Without Thiol) [58]</p></td>
+<td><p>Polycondensation</p></td>
+<td><p>Homopolymer</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Lactam [5]</p></td>
 <td><p></p></td>
 <td><p>Ring-Opening Chain Polymerization</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyamide</p></td>
-<td><p>0</p></td>
-<td><p>Amino Acidc</p></td>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Amino Acid [7]</p></td>
 <td><p></p></td>
 <td><p>Polycondensation</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyamide</p></td>
-<td><p>0</p></td>
-<td><p>Amino Acidc</p></td>
-<td><p>Amino Acidc</p></td>
+<tr class="row-odd"><td><p>109</p></td>
+<td><p>Amino Acid [7]</p></td>
+<td><p>Amino Acid [7]</p></td>
 <td><p>Polycondensation</p></td>
-<td><p>Polymer</p></td>
+<td><p>Alternating copolymer</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyamide</p></td>
-<td><p>0</p></td>
-<td><p>Di/Polycarboxylic Acid</p></td>
-<td><p>Di/Polyamine</p></td>
+<tr class="row-even"><td><p>108</p></td>
+<td><p>Di/Polycarboxylic Acid [52]</p></td>
+<td><p>Di/Polyamine [54]</p></td>
 <td><p>Polycondensation</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyimide</p></td>
-<td><p>0</p></td>
-<td><p>Di/Polycyclic Anhydride</p></td>
-<td><p>Primary Di/Polyamine</p></td>
+<tr class="row-odd"><td><p>110</p></td>
+<td><p>Di/Polycyclic Anhydride [56]</p></td>
+<td><p>Primary Di/Polyamine [57]</p></td>
 <td><p>Polycondensation</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyurethane</p></td>
-<td><p>0</p></td>
-<td><p>Di/Polyisocyanate</p></td>
-<td><p>Di/Polyol</p></td>
+<tr class="row-even"><td><p>111</p></td>
+<td><p>Di/Polyisocyanate [55]</p></td>
+<td><p>Di/Polyol [53]</p></td>
 <td><p>Polyaddition</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyoxazolidone</p></td>
-<td><p>0</p></td>
-<td><p>Di/Polyepoxide</p></td>
-<td><p>Di/Polyisocyanate</p></td>
+<tr class="row-odd"><td><p>113</p></td>
+<td><p>Di/Polyepoxide [51]</p></td>
+<td><p>Di/Polyisocyanate [55]</p></td>
 <td><p>Polyaddition</p></td>
-<td><p>Polymer</p></td>
+<td><p>Homopolymer</p></td>
 </tr>
 </tbody>
 </table>
-<p>Ps_rxnL</p>
+<p><strong>Table 4-6. Post-polymerization reactions of residual polymerizable functional grous(s).</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>No. of Applied Polymerization Reaction</p></th>
+<th class="head"><p>Reaction Class</p></th>
+<th class="head"><p>Residual Functional Group</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1, 3, 101, 102, 103</p></td>
+<td><p>200</p></td>
+<td><p>olefin</p></td>
+</tr>
+<tr class="row-odd"><td><p>112</p></td>
+<td><p>201</p></td>
+<td><p>epoxide</p></td>
+</tr>
+<tr class="row-even"><td><p>4, 5, 6, 7, 104, 105, 108, 109</p></td>
+<td><p>202</p></td>
+<td><p>carboxylic acid and acyl halide</p></td>
+</tr>
+<tr class="row-odd"><td><p>4, 5, 6, 104, 105, 111, 114, 115</p></td>
+<td><p>203</p></td>
+<td><p>hydroxyl in alcohol and phenol</p></td>
+</tr>
+<tr class="row-even"><td><p>4, 5, 7</p></td>
+<td><p>204</p></td>
+<td><p>amine</p></td>
+</tr>
+<tr class="row-odd"><td><p>111</p></td>
+<td><p>205</p></td>
+<td><p>isocyanate</p></td>
+</tr>
+<tr class="row-even"><td><p>112</p></td>
+<td><p>206</p></td>
+<td><p>carboxylic acid anhydride</p></td>
+</tr>
+<tr class="row-odd"><td><p>110</p></td>
+<td><p>207</p></td>
+<td><p>carboxylic acid anhydride</p></td>
+</tr>
+<tr class="row-even"><td><p>113</p></td>
+<td><p>208</p></td>
+<td><p>isocyanate</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 4-7. Assigned polymerization reactions for detail classified olefinic monomer.</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Applied Polymerization Reaction of Olefinic Monomer</p></th>
+<th class="head"><p>Reaction Class</p></th>
+<th class="head"><p>Monomer Class / Residual Functional Group</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ROMP</p></td>
+<td><p>1050</p></td>
+<td><p>cycCH [1050]</p></td>
+</tr>
+<tr class="row-odd"><td><p>COC</p></td>
+<td><p>1051</p></td>
+<td><p>cycCH [1050] in COC</p></td>
+</tr>
+<tr class="row-even"><td><p>COC</p></td>
+<td><p>1051</p></td>
+<td><p>aliphCH [1052] in COC</p></td>
+</tr>
+<tr class="row-odd"><td><p>Detail Classified Polyolefin Containing Diene Monomer</p></td>
+<td><p>209</p></td>
+<td><p>isomerize 1,2-added diene to 1,4-addition</p></td>
+</tr>
+<tr class="row-even"><td><p>ROMPH</p></td>
+<td><p>210</p></td>
+<td><p>olefin hydrogenation on ROMPH</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 

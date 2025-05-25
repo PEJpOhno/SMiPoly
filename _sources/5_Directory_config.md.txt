@@ -34,7 +34,6 @@ SMiPoly
 │   ├── 2_Ps_rxnL.ipynb  
 │   ├── 3_Ps_GenL.ipynb  
 │   └── rules/  
-├── docs     # soure files for documentation
-└── gh-pages # documentation for gh-pages branch, gitignored
+└── docs     # soure files for documentation 
 
 ```

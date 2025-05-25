@@ -51,7 +51,7 @@ In following tables,
  
 - Monomer classes are corresponding to corresponding to key of mon_dic and values of mon_dic_inv. 
 
-**Table 5-1. Allocated numbers and defined monomer classes for self-polymerizable system** 
+**Table 4-1. Allocated numbers and defined monomer classes for self-polymerizable system** 
 |No.    |monomer class| compounds                                       |
 |-------|-------------|----------------------------------------------------|
 | 1     | vinyl       | vinylidene                                         |
@@ -69,7 +69,7 @@ In following tables,
 | 13    | BzodiF      | bis(p-fluoro aryl)ketone                             | 
 
 
-**Table 5-2. Allocated numbers and defined monomer classes for the polymerization system that require bi-monomer classes**  
+**Table 4-2. Allocated numbers and defined monomer classes for the polymerization system that require bi-monomer classes**  
 |No.    |monomer class| compounds                                                    |
 |-------|-------------|--------------------------------------------------------------|
 | 51    | diepo       | di/polyepoxide                                               |
@@ -82,7 +82,7 @@ In following tables,
 | 58    | diol_b      | primary and secodary di/polyol, di/polyphenol                |
 
 
-**Table 5-3. Allocated numbers and defined monomer classes for olefinic monomers** 
+**Table 4-3. Allocated numbers and defined monomer classes for olefinic monomers** 
 |No.    |monomer class| compounds                                          |
 |-------|-------------|----------------------------------------------------|
 | 1001  | acryl       | acrylate                                           |
@@ -99,15 +99,15 @@ In following tables,
 | 1052  | aliphCH     | aliphatic olefin                                   |
 
 
-**Table 5-4. post-polymerization reactions of residual polymerizable functional grous(s)**  
+**Table 4-4. post-polymerization reactions of residual polymerizable functional grous(s)**  
 |No.  |SMARTS       | Residual functional group                          |
 |-----|-------------|----------------------------------------------------|
-| 200 | [CX3]=[CX3]                    | olefin                          |
-| 201 | [CX4;R]1[OX2;R][CX4;R]1        | epoxide                         | 
-| 202 | [CX3] (=[O])[OX2H1,F,Cl,Br,I]   | carboxylic acid and acyl halide |
-| 203 | [C,c][OX2,SX2;H1;!$([O,S]C=*)] | hydroxyl in alcohol and phenol  |
-| 204 | [C,c][NX3;H2;!$(N[C,S]=*)]     | amine                           | 
-| 205 | [NX2]=[CX2]=[OX1,SX1]          | isocyanate                      |
-| 206 | [C,c][CX3,c;R] (=[OX1])[OX2,o;R][CX3,c;R] (=[OX1])[C,c]| carboxylic acid anhydride |
+| 200 | \[CX3\]=\[CX3\]                | olefin                          |
+| 201 | \[CX4;R\]1\[OX2;R\]\[CX4;R\]1  | epoxide                         | 
+| 202 | \[CX3\](=\[O\])\[OX2H1,F,Cl,Br,I\] | carboxylic acid and acyl halide |
+| 203 | \[C,c\]\[OX2,SX2;H1;!$([O,S]C=*)\] | hydroxyl in alcohol and phenol  |
+| 204 | \[C,c\]\[NX3;H2;!$(N\[C,S\]=*)\] | amine                         | 
+| 205 | \[NX2\]=\[CX2\]=\[OX1,SX1\]    | isocyanate                      |
+| 206 | \[C,c\]\[CX3,c;R\](=\[OX1\])\[OX2,o;R\]\[CX3,c;R\](=\[OX1\])\[C,c\]| carboxylic acid anhydride |
 
 
