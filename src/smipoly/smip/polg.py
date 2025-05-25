@@ -276,6 +276,10 @@ def ole_copolym(df, targ=None, ncomp=None, dsp_rsl=None, drop_dupl=None):
         ValueError: If incompatible olefin classes are used together 
             (e.g., ROMP with other classes).
 
+    Todo:
+        - Add procedure to removing some remaining duplicates in ROMP(H).
+        - Add cationic polymerization via non-classical cations.
+
     Notes:
         - Valid olefin classes are displayed when the function is
           called without valid `targ`.

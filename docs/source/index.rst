@@ -6,9 +6,6 @@
 SMiPoly documentation
 ==========================
 
-**WARNING:** Please note that this document is located in the develop branch
-and is still in progress  
-
 About SMiPoly  
 ==========================
 
@@ -42,5 +39,6 @@ About SMiPoly
    42_Ps_rxnL
    43_Ps_GenL
    5_Directory_config
+   6_Postface
 
 
