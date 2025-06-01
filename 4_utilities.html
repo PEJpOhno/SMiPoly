@@ -93,124 +93,51 @@ To apply the new rule(s), replace the old ‘./smipoly/rules’ directory by the
 <li><p>3_Ps_GenL.ipynb: definitions of polymer classes with combinations of starting monomer(s) and polymerization reaction</p></li>
 </ul>
 <p>Each definations were written by <a class="reference external" href="https://www.daylight.com/dayhtml_tutorials/languages/smarts/">SMARTS (SMiles ARbitrary Target Specification</a>) strings.</p>
+<p>The difined monomer classificatin, polymerization reaction and the polymer genration rules were located in src/smipoly/rulse as pickle or json file.<br />
+These were genarated by using utilities/1_MonomerDefiner.ipynb, 2_Ps_rxnL.ipynb and 3_Ps_GenL.ipynb.</p>
 <table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="head"><p>Polymer Class</p></th>
-<th class="head"><p>Monomer Class 1</p></th>
-<th class="head"><p>Monomer Class 2</p></th>
-<th class="head"><p>Reaction Type</p></th>
+<tr class="row-odd"><th class="head"><p>Generator .ipynb file name</p></th>
+<th class="head"><p>Valiable name</p></th>
+<th class="head"><p>Saved file name</p></th>
+<th class="head"><p>Defined rule</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Polyolefin</p></td>
-<td><p>Vinyl</p></td>
-<td><p></p></td>
-<td><p>Addition Chain Polymerization</p></td>
+<tr class="row-even"><td><p>1_MonomerDefiner.ipynb</p></td>
+<td><p>mon_vals</p></td>
+<td><p>mon_vals</p></td>
+<td><p>Clategorization of monomer classes</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyolefin</p></td>
-<td><p>Cyclic Olefin</p></td>
-<td><p></p></td>
-<td><p>Addition Chain Polymerization</p></td>
+<tr class="row-odd"><td><p></p></td>
+<td><p>mon_dic, mon_dic_inv</p></td>
+<td><p>mon_dic.json, mon_dic_inv.json</p></td>
+<td><p>The defination of monomer</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyolefin</p></td>
-<td><p>Vinyl</p></td>
-<td><p>Vinyl</p></td>
-<td><p>Addition Chain Polymerization</p></td>
+<tr class="row-even"><td><p></p></td>
+<td><p>monL</p></td>
+<td><p>mon_lst.json</p></td>
+<td><p>The definition of the polymerization site</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyolefin</p></td>
-<td><p>Vinyl</p></td>
-<td><p>Cyclic Olefin</p></td>
-<td><p>Addition Chain Polymerization</p></td>
+<tr class="row-odd"><td><p></p></td>
+<td><p>exclL</p></td>
+<td><p>excl_lst.json</p></td>
+<td><p>The definition of functional groups that should not coexist in a monomer molecule</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyolefin</p></td>
-<td><p>Cyclic Olefin</p></td>
-<td><p>Cyclic Olefin</p></td>
-<td><p>Addition Chain Polymerization</p></td>
+<tr class="row-even"><td><p>2_Ps_rxnL.ipynb</p></td>
+<td><p>Ps_rxnL</p></td>
+<td><p>ps_rxn.pkl</p></td>
+<td><p>polymerization reaction</p></td>
 </tr>
-<tr class="row-odd"><td><p>Polyester</p></td>
-<td><p>Lactone</p></td>
-<td><p></p></td>
-<td><p>Ring-Opening Chain Polymerization</p></td>
+<tr class="row-odd"><td><p>3_Ps_GenL.ipyn</p></td>
+<td><p>Ps_classL</p></td>
+<td><p>ps_class.json</p></td>
+<td><p>Polymer classes</p></td>
 </tr>
-<tr class="row-even"><td><p>Polyester</p></td>
-<td><p>Hydroxy Carboxylic Acidc</p></td>
-<td><p></p></td>
-<td><p>Polycondensation</p></td>
-</tr>
-<tr class="row-odd"><td><p>Polyester</p></td>
-<td><p>Hydroxy Carboxylic Acidc</p></td>
-<td><p>Hydroxy Carboxylic Acidc</p></td>
-<td><p>Polycondensation</p></td>
-</tr>
-<tr class="row-even"><td><p>Polyester</p></td>
-<td><p>Di/Polycarboxylic Acid</p></td>
-<td><p>Di/Polyol</p></td>
-<td><p>Polycondensation</p></td>
-</tr>
-<tr class="row-odd"><td><p>Polyester</p></td>
-<td><p>Di/Polyol</p></td>
-<td><p>Carbon Monoxidee</p></td>
-<td><p>Polycondensationf</p></td>
-</tr>
-<tr class="row-even"><td><p>Polyester</p></td>
-<td><p>Cyclic Anhydride</p></td>
-<td><p>Epoxide</p></td>
-<td><p>Ring-Opening Chain Polymerization</p></td>
-</tr>
-<tr class="row-odd"><td><p>Polyether</p></td>
-<td><p>Epoxide</p></td>
-<td><p></p></td>
-<td><p>Ring-Opening Chain Polymerization</p></td>
-</tr>
-<tr class="row-even"><td><p>Polyether</p></td>
-<td><p>Hindered Phenol</p></td>
-<td><p></p></td>
-<td><p>Polycondensationg</p></td>
-</tr>
-<tr class="row-odd"><td><p>Polyetherh</p></td>
-<td><p>Bis(p-Halogenated Aryl)Sulfone</p></td>
-<td><p>Di/Polyol (Without Thiol)</p></td>
-<td><p>Polycondensation</p></td>
-</tr>
-<tr class="row-even"><td><p>Polyetheri</p></td>
-<td><p>Bis(p-Fluoroaryl)Ketone</p></td>
-<td><p>Di/Polyol (Without Thiol)</p></td>
-<td><p>Polycondensation</p></td>
-</tr>
-<tr class="row-odd"><td><p>Polyamide</p></td>
-<td><p>Lactam</p></td>
-<td><p></p></td>
-<td><p>Ring-Opening Chain Polymerization</p></td>
-</tr>
-<tr class="row-even"><td><p>Polyamide</p></td>
-<td><p>Amino Acidc</p></td>
-<td><p></p></td>
-<td><p>Polycondensation</p></td>
-</tr>
-<tr class="row-odd"><td><p>Polyamide</p></td>
-<td><p>Amino Acidc</p></td>
-<td><p>Amino Acidc</p></td>
-<td><p>Polycondensation</p></td>
-</tr>
-<tr class="row-even"><td><p>Polyamide</p></td>
-<td><p>Di/Polycarboxylic Acid</p></td>
-<td><p>Di/Polyamine</p></td>
-<td><p>Polycondensation</p></td>
-</tr>
-<tr class="row-odd"><td><p>Polyimide</p></td>
-<td><p>Di/Polycyclic Anhydride</p></td>
-<td><p>Primary Di/Polyamine</p></td>
-<td><p>Polycondensation</p></td>
-</tr>
-<tr class="row-even"><td><p>Polyurethane</p></td>
-<td><p>Di/Polyisocyanate</p></td>
-<td><p>Di/Polyol</p></td>
-<td><p>Polyaddition</p></td>
-</tr>
-<tr class="row-odd"><td><p>Polyoxazolidone</p></td>
-<td><p>Di/Polyepoxide</p></td>
-<td><p>Di/Polyisocyanate</p></td>
-<td><p>Polyaddition</p></td>
+<tr class="row-even"><td><p></p></td>
+<td><p>Ps_GenL</p></td>
+<td><p>ps_gen.pkl</p></td>
+<td><p>Polymer classes with applied polymerization reactions and starting monomer(s)</p></td>
 </tr>
 </tbody>
 </table>

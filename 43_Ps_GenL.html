@@ -87,11 +87,13 @@
              
   <section id="ps-genl">
 <h1>4-3. 3_Ps_GenL<a class="headerlink" href="#ps-genl" title="Link to this heading"></a></h1>
-<p>Polymer Class are same as key of Ps_GenL. The alocated number of polymerization reaction are key of Ps_rxnL.<br />
+<p>Polymer Class are same as key of Ps_GenL.<br />
+The alocated number of polymerization reaction are key of Ps_rxnL.<br />
 The numbers within the square brackets in the monomer class correspond to the values of mon_dic and key of mon_dic_inv.</p>
 <section id="correspondence-table-of-numbers-and-content">
 <h2>Correspondence Table of Numbers and Content<a class="headerlink" href="#correspondence-table-of-numbers-and-content" title="Link to this heading"></a></h2>
-<p><strong>Table 4-8. Assigned polymerization reactions and corresponding monomer classes.</strong></p>
+<p><strong>Table 4-8. For the function “bipolym”</strong><br />
+Defined polymer class, assigned polymerization reactions and corresponding monomer classes.</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Polymer Class</p></th>
@@ -259,6 +261,45 @@ The numbers within the square brackets in the monomer class correspond to the va
 </tr>
 </tbody>
 </table>
+<p><strong>Table 4-9. For the unction “ole_copolym”</strong><br />
+Defined polymer class, assigned polymeriztion reactions and corresponding monomer classes for the detailed olefin polymerization.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Polymer Class</p></th>
+<th class="head"><p>Polymerization Reaction</p></th>
+<th class="head"><p>Monomer Class</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ROMP</p></td>
+<td><p>1050</p></td>
+<td><p>cycCH [1050]</p></td>
+</tr>
+<tr class="row-odd"><td><p>COC</p></td>
+<td><p>none</p></td>
+<td><p>cycCH [1050] + aliphCH [1052]</p></td>
+</tr>
+<tr class="row-even"><td><p>rec:radi</p></td>
+<td><p>-</p></td>
+<td><p>acryl [1001], bEWole [1002], styryl [1003], allyl [1004], haloCH [1005], vinylester [1006], malei [1007], conjdiene [1020]</p></td>
+</tr>
+<tr class="row-odd"><td><p>rec:cati *</p></td>
+<td><p>-</p></td>
+<td><p>styryl [1003], vinylether [1030], tertcatCH [1031]</p></td>
+</tr>
+<tr class="row-even"><td><p>rec:ani  *</p></td>
+<td><p>-</p></td>
+<td><p>acryl [1001], styryl [1003], conjdiene [1020]</p></td>
+</tr>
+<tr class="row-odd"><td><p>rec:coord *</p></td>
+<td><p>ROMP, ROMPH, COC</p></td>
+<td><p>cycCH [1050], aliphCH [1052] (for COC)</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>When all the components of the polymerization system correspond to the monomer class, it is recommended as a polymerization method.</p></li>
+</ul>
 </section>
 </section>
 
