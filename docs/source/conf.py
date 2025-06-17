@@ -10,11 +10,14 @@ sys.path.insert(0, str(Path('../..', 'src').resolve()))
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+from smipoly._version import __version__
+major_minor_version = ".".join(__version__.split(".")[:2])
 
 project = 'SMiPoly_docs'
 copyright = '2025, Mitsuru Ohno'
 author = 'Mitsuru Ohno'
-release = '1.0'
+version = major_minor_version #documentのverはライブラリのmajor minor ver
+release = '20250617'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

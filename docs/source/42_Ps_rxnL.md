@@ -77,7 +77,7 @@ The numbers within the square brackets in the monomer class correspond to the va
 | 113                            | Di/Polyepoxide \[51\]  | Di/Polyisocyanate \[55\] | Polyaddition               | Homopolymer            |
 
 
-**Table 4-6. Post-polymerization reactions of residual polymerizable functional grous(s).**  
+**Table 4-6. Post-polymerization reactions of residual polymerizable functional grous(s) for the Function "bipolym".**  
 
 | No. of Applied Polymerization Reaction | Reaction Class | Residual Functional Group           |
 |----------------------------------------|----------------|-------------------------------------|

@@ -6,6 +6,9 @@
 SMiPoly documentation
 ==========================
 
+Current version: |version|, release: |release|
+
+
 About SMiPoly  
 ==========================
 
@@ -30,7 +33,7 @@ About SMiPoly
 
    1_Installing_SMiPoly
    2_Getting_start
-   3_Modlues_Overview
+   3_Modules_Overview
    smipoly.smip.monc
    smipoly.smip.polg
    smipoly.smip.funclib

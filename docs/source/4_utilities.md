@@ -11,30 +11,15 @@ To apply the new rule(s), replace the old './smipoly/rules' directory by the new
 
 Each definations were written by [SMARTS (SMiles ARbitrary Target Specification](https://www.daylight.com/dayhtml_tutorials/languages/smarts/)) strings.  
 
+The difined monomer classificatin, polymerization reaction and the polymer genration rules were located in src/smipoly/rulse as pickle or json file.  
+These were genarated by using utilities/1_MonomerDefiner.ipynb, 2_Ps_rxnL.ipynb and 3_Ps_GenL.ipynb. 
 
-
-| Polymer Class   | Monomer Class 1           | Monomer Class 2           | Reaction Type                 |
-|-----------------|---------------------------|---------------------------|-------------------------------|
-| Polyolefin      | Vinyl                    |                           | Addition Chain Polymerization |
-| Polyolefin      | Cyclic Olefin            |                           | Addition Chain Polymerization |
-| Polyolefin      | Vinyl                    | Vinyl                     | Addition Chain Polymerization |
-| Polyolefin      | Vinyl                    | Cyclic Olefin             | Addition Chain Polymerization |
-| Polyolefin      | Cyclic Olefin            | Cyclic Olefin             | Addition Chain Polymerization |
-| Polyester       | Lactone                  |                           | Ring-Opening Chain Polymerization |
-| Polyester       | Hydroxy Carboxylic Acidc |                           | Polycondensation             |
-| Polyester       | Hydroxy Carboxylic Acidc | Hydroxy Carboxylic Acidc  | Polycondensation             |
-| Polyester       | Di/Polycarboxylic Acid   | Di/Polyol                 | Polycondensation             |
-| Polyester       | Di/Polyol                | Carbon Monoxidee          | Polycondensationf            |
-| Polyester       | Cyclic Anhydride         | Epoxide                   | Ring-Opening Chain Polymerization |
-| Polyether       | Epoxide                  |                           | Ring-Opening Chain Polymerization |
-| Polyether       | Hindered Phenol          |                           | Polycondensationg            |
-| Polyetherh      | Bis(p-Halogenated Aryl)Sulfone | Di/Polyol (Without Thiol) | Polycondensation             |
-| Polyetheri      | Bis(p-Fluoroaryl)Ketone  | Di/Polyol (Without Thiol) | Polycondensation             |
-| Polyamide       | Lactam                  |                           | Ring-Opening Chain Polymerization |
-| Polyamide       | Amino Acidc             |                           | Polycondensation             |
-| Polyamide       | Amino Acidc             | Amino Acidc               | Polycondensation             |
-| Polyamide       | Di/Polycarboxylic Acid  | Di/Polyamine              | Polycondensation             |
-| Polyimide       | Di/Polycyclic Anhydride | Primary Di/Polyamine      | Polycondensation             |
-| Polyurethane    | Di/Polyisocyanate       | Di/Polyol                 | Polyaddition                 |
-| Polyoxazolidone | Di/Polyepoxide          | Di/Polyisocyanate         | Polyaddition                 |
-
+|Generator .ipynb file name |Valiable name |Saved file name |Defined rule |
+|---------------------------|--------------|----------------|-------------|
+|1_MonomerDefiner.ipynb |mon_vals |mon_vals |Clategorization of monomer classes |
+|                       |mon_dic, mon_dic_inv |mon_dic.json, mon_dic_inv.json |The defination of monomer |
+|                       |monL |mon_lst.json |The definition of the polymerization site |
+|                       |exclL |excl_lst.json |The definition of functional groups that should not coexist in a monomer molecule |
+|2_Ps_rxnL.ipynb |Ps_rxnL  |ps_rxn.pkl    |polymerization reaction |
+|3_Ps_GenL.ipynb |Ps_classL |ps_class.json |Polymer classes |
+|               |Ps_GenL   |ps_gen.pkl    |Polymer classes with applied polymerization reactions and starting monomer(s) |

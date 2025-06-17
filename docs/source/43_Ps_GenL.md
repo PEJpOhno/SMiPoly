@@ -1,11 +1,13 @@
 # 4-3. 3_Ps_GenL  
 
-Polymer Class are same as key of Ps_GenL. The alocated number of polymerization reaction are key of Ps_rxnL.  
+Polymer Class are same as key of Ps_GenL.  
+The alocated number of polymerization reaction are key of Ps_rxnL.  
 The numbers within the square brackets in the monomer class correspond to the values of mon_dic and key of mon_dic_inv.  
 
 ## Correspondence Table of Numbers and Content  
 
-**Table 4-8. Assigned polymerization reactions and corresponding monomer classes.**  
+**Table 4-8. For the function "bipolym"**  
+Defined polymer class, assigned polymerization reactions and corresponding monomer classes.  
 
 | Polymer Class  | Polymerization Reaction | Monomer Class 1    | Monomer Class 2    | Reaction Type         | Product          |
 |----------------|-------------------------|--------------------|--------------------|-----------------------|------------------|
@@ -31,3 +33,17 @@ The numbers within the square brackets in the monomer class correspond to the va
 | Polyimide      | 110                     | Di/Polycyclic Anhydride \[56\] | Primary Di/Polyamine \[57\] | Polycondensation | Homopolymer |
 | Polyurethane   | 111                     | Di/Polyisocyanate \[55\]       | Di/Polyol \[53\]            | Polyaddition | Homopolymer |
 | Polyoxazolidone | 113                    | Di/Polyepoxide \[51\] | Di/Polyisocyanate \[55\]    | Polyaddition | Homopolymer |
+
+
+**Table 4-9. For the unction "ole_copolym"**  
+Defined polymer class, assigned polymeriztion reactions and corresponding monomer classes for the detailed olefin polymerization.  
+| Polymer Class | Polymerization Reaction | Monomer Class      | 
+|---------------|-------------------------|--------------------|
+| ROMP          | 1050                    | cycCH \[1050\]        |
+| COC           | none                    | cycCH \[1050\] + aliphCH \[1052\] |
+| rec:radi      | -                       | acryl \[1001\], bEWole \[1002\], styryl \[1003\], allyl \[1004\], haloCH \[1005\], vinylester \[1006\], malei \[1007\], conjdiene \[1020\] |
+| rec:cati *    | -                       | styryl \[1003\], vinylether \[1030\], tertcatCH \[1031\] |
+| rec:ani  *    | -                       | acryl \[1001\], styryl \[1003\], conjdiene \[1020\] |
+| rec:coord *   | ROMP, ROMPH, COC        | cycCH \[1050\], aliphCH \[1052\] (for COC) |
+
+* When all the components of the polymerization system correspond to the monomer class, it is recommended as a polymerization method.  
