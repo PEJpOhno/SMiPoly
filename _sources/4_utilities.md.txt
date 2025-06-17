@@ -21,5 +21,5 @@ These were genarated by using utilities/1_MonomerDefiner.ipynb, 2_Ps_rxnL.ipynb 
 |                       |monL |mon_lst.json |The definition of the polymerization site |
 |                       |exclL |excl_lst.json |The definition of functional groups that should not coexist in a monomer molecule |
 |2_Ps_rxnL.ipynb |Ps_rxnL  |ps_rxn.pkl    |polymerization reaction |
-|3_Ps_GenL.ipyn |Ps_classL |ps_class.json |Polymer classes |
+|3_Ps_GenL.ipynb |Ps_classL |ps_class.json |Polymer classes |
 |               |Ps_GenL   |ps_gen.pkl    |Polymer classes with applied polymerization reactions and starting monomer(s) |
