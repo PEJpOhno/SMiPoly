@@ -5,7 +5,18 @@ When using Jupyter Notebook, also refer to "sample_script/sample_smip_demo4.ipyn
 
 ---
 
-## 1. Prepare and load Input File
+## 1. Quick start  
+For quick start, the following sampl script and dataset are available.  
+
+**Sample script**  
+Download './sample_script/sample_smip_demo4.ipynb' from [SMiPoly repository](https://github.com/PEJpOhno/SMiPoly).  
+To run this demo script, Jupyter Notebook is required.
+
+**Sample data**  
+The sample dataset './sample_data/202207_smip_monset.csv' includes common 1,083 monomers collected from published documents such as scientific articles, catalogues and so on.
+
+
+## 2. Prepare and load Input File
 
 To begin, you need to prepare an input file containing the chemical data for your compounds. The input file should be in a tabular format (e.g., CSV) with at least one column containing SMILES strings. 
 
@@ -34,7 +45,7 @@ df = pd.read_csv("input_file.csv")
 ```
 
 
-### Sample dataset  
+### Using Sample dataset  
 Also  'sample_data/202207_smip_monset.csv' is avalable under the Internet-connected environment.  
 ```python
 import pandas as pd
@@ -44,7 +55,7 @@ df = pd.read_csv("https://raw.githubusercontent.com/PEJpOhno/SMiPoly/main/sample
 
 ---
 
-## 2. Monomer Classification
+## 3. Monomer Classification
 
 The monomer classification step identifies and categorizes monomers based on their functional groups or olefinic properties.
 
@@ -78,7 +89,7 @@ classified_olefins_df.to_csv("classified_olefins.csv", index=False)
 
 ---
 
-## 3. Generate Polymers
+## 4. Generate Polymers
 
 The polymer generation step involves creating polymers from the classified monomers.
 
