@@ -5,6 +5,9 @@
 |:---:|:---:|  
 |[![Downloads](https://static.pepy.tech/badge/smipoly)](https://pepy.tech/project/smipoly)|![conda](https://anaconda.org/conda-forge/smipoly/badges/downloads.svg)|  
 
+___Demo video___
+[![Demo video](https://img.youtube.com/vi/ilzYwNWvTeQ/hqdefault.jpg)](https://youtu.be/ilzYwNWvTeQ)  
+
 ## 1. About SMiPoly  
 "SMiPoly (**S**mall **M**olecules **i**nto **Poly**mers)" is rule-based virtual library generator for discovery of functional polymers. It is consist of two submodules, "monc.py" and "polg.py".  
 "monc.py" is a monomer classifier from a list of small molecules, and "polg.py" is a polymer repeating unit generator from the classified monomer list.  
@@ -50,10 +53,10 @@ To run this demo script, Jupyter Notebook is required.
 ### Sample data
 The sample dataset './sample_data/202207_smip_monset.csv' includes common 1,083 monomers collected from published documents such as scientific articles, catalogues and so on.
 
-## 5. Copyright and license  
+## 4. Copyright and license  
 Copyright (c) 2022 Mitsuru Ohno  
 Released under the BSD-3 license, license that can be found in the LICENSE file.  
 
-## 6. Related projects  
+## 5. Related projects  
 RadonPy (Fully automated calculation for a comprehensive set of polymer properties)  
 https://github.com/RadonPy/RadonPy  
