@@ -15,7 +15,7 @@ ___Demo video___
 ### How To Cite (publications)   
 SMiPoly: Generation of a Synthesizable Polymer Virtual Library Using Rule-Based Polymerization Reactions  
 Mitsuru Ohno, Yoshihiro Hayashi, Qi Zhang, Yu Kaneko, and Ryo Yoshida  
-*Journal of Chemical Information and Modeling* **2023** *63* (17), 5539-5548  
+*Journal of Chemical Information and Modeling* **2023** *63* (17), 5539&#8203;-5548  
 DOI: 10.1021/acs.jcim.3c00329  
 https://doi.org/10.1021/acs.jcim.3c00329  
 (version 0.0.1 was used)    
