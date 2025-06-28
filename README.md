@@ -5,8 +5,8 @@
 |:---:|:---:|  
 |[![Downloads](https://static.pepy.tech/badge/smipoly)](https://pepy.tech/project/smipoly)|![conda](https://anaconda.org/conda-forge/smipoly/badges/downloads.svg)|  
 
-___Demo video___
-[![Demo video](https://img.youtube.com/vi/ilzYwNWvTeQ/hqdefault.jpg)](https://youtu.be/ilzYwNWvTeQ)  
+___Demo video___  
+[![Demo video](https://img.youtube.com/vi/ilzYwNWvTeQ/sddefault.jpg)](https://youtu.be/ilzYwNWvTeQ)  
 
 ## 1. About SMiPoly  
 "SMiPoly (**S**mall **M**olecules **i**nto **Poly**mers)" is rule-based virtual library generator for discovery of functional polymers. It is consist of two submodules, "monc.py" and "polg.py".  
@@ -22,8 +22,7 @@ https://doi.org/10.1021/acs.jcim.3c00329
 
 ### SMiPoly documentation and demo video  
 **Documentation :** https://pejpohno.github.io/SMiPoly/  
-
-[![Demo video](https://img.youtube.com/vi/ilzYwNWvTeQ/sddefault.jpg)](https://youtu.be/ilzYwNWvTeQ)
+**Demo video :** https://youtu.be/ilzYwNWvTeQ  
 
 
 ## 2. Current version and requirements
