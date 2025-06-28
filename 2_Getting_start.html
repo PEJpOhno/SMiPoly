@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2. Getting Start &mdash; SMiPoly_docs 20250617 documentation</title>
+  <title>2. Getting Start &mdash; SMiPoly_docs 20250628 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=a058bb90"></script>
+      <script src="_static/documentation_options.js?v=e512689e"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -46,13 +46,14 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="1_Installing_SMiPoly.html">1. Installing SMiPoly</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">2. Getting Start</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prepare-and-load-input-file">1. Prepare and load Input File</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quick-start">1. Quick start</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prepare-and-load-input-file">2. Prepare and load Input File</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#steps">Steps:</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#example-input-file">Example Input File</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#sample-dataset">Sample dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-sample-dataset">Using Sample dataset</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#monomer-classification">2. Monomer Classification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#monomer-classification">3. Monomer Classification</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#monomer-extraction-and-classification">Monomer Extraction and Classification</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#example">Example:</a></li>
 </ul>
@@ -63,7 +64,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#generate-polymers">3. Generate Polymers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generate-polymers">4. Generate Polymers</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#polymer-generation">Polymer Generation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id2">Example:</a></li>
 </ul>
@@ -117,8 +118,17 @@
 <p>This guide will walk you through the steps to prepare input files, classify monomers, and generate polymers using the SMiPoly framework.<br />
 When using Jupyter Notebook, also refer to “sample_script/sample_smip_demo4.ipynb”.</p>
 <hr class="docutils" />
+<section id="quick-start">
+<h2>1. Quick start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
+<p>For quick start, the following sampl script and dataset are available.</p>
+<p><strong>Sample script</strong><br />
+Download <a class="reference external" href="https://github.com/PEJpOhno/SMiPoly/blob/main/sample_script/sample_smip_demo4.ipynb">‘./sample_script/sample_smip_demo4.ipynb’</a> from <a class="reference external" href="https://github.com/PEJpOhno/SMiPoly.git">SMiPoly repository</a>.<br />
+To run this demo script, Jupyter Notebook is required.</p>
+<p><strong>Sample data</strong><br />
+The sample dataset ‘./sample_data/202207_smip_monset.csv’ includes common 1,083 monomers collected from published documents such as scientific articles, catalogues and so on.</p>
+</section>
 <section id="prepare-and-load-input-file">
-<h2>1. Prepare and load Input File<a class="headerlink" href="#prepare-and-load-input-file" title="Link to this heading"></a></h2>
+<h2>2. Prepare and load Input File<a class="headerlink" href="#prepare-and-load-input-file" title="Link to this heading"></a></h2>
 <p>To begin, you need to prepare an input file containing the chemical data for your compounds. The input file should be in a tabular format (e.g., CSV) with at least one column containing SMILES strings.</p>
 <section id="steps">
 <h3>Steps:<a class="headerlink" href="#steps" title="Link to this heading"></a></h3>
@@ -171,8 +181,8 @@ When using Jupyter Notebook, also refer to “sample_script/sample_smip_demo4.ip
 </pre></div>
 </div>
 </section>
-<section id="sample-dataset">
-<h3>Sample dataset<a class="headerlink" href="#sample-dataset" title="Link to this heading"></a></h3>
+<section id="using-sample-dataset">
+<h3>Using Sample dataset<a class="headerlink" href="#using-sample-dataset" title="Link to this heading"></a></h3>
 <p>Also  ‘sample_data/202207_smip_monset.csv’ is avalable under the Internet-connected environment.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
@@ -183,7 +193,7 @@ When using Jupyter Notebook, also refer to “sample_script/sample_smip_demo4.ip
 </section>
 <hr class="docutils" />
 <section id="monomer-classification">
-<h2>2. Monomer Classification<a class="headerlink" href="#monomer-classification" title="Link to this heading"></a></h2>
+<h2>3. Monomer Classification<a class="headerlink" href="#monomer-classification" title="Link to this heading"></a></h2>
 <p>The monomer classification step identifies and categorizes monomers based on their functional groups or olefinic properties.</p>
 <section id="monomer-extraction-and-classification">
 <h3>Monomer Extraction and Classification<a class="headerlink" href="#monomer-extraction-and-classification" title="Link to this heading"></a></h3>
@@ -220,7 +230,7 @@ When using Jupyter Notebook, also refer to “sample_script/sample_smip_demo4.ip
 </section>
 <hr class="docutils" />
 <section id="generate-polymers">
-<h2>3. Generate Polymers<a class="headerlink" href="#generate-polymers" title="Link to this heading"></a></h2>
+<h2>4. Generate Polymers<a class="headerlink" href="#generate-polymers" title="Link to this heading"></a></h2>
 <p>The polymer generation step involves creating polymers from the classified monomers.</p>
 <section id="polymer-generation">
 <h3>Polymer Generation<a class="headerlink" href="#polymer-generation" title="Link to this heading"></a></h3>
