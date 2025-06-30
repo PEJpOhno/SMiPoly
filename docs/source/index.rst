@@ -25,6 +25,12 @@ About SMiPoly
 
 **Project Link** https://github.com/PEJpOhno/SMiPoly  
 
+**Demo video**  
+
+.. image:: ./_static/SMiPoly_movie1.jpg
+   :target: https://youtu.be/ilzYwNWvTeQ
+   :alt: Demo video
+   :width: 300px
    
 .. toctree::
    :maxdepth: 2
