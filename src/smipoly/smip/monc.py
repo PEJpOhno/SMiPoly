@@ -77,8 +77,8 @@ def moncls(df, smiColn, minFG=None, maxFG=None, dsp_rsl=None):
         ValueError: If the specified SMILES column name is invalid.
 
     Notes:
-        - The function appends additional rows for carbonate
-          structures.
+        - This function forcibly adds CO for carbonate synthesis 
+          and HCHO for future works."
 
     """
     # #The default number of the samle class of FG were limited
