@@ -1,4 +1,4 @@
-# 6. Postface  
+# 7. Postface  
 ## References  
 SMARTS:  
 [https://www.daylight.com/dayhtml/doc/theory/theory.smarts.html](https://www.daylight.com/dayhtml/doc/theory/theory.smarts.html)  

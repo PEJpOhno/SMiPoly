@@ -48,6 +48,7 @@ About SMiPoly
    42_Ps_rxnL
    43_Ps_GenL
    5_Directory_config
-   6_Postface
+   6_Modifying_Rules
+   7_Postface
 
 

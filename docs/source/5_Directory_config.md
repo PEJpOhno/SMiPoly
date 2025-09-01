@@ -34,6 +34,6 @@ SMiPoly
 │   ├── 2_Ps_rxnL.ipynb  
 │   ├── 3_Ps_GenL.ipynb  
 │   └── rules/  
-└── docs     # soure files for documentation 
+└── docs     # source files for documentation 
 
 ```
