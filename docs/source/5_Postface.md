@@ -47,7 +47,9 @@ SMiPoly
 ├── setup.cfg
 ├── README.md
 ├── sample_data
-│   └── 202207_smip_monset.csv
+│   |── 202207_smip_monset.csv
+│   ├── SMiPoly_001_generatedPolymer.csv.zip
+│   └── tutorial_aziridine.csv
 ├── sample_script
 │   └── sample_smip_demo4.ipynb
 ├── utilities  

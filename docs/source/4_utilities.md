@@ -201,7 +201,7 @@ In the case of running polymerization via ole_copolym(), you may also add the re
 ```Ps_GenL['rec:radi']``` , ```Ps_GenL['rec:cati'] ```, ```Ps_GenL['rec:ani'] ```, ```Ps_GenL['rec:coord']```
 
 
-After all modifications have been completed, run "Rule Change Operations".  
+After all modifications have been completed, run "Post-modification Operations".  
 
 ## TIPs
 Points to note when using SMARTS notation, especially reaction SMARTS: 
