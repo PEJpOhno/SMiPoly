@@ -17,7 +17,7 @@ project = 'SMiPoly_docs'
 copyright = '2025, Mitsuru Ohno'
 author = 'Mitsuru Ohno'
 version = major_minor_version #documentのverはライブラリのmajor minor ver
-release = '20250630'
+release = '20250907'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
