@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4. utilities; Overview &mdash; SMiPoly_docs 20250630 documentation</title>
+  <title>4. utilities; Rule Modification Utilities &mdash; SMiPoly_docs 20250907 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=a24e8bd5"></script>
+      <script src="_static/documentation_options.js?v=7284c450"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -50,12 +50,27 @@
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.monc.html">smipoly.smip.monc module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.polg.html">smipoly.smip.polg module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.funclib.html">smipoly.smip.funclib module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. utilities; Overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. utilities; Rule Modification Utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#common-operations-to-modifying-rules">Common Operations To Modifying Rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pre-modification-operations">Pre-modification Operations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#post-modification-operations">Post-modification Operations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modifying-rules">Modifying Rules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#modifying-an-existing-monomer-class">Modifying an Existing Monomer Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#defining-a-new-monomer-class">Defining a New Monomer Class</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#defining-a-new-polymerization-reaction">Defining a New Polymerization Reaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#defining-a-new-polymer-class">Defining a New Polymer Class</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#tips">TIPs</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="41_MonomerDefiner.html">4-1. 1_MonomerDefiner.ipynb</a></li>
 <li class="toctree-l1"><a class="reference internal" href="42_Ps_rxnL.html">4-2. 2_Ps_rxnL.ipynb</a></li>
 <li class="toctree-l1"><a class="reference internal" href="43_Ps_GenL.html">4-3. 3_Ps_GenL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_Directory_config.html">5. Directry configuration</a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_Postface.html">6. Postface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Postface.html">5. Postface</a></li>
 </ul>
 
         </div>
@@ -72,7 +87,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">4. utilities; Overview</li>
+      <li class="breadcrumb-item active">4. utilities; Rule Modification Utilities</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/4_utilities.md.txt" rel="nofollow"> View page source</a>
       </li>
@@ -82,9 +97,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="utilities-overview">
-<h1>4. utilities; Overview<a class="headerlink" href="#utilities-overview" title="Link to this heading"></a></h1>
-<p>.ipynb files in directiry “utirities” are tools to imprementing the rules of monomer extraction-cllasification , polymerization reaction definition and polymer generation.</p>
+  <section id="utilities-rule-modification-utilities">
+<h1>4. utilities; Rule Modification Utilities<a class="headerlink" href="#utilities-rule-modification-utilities" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>The .ipynb files in the utilities directory are tools for implementing rules related to monomer extraction and classification, polymerization reaction definitions, and polymer generation.
+You can modify the rules using the notebooks in the <code class="docutils literal notranslate"><span class="pre">utility</span></code> directory: <code class="docutils literal notranslate"><span class="pre">1_MonomerDefiner.ipynb</span></code>, <code class="docutils literal notranslate"><span class="pre">2_Ps_rxnL.ipynb</span></code>, and <code class="docutils literal notranslate"><span class="pre">3_Ps_GenL.ipynb</span></code>.<br />
+These files require Jupyter Notebook to run.</p>
 <p>By using the files in ‘./utilities’ directory, one can modify or add the definition of monomers, the rules of polymerization reactions and polymer classes.<br />
 To apply the new rule(s), replace the old ‘./smipoly/rules’ directory by the new one. The files must be run according to the number assigned the head of the each filename.</p>
 <ul class="simple">
@@ -141,6 +160,226 @@ These were genarated by using utilities/1_MonomerDefiner.ipynb, 2_Ps_rxnL.ipynb 
 </tr>
 </tbody>
 </table>
+</section>
+<section id="common-operations-to-modifying-rules">
+<h2>Common Operations To Modifying Rules<a class="headerlink" href="#common-operations-to-modifying-rules" title="Link to this heading"></a></h2>
+<section id="pre-modification-operations">
+<h3>Pre-modification Operations<a class="headerlink" href="#pre-modification-operations" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Clone the <a class="reference external" href="https://github.com/PEJpOhno/SMiPoly.git">SMiPoly GitHub repository</a> and note the path on your local machine (e.g., [path_to_cloned_repo]).</p></li>
+<li><p>Delete the 8 files within the <code class="docutils literal notranslate"><span class="pre">utilities/rules</span></code> directory of the cloned repository, leaving an empty directory.</p></li>
+</ol>
+</section>
+<section id="post-modification-operations">
+<h3>Post-modification Operations<a class="headerlink" href="#post-modification-operations" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Run the following files in the utilities directory in this specific order: <code class="docutils literal notranslate"><span class="pre">1_MonomerDefiner.ipynb</span></code>, <code class="docutils literal notranslate"><span class="pre">2_Ps_rxnL.ipynb</span></code>, and <code class="docutils literal notranslate"><span class="pre">3_Ps_GenL.ipynb</span></code>. Make sure to run all of them, regardless of whether any changes have been made to the notebooks.</p></li>
+<li><p>Copy the 8 files from <code class="docutils literal notranslate"><span class="pre">utilities/rules</span></code>.</p></li>
+<li><p>Delete the 8 files from <code class="docutils literal notranslate"><span class="pre">src/smipoly/rules</span></code>.</p></li>
+<li><p>Paste the 8 files you copied in step 2 into the now-empty <code class="docutils literal notranslate"><span class="pre">src/smipoly/rules</span> <span class="pre">directory</span></code>.</p></li>
+<li><p>Create and activate a virtual environment to run the modified SMiPoly.</p></li>
+<li><p>Install with the following command:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install [path_to_cloned_repo]
+</pre></div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>Verify the operation. If there are no issues, you can delete the cloned repository.</p></li>
+</ol>
+</section>
+</section>
+<section id="modifying-rules">
+<h2>Modifying Rules<a class="headerlink" href="#modifying-rules" title="Link to this heading"></a></h2>
+<p>Monomer and CRU substructures were represented using <a class="reference external" href="https://www.daylight.com/dayhtml/doc/theory/theory.smarts.html">SMARTS</a>, while the polymerization reactions were described using <a class="reference external" href="https://daylight.com/meetings/summerschool00/course/basics/smirks.html">reaction SMARTS</a>.</p>
+<section id="modifying-an-existing-monomer-class">
+<h3>Modifying an Existing Monomer Class<a class="headerlink" href="#modifying-an-existing-monomer-class" title="Link to this heading"></a></h3>
+<p>Open <code class="docutils literal notranslate"><span class="pre">1_MonomerDefiner.ipynb</span></code> and add or remove the corresponding monomer definitions in <code class="docutils literal notranslate"><span class="pre">monL</span></code> and/or <code class="docutils literal notranslate"><span class="pre">exclL</span></code>.<br />
+Since certain polymers are associated with multiple polymerization reactions, care should be taken regarding their impact scope.</p>
+<p><strong>Example 1.</strong></p>
+<ul class="simple">
+<li><p>Exclude vinyl monomers without F at the terminal methylidene of the polymerization site.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># origine</span>
+<span class="n">n</span><span class="o">=</span><span class="n">mon_dic</span><span class="p">[</span><span class="s1">&#39;vinyl&#39;</span><span class="p">]</span>
+<span class="n">monL</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;[CX3H2]=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3](F)(F)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3;H1](F)=[CX3]&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;[CX3](Cl)(Cl)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3;H1](Cl)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3](Cl)(F)=[CX3]&#39;</span><span class="p">)</span>
+
+<span class="c1"># update</span>
+<span class="n">n</span><span class="o">=</span><span class="n">mon_dic</span><span class="p">[</span><span class="s1">&#39;vinyl&#39;</span><span class="p">]</span>
+<span class="n">monL</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;[CX3H2]=[CX3]&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;[CX3](Cl)(Cl)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3;H1](Cl)=[CX3]&#39;</span><span class="p">,</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Example 2.</strong></p>
+<ul class="simple">
+<li><p>Add terminal dibromoolefins.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># origine</span>
+<span class="n">n</span><span class="o">=</span><span class="n">mon_dic</span><span class="p">[</span><span class="s1">&#39;vinyl&#39;</span><span class="p">]</span>
+<span class="n">monL</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;[CX3H2]=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3](F)(F)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3;H1](F)=[CX3]&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;[CX3](Cl)(Cl)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3;H1](Cl)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3](Cl)(F)=[CX3]&#39;</span><span class="p">)</span>
+
+<span class="c1"># update</span>
+<span class="n">n</span><span class="o">=</span><span class="n">mon_dic</span><span class="p">[</span><span class="s1">&#39;vinyl&#39;</span><span class="p">]</span>
+<span class="n">monL</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;[CX3H2]=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3](F)(F)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3;H1](F)=[CX3]&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;[CX3](Cl)(Cl)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3;H1](Cl)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3](Cl)(F)=[CX3]&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;[CX3]([Br])([Br])=[CX3]&#39;</span><span class="p">,)</span>
+</pre></div>
+</div>
+<p><strong>Example 3.</strong></p>
+<ul class="simple">
+<li><p>Exclude compounds containing fluorine (F) in the molecule using <code class="docutils literal notranslate"><span class="pre">exclL[n]</span></code>.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># origine</span>
+<span class="n">n</span><span class="o">=</span><span class="n">mon_dic</span><span class="p">[</span><span class="s1">&#39;vinyl&#39;</span><span class="p">]</span>
+<span class="n">monL</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;[CX3H2]=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3](F)(F)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3;H1](F)=[CX3]&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;[CX3](Cl)(Cl)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3;H1](Cl)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3](Cl)(F)=[CX3]&#39;</span><span class="p">)</span>
+<span class="n">exclL</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;[CX3H1]=[O]&#39;</span><span class="p">,</span> <span class="s1">&#39;[$(*-[NX2-]-[NX2+]#[NX1]),$(*-[NX2]=[NX2+]=[NX1-])]&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;[CX3;!R](=[OX1])[OX2;!R][CX3;!R](=[OX1])&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3;!R](=[OX1])[NX3;!R][CX3;!R](=[OX1])&#39;</span><span class="p">)</span>
+
+<span class="c1"># update</span>
+<span class="n">n</span><span class="o">=</span><span class="n">mon_dic</span><span class="p">[</span><span class="s1">&#39;vinyl&#39;</span><span class="p">]</span>
+<span class="n">monL</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;[CX3H2]=[CX3]&#39;</span><span class="p">,</span> 
+         <span class="s1">&#39;[CX3](Cl)(Cl)=[CX3]&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3;H1](Cl)=[CX3]&#39;</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">exclL</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;[F]&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;[CX3H1]=[O]&#39;</span><span class="p">,</span> <span class="s1">&#39;[$(*-[NX2-]-[NX2+]#[NX1]),$(*-[NX2]=[NX2+]=[NX1-])]&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;[CX3;!R](=[OX1])[OX2;!R][CX3;!R](=[OX1])&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX3;!R](=[OX1])[NX3;!R][CX3;!R](=[OX1])&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="defining-a-new-monomer-class">
+<h3>Defining a New Monomer Class<a class="headerlink" href="#defining-a-new-monomer-class" title="Link to this heading"></a></h3>
+<p>Open <code class="docutils literal notranslate"><span class="pre">1_MonomerDefiner.ipynb</span></code>.<br />
+Define aziridine as a new monomer class. For simplicity, the definition of aziridine is as follows:</p>
+<ul class="simple">
+<li><p>A three-membered ring containing one N and two C atoms.</p></li>
+<li><p>In aziridine, the ring carbons are must be CH₂ group.</p></li>
+<li><p>The substituent on the nitrogen is a hydrogen atom, alkylcarbonyl or arylsulfonyl.</p></li>
+<li><p>The molecule does not contain any acyclic primary or secondary amines.</p></li>
+<li><p>Aziridines undergoe ring-opening polymerization to give polyamines.</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Add its name as akey to <code class="docutils literal notranslate"><span class="pre">mon_dic</span></code>. For this case, assign an unused integer below 50 as the value. The example uses 14 as the value.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># origine</span>
+<span class="n">mon_dic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;vinyl&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;epo&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;diepo&quot;</span><span class="p">:</span><span class="mi">51</span><span class="p">,</span> <span class="s2">&quot;cOle&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;lactone&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;lactam&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;hydCOOH&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;aminCOOH&quot;</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span>
+           <span class="s2">&quot;hindPhenol&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;cAnhyd&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span>  <span class="s2">&quot;CO&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;HCHO&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span> <span class="s2">&quot;sfonediX&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;BzodiF&quot;</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span>
+           <span class="s2">&quot;diCOOH&quot;</span><span class="p">:</span><span class="mi">52</span><span class="p">,</span> <span class="s2">&quot;diol&quot;</span><span class="p">:</span><span class="mi">53</span><span class="p">,</span> <span class="s2">&quot;diamin&quot;</span><span class="p">:</span><span class="mi">54</span><span class="p">,</span> <span class="s2">&quot;diNCO&quot;</span><span class="p">:</span><span class="mi">55</span><span class="p">,</span> <span class="s2">&quot;dicAnhyd&quot;</span><span class="p">:</span><span class="mi">56</span><span class="p">,</span> <span class="s2">&quot;pridiamin&quot;</span><span class="p">:</span><span class="mi">57</span><span class="p">,</span> <span class="s2">&quot;diol_b&quot;</span><span class="p">:</span><span class="mi">58</span><span class="p">,</span>
+           <span class="s2">&quot;acryl&quot;</span><span class="p">:</span><span class="mi">1001</span><span class="p">,</span> <span class="s2">&quot;bEWole&quot;</span><span class="p">:</span><span class="mi">1002</span><span class="p">,</span> <span class="s2">&quot;styryl&quot;</span><span class="p">:</span><span class="mi">1003</span><span class="p">,</span> <span class="s2">&quot;allyl&quot;</span><span class="p">:</span><span class="mi">1004</span><span class="p">,</span> <span class="s2">&quot;haloCH&quot;</span><span class="p">:</span><span class="mi">1005</span><span class="p">,</span> <span class="s2">&quot;vinylester&quot;</span><span class="p">:</span><span class="mi">1006</span><span class="p">,</span>
+           <span class="s2">&quot;malei&quot;</span><span class="p">:</span><span class="mi">1007</span><span class="p">,</span> <span class="s2">&quot;conjdiene&quot;</span><span class="p">:</span><span class="mi">1020</span><span class="p">,</span> <span class="s2">&quot;vinylether&quot;</span><span class="p">:</span><span class="mi">1030</span><span class="p">,</span> <span class="s2">&quot;tertcatCH&quot;</span><span class="p">:</span><span class="mi">1031</span><span class="p">,</span> <span class="s2">&quot;cycCH&quot;</span><span class="p">:</span><span class="mi">1050</span><span class="p">,</span> <span class="s2">&quot;aliphCH&quot;</span><span class="p">:</span><span class="mi">1052</span><span class="p">,</span> <span class="p">}</span>
+
+<span class="c1"># update</span>
+<span class="n">mon_dic</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;vinyl&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;epo&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;diepo&quot;</span><span class="p">:</span><span class="mi">51</span><span class="p">,</span> <span class="s2">&quot;cOle&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;lactone&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;lactam&quot;</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;hydCOOH&quot;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;aminCOOH&quot;</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span>
+           <span class="s2">&quot;hindPhenol&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;cAnhyd&quot;</span><span class="p">:</span><span class="mi">9</span><span class="p">,</span>  <span class="s2">&quot;CO&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;HCHO&quot;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span> <span class="s2">&quot;sfonediX&quot;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;BzodiF&quot;</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span>
+           <span class="s2">&quot;aziridine&quot;</span><span class="p">:</span><span class="mi">14</span><span class="p">,</span>
+           <span class="s2">&quot;diCOOH&quot;</span><span class="p">:</span><span class="mi">52</span><span class="p">,</span> <span class="s2">&quot;diol&quot;</span><span class="p">:</span><span class="mi">53</span><span class="p">,</span> <span class="s2">&quot;diamin&quot;</span><span class="p">:</span><span class="mi">54</span><span class="p">,</span> <span class="s2">&quot;diNCO&quot;</span><span class="p">:</span><span class="mi">55</span><span class="p">,</span> <span class="s2">&quot;dicAnhyd&quot;</span><span class="p">:</span><span class="mi">56</span><span class="p">,</span> <span class="s2">&quot;pridiamin&quot;</span><span class="p">:</span><span class="mi">57</span><span class="p">,</span> <span class="s2">&quot;diol_b&quot;</span><span class="p">:</span><span class="mi">58</span><span class="p">,</span>
+           <span class="s2">&quot;acryl&quot;</span><span class="p">:</span><span class="mi">1001</span><span class="p">,</span> <span class="s2">&quot;bEWole&quot;</span><span class="p">:</span><span class="mi">1002</span><span class="p">,</span> <span class="s2">&quot;styryl&quot;</span><span class="p">:</span><span class="mi">1003</span><span class="p">,</span> <span class="s2">&quot;allyl&quot;</span><span class="p">:</span><span class="mi">1004</span><span class="p">,</span> <span class="s2">&quot;haloCH&quot;</span><span class="p">:</span><span class="mi">1005</span><span class="p">,</span> <span class="s2">&quot;vinylester&quot;</span><span class="p">:</span><span class="mi">1006</span><span class="p">,</span>
+           <span class="s2">&quot;malei&quot;</span><span class="p">:</span><span class="mi">1007</span><span class="p">,</span> <span class="s2">&quot;conjdiene&quot;</span><span class="p">:</span><span class="mi">1020</span><span class="p">,</span> <span class="s2">&quot;vinylether&quot;</span><span class="p">:</span><span class="mi">1030</span><span class="p">,</span> <span class="s2">&quot;tertcatCH&quot;</span><span class="p">:</span><span class="mi">1031</span><span class="p">,</span> <span class="s2">&quot;cycCH&quot;</span><span class="p">:</span><span class="mi">1050</span><span class="p">,</span> <span class="s2">&quot;aliphCH&quot;</span><span class="p">:</span><span class="mi">1052</span><span class="p">,</span> <span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>The numerical values used as keys in <code class="docutils literal notranslate"><span class="pre">mon_dic</span></code> should be registered in the corresponding tuple within <code class="docutils literal notranslate"><span class="pre">mon_vals</span></code>. Aziridine has been added to <code class="docutils literal notranslate"><span class="pre">mon_vals[0]</span></code>.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># origine</span>
+<span class="n">mon_vals</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">),</span> <span class="p">(</span><span class="mi">51</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">57</span><span class="p">,</span><span class="mi">58</span><span class="p">),</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">203</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">206</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">1001</span><span class="p">,</span> <span class="mi">1002</span><span class="p">,</span> <span class="mi">1003</span><span class="p">,</span> <span class="mi">1004</span><span class="p">,</span> <span class="mi">1005</span><span class="p">,</span> <span class="mi">1006</span><span class="p">,</span> <span class="mi">1007</span><span class="p">,</span><span class="mi">1020</span><span class="p">,</span> <span class="mi">1030</span><span class="p">,</span> <span class="mi">1031</span><span class="p">,</span> <span class="mi">1050</span><span class="p">,</span> <span class="mi">1052</span><span class="p">))</span>
+
+<span class="c1"># update</span>
+<span class="n">mon_vals</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">51</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">53</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">57</span><span class="p">,</span><span class="mi">58</span><span class="p">),</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">201</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">203</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">205</span><span class="p">,</span> <span class="mi">206</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">1001</span><span class="p">,</span> <span class="mi">1002</span><span class="p">,</span> <span class="mi">1003</span><span class="p">,</span> <span class="mi">1004</span><span class="p">,</span> <span class="mi">1005</span><span class="p">,</span> <span class="mi">1006</span><span class="p">,</span> <span class="mi">1007</span><span class="p">,</span><span class="mi">1020</span><span class="p">,</span> <span class="mi">1030</span><span class="p">,</span> <span class="mi">1031</span><span class="p">,</span> <span class="mi">1050</span><span class="p">,</span> <span class="mi">1052</span><span class="p">))</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Set up monL and exclL entries for aziridine.</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="n">mon_dic</span><span class="p">[</span><span class="s1">&#39;aziridine&#39;</span><span class="p">]</span>
+<span class="n">monL</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;[CX4H2]1[NX3H1][CX4H2]1&#39;</span><span class="p">,</span> <span class="s1">&#39;[CX4H2]1[NX3]([CX3](=[OX1])[CX4])[CX4H2]1&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;[CX4H2]1[NX3]([SX4](=[OX1])(=[OX1])[c])[CX4H2]1&#39;</span><span class="p">)</span>
+<span class="n">exclL</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;[N&amp;X3;H2,H1;!$(N[C,S]=*);!R]&#39;</span><span class="p">,</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>A detailed definition of olefin monomers (mon_dic[&lt;’olefinic monomer class’&gt;] &gt;= 1001) is as follows:</p>
+<ul class="simple">
+<li><p>Position the C=C involved in polymerization as close to the beginning of the SMARTS string as possible.</p></li>
+<li><p>Assigning atom mapping to the atoms involved in the reaction. This allows the polymerization reaction equation to be automatically generated by <code class="docutils literal notranslate"><span class="pre">ole_rxnsmarts_gen(reactant)</span></code> and <code class="docutils literal notranslate"><span class="pre">ole_cru_gen()</span></code>.</p></li>
+<li><p>In SMARTS notation, atoms are denoted by their element symbols, not by their atomic numbers.</p></li>
+</ul>
+</section>
+<section id="defining-a-new-polymerization-reaction">
+<h3>Defining a New Polymerization Reaction<a class="headerlink" href="#defining-a-new-polymerization-reaction" title="Link to this heading"></a></h3>
+<p>Open <code class="docutils literal notranslate"><span class="pre">2_Ps_rxnL.ipynb</span></code>.<br />
+For polymerization involving a single monomer, use the value associated with the monomer class as the key in Ps_rxnL, taken from mon_dic. In cases where multiple monomers are involved or other polymerization reactions have already been defined, use an undefined integer as the key (see the relevant section in 2_Ps_rxnL.ipynb).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span> <span class="n">mon_dic</span><span class="p">[</span><span class="s1">&#39;aziridine&#39;</span><span class="p">]</span>
+<span class="n">aziridine_homo</span> <span class="o">=</span> <span class="s1">&#39;[CX4;H2;R:1]1[NX3;R:2][CX4;H2;R:3]1&gt;&gt;*-[CX4;H2:1][CX4;H2:3][NX3:2]-*&#39;</span>
+<span class="n">Ps_rxnL</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">AllChem</span><span class="o">.</span><span class="n">ReactionFromSmarts</span><span class="p">(</span><span class="n">aziridine_homo</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Describe the skeleton directly involved in polymerization.</p></li>
+</ul>
+<p>Except in special cases, for polymerization via <code class="docutils literal notranslate"><span class="pre">ole_copolym()</span></code>, this definition isn’t required because the polymerization reaction equation is automatically generated by <code class="docutils literal notranslate"><span class="pre">ole_cru_gen()</span></code>.</p>
+</section>
+<section id="defining-a-new-polymer-class">
+<h3>Defining a New Polymer Class<a class="headerlink" href="#defining-a-new-polymer-class" title="Link to this heading"></a></h3>
+<p>Open <code class="docutils literal notranslate"><span class="pre">3_Ps_GenL.ipynb</span></code>.<br />
+When the product of a new polymerization reaction does not fit into an existing polymer class, a suitable polymer class should be created.　　
+For aziridine polymerization, update dictionary of polymerclass:<code class="docutils literal notranslate"><span class="pre">Ps_classL</span></code>. Generally, the value corresponding to a key in the polymer class should follow the Polymer Class No. in the <a class="reference external" href="https://polymer.nims.go.jp/PoLyInfo/guide/jp/term_polymer.html#chap06">PoLyInfo database (https://polymer.nims.go.jp/PoLyInfo/guide/jp/term_polymer.html#chap06)</a>.<br />
+However, when you add a definition for a polymerization reaction using <code class="docutils literal notranslate"><span class="pre">ole_copolym()</span></code> for olefinic monomers that have been classified in detail by <code class="docutils literal notranslate"><span class="pre">olecls()</span></code>, do not append to <code class="docutils literal notranslate"><span class="pre">Ps_classL</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># origine</span>
+<span class="n">Ps_classL</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;polyolefin&#39;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;polyester&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;polyether&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;polyamide&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;polyimide&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;polyurethane&#39;</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span> 
+            <span class="s1">&#39;polyoxazolidone&#39;</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="p">}</span>
+<span class="c1"># update</span>
+<span class="n">Ps_classL</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;polyolefin&#39;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;polyester&#39;</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;polyether&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;polyamide&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;polyimide&#39;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="s1">&#39;polyurethane&#39;</span><span class="p">:</span><span class="mi">19</span><span class="p">,</span> 
+            <span class="s1">&#39;polyoxazolidone&#39;</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="s1">&#39;polyamine&#39;</span><span class="p">:</span><span class="mi">9</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Then define the combination of polymer class, applied monomer(s) and polymerization reaction.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ps_GenL</span><span class="p">[</span><span class="s1">&#39;polyamine&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;aziridine&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">Ps_rxnL</span><span class="p">[</span><span class="n">mon_dic</span><span class="p">[</span><span class="s1">&#39;aziridine&#39;</span><span class="p">]]),</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Where,
+‘polyamine’: newly defined polymer class<br />
+‘aziridine’: the key of the monomer in mon_dic
+‘none’: For polymerization involving a single monomer, set the second element to ‘none’.
+Ps_rxnL[mon_dic[‘aziridine’]]): newly defined polymerization reaction. If an integer is specified as the key in “Defining a New Polymerization Reaction”, use that value as the key for <code class="docutils literal notranslate"><span class="pre">Ps_rxnL[]</span></code>.</p>
+<p>If the resulting polymer belongs to an existing polymer class, append a tuple to that class consisting of:</p>
+<ul class="simple">
+<li><p>the keys of all monomers used in the newly defined polymerization reaction (from mon_dic), and</p></li>
+<li><p>the newly defined Ps_rxnL[n].</p></li>
+</ul>
+<p>In the case of running polymerization via ole_copolym(), you may also add the recommended polymerization conditions for the corresponding olefinic monomer to:<br />
+<code class="docutils literal notranslate"><span class="pre">Ps_GenL['rec:radi']</span></code> , <code class="docutils literal notranslate"><span class="pre">Ps_GenL['rec:cati']</span> </code>, <code class="docutils literal notranslate"><span class="pre">Ps_GenL['rec:ani']</span> </code>, <code class="docutils literal notranslate"><span class="pre">Ps_GenL['rec:coord']</span></code></p>
+<p>After all modifications have been completed, run “Rule Change Operations”.</p>
+</section>
+</section>
+<section id="tips">
+<h2>TIPs<a class="headerlink" href="#tips" title="Link to this heading"></a></h2>
+<p>Points to note when using SMARTS notation, especially reaction SMARTS:
+Atom mapping should be applied to the following:
+<strong>Examples</strong></p>
+<ul class="simple">
+<li><p>Polymerization sites</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>✔️ Correct: [CX3;H2:1]=[CX3;H1:2]  
+❌ Incorrect: [CX3;H2]=[CX3;H]
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Atoms bonded to atoms outside the substructure</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>✔️ Correct: [CX3;H2:1]=[CX3;H1:2][CX3](=[OX1])[OX2,SX2:3] 
+❌ Incorrect: [CX3;H2:1]=[CX3;H1:2]CX3[OX2,SX2]
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Atoms for which multiple elements are possible candidates</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>✔️ Correct: [CX3;H2:1]=[CX3;H0:2][F,Cl:3]
+❌ Incorrect: [CX3;H2:1]=[CX3;H0:2][F,Cl]
+</pre></div>
+</div>
+</section>
 </section>
 
 
