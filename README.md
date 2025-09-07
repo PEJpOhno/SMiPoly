@@ -59,3 +59,36 @@ Released under the BSD-3 license, license that can be found in the LICENSE file.
 ## 5. Related projects  
 RadonPy (Fully automated calculation for a comprehensive set of polymer properties)  
 https://github.com/RadonPy/RadonPy  
+
+## 6. THIRD-PARTY LICENSES
+
+This software includes the following third-party libraries:
+
+---
+
+Library: Python
+Website: https://www.python.org/
+License: Python Software Foundation License Version 2
+Copyright © 2001–2025 Python Software Foundation
+
+---
+
+Library: NumPy
+Website: https://numpy.org/
+License: BSD 3-Clause License
+Copyright (c) 2005–2025, NumPy Developers
+
+---
+
+Library: pandas
+Website: https://pandas.pydata.org/
+License: BSD 3-Clause License
+Copyright (c) 2008–2025, PyData Development Team
+
+---
+
+Library: RDKit
+Website: https://www.rdkit.org/
+License: BSD 3-Clause License
+Copyright (c) 2006–2025, Rational Discovery LLC, Greg Landrum, Julie Penzotti, and contributors
+
