@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4. utilities; Rule Modification Utilities &mdash; SMiPoly_docs 20250905 documentation</title>
+  <title>4. utilities; Rule Modification Utilities &mdash; SMiPoly_docs 202509011 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=e104ca23"></script>
+      <script src="_static/documentation_options.js?v=358efead"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -197,7 +197,7 @@ These were genarated by using utilities/1_MonomerDefiner.ipynb, 2_Ps_rxnL.ipynb 
 Since certain polymers are associated with multiple polymerization reactions, care should be taken regarding their impact scope.</p>
 <p><strong>Example 1.</strong></p>
 <ul class="simple">
-<li><p>Exclude vinyl monomers without F at the terminal methylidene of the polymerization site.</p></li>
+<li><p>Exclude vinyl monomers with F at the terminal methylidene of the polymerization site.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># origine</span>
 <span class="n">n</span><span class="o">=</span><span class="n">mon_dic</span><span class="p">[</span><span class="s1">&#39;vinyl&#39;</span><span class="p">]</span>
@@ -338,10 +338,10 @@ However, when you add a definition for a polymerization reaction using <code cla
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Ps_GenL</span><span class="p">[</span><span class="s1">&#39;polyamine&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;aziridine&#39;</span><span class="p">,</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">Ps_rxnL</span><span class="p">[</span><span class="n">mon_dic</span><span class="p">[</span><span class="s1">&#39;aziridine&#39;</span><span class="p">]]),</span> <span class="p">)</span>
 </pre></div>
 </div>
-<p>Where,
+<p>Where,<br />
 ‘polyamine’: newly defined polymer class<br />
-‘aziridine’: the key of the monomer in mon_dic
-‘none’: For polymerization involving a single monomer, set the second element to ‘none’.
+‘aziridine’: the key of the monomer in mon_dic<br />
+‘none’: For polymerization involving a single monomer, set the second element to ‘none’.<br />
 Ps_rxnL[mon_dic[‘aziridine’]]): newly defined polymerization reaction. If an integer is specified as the key in “Defining a New Polymerization Reaction”, use that value as the key for <code class="docutils literal notranslate"><span class="pre">Ps_rxnL[]</span></code>.</p>
 <p>If the resulting polymer belongs to an existing polymer class, append a tuple to that class consisting of:</p>
 <ul class="simple">

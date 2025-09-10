@@ -57,7 +57,7 @@ Open ```1_MonomerDefiner.ipynb``` and add or remove the corresponding monomer de
 Since certain polymers are associated with multiple polymerization reactions, care should be taken regarding their impact scope.  
 
 **Example 1.**
-- Exclude vinyl monomers without F at the terminal methylidene of the polymerization site.  　　
+- Exclude vinyl monomers with F at the terminal methylidene of the polymerization site.  　　
 ```
 # origine
 n=mon_dic['vinyl']
@@ -187,11 +187,11 @@ Then define the combination of polymer class, applied monomer(s) and polymerizat
 ```
 Ps_GenL['polyamine'] = (('aziridine', 'none', Ps_rxnL[mon_dic['aziridine']]), )
 ```
-Where, 
+Where,  
 'polyamine': newly defined polymer class  
-'aziridine': the key of the monomer in mon_dic
-'none': For polymerization involving a single monomer, set the second element to 'none'.
-Ps_rxnL[mon_dic['aziridine']]): newly defined polymerization reaction. If an integer is specified as the key in "Defining a New Polymerization Reaction", use that value as the key for ```Ps_rxnL[]```.
+'aziridine': the key of the monomer in mon_dic  
+'none': For polymerization involving a single monomer, set the second element to 'none'.  
+Ps_rxnL[mon_dic['aziridine']]): newly defined polymerization reaction. If an integer is specified as the key in "Defining a New Polymerization Reaction", use that value as the key for ```Ps_rxnL[]```.  
 
 If the resulting polymer belongs to an existing polymer class, append a tuple to that class consisting of:
 - the keys of all monomers used in the newly defined polymerization reaction (from mon_dic), and
