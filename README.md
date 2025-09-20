@@ -5,6 +5,9 @@
 |:---:|:---:|  
 |[![Downloads](https://static.pepy.tech/badge/smipoly)](https://pepy.tech/project/smipoly)|![conda](https://anaconda.org/conda-forge/smipoly/badges/downloads.svg)|  
 
+
+**Documentation :** https://pejpohno.github.io/SMiPoly/  
+
 ___Demo video___  
 [![Demo video](https://img.youtube.com/vi/ilzYwNWvTeQ/sddefault.jpg)](https://youtu.be/ilzYwNWvTeQ)  
 
@@ -19,10 +22,6 @@ Mitsuru Ohno, Yoshihiro Hayashi, Qi Zhang, Yu Kaneko, and Ryo Yoshida
 DOI: 10.1021/acs.jcim.3c00329  
 https://doi.org/10.1021/acs.jcim.3c00329  
 (version 0.0.1 was used)    
-
-### SMiPoly documentation and demo video  
-**Documentation :** https://pejpohno.github.io/SMiPoly/  
-**Demo video :** https://youtu.be/ilzYwNWvTeQ  
 
 
 ## 2. Current version and requirements
