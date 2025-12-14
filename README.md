@@ -5,6 +5,9 @@
 |:---:|:---:|  
 |[![Downloads](https://static.pepy.tech/badge/smipoly)](https://pepy.tech/project/smipoly)|![conda](https://anaconda.org/conda-forge/smipoly/badges/downloads.svg)|  
 
+
+**Documentation :** https://pejpohno.github.io/SMiPoly/  
+
 ___Demo video___  
 [![Demo video](https://img.youtube.com/vi/ilzYwNWvTeQ/sddefault.jpg)](https://youtu.be/ilzYwNWvTeQ)  
 
@@ -15,20 +18,16 @@ ___Demo video___
 ### How To Cite (publications)   
 SMiPoly: Generation of a Synthesizable Polymer Virtual Library Using Rule-Based Polymerization Reactions  
 Mitsuru Ohno, Yoshihiro Hayashi, Qi Zhang, Yu Kaneko, and Ryo Yoshida  
-*Journal of Chemical Information and Modeling* **2023** *63* (17), 5539-5548  
+*Journal of Chemical Information and Modeling* **2023** *63* (17), 5539&#8203;-5548  
 DOI: 10.1021/acs.jcim.3c00329  
 https://doi.org/10.1021/acs.jcim.3c00329  
 (version 0.0.1 was used)    
 
-### SMiPoly documentation and demo video  
-**Documentation :** https://pejpohno.github.io/SMiPoly/  
-**Demo video :** https://youtu.be/ilzYwNWvTeQ  
-
 
 ## 2. Current version and requirements
-current version = 1.1.0  
+current version = 1.1.1  
 requirements
-  - pyhon 3.9, 3.10, 3.11, 3.12  
+  - pyhon 3.9, 3.10, 3.11, 3.12, 3.13, 3.14  
   - rdkit >= 2023.9.1  
   - numpy >= 1.26.0  
   - pandas >= 2.1.0  
@@ -59,3 +58,36 @@ Released under the BSD-3 license, license that can be found in the LICENSE file.
 ## 5. Related projects  
 RadonPy (Fully automated calculation for a comprehensive set of polymer properties)  
 https://github.com/RadonPy/RadonPy  
+
+## 6. THIRD-PARTY LICENSES
+
+This software includes the following third-party libraries:
+
+---
+
+Library: Python
+Website: https://www.python.org/
+License: Python Software Foundation License Version 2
+Copyright © 2001–2025 Python Software Foundation
+
+---
+
+Library: NumPy
+Website: https://numpy.org/
+License: BSD 3-Clause License
+Copyright (c) 2005–2025, NumPy Developers
+
+---
+
+Library: pandas
+Website: https://pandas.pydata.org/
+License: BSD 3-Clause License
+Copyright (c) 2008–2025, PyData Development Team
+
+---
+
+Library: RDKit
+Website: https://www.rdkit.org/
+License: BSD 3-Clause License
+Copyright (c) 2006–2025, Rational Discovery LLC, Greg Landrum, Julie Penzotti, and contributors
+

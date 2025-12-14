@@ -1,0 +1,10 @@
+comID,MolecularFormula,MolecularWeight,SMILES,IUPACName
+CID285042,,,CC(C)C1C(N1C(=O)NC2=CC=CC=C2)C(C)C ,"N-phenyl-2,3-di(propan-2-yl)aziridine-1-carboxamide"
+CID70628,,,C1CN1CC2=CC=CC=C2,1-Benzylaziridine
+CID20212409,,,C1C(N1CCCC2=CC=CC=C2)C3=CC=CC=C3 ,2-Phenyl-1-(3-phenylpropyl)aziridine
+CID9033,,,C1CN1,aziridine
+CID227244,,,CC1(CN1)C,"2,2-dimethyl aziridine"
+CID549240,,,C1CCC2C(C1)N2,7-Azabicyclo[4.1.0]heptane
+CID161726,,,C1=CC=C(C=C1)C=C(Br)Br,Dibromostyrene
+CID561274,,,CC1=CC=C(C=C1)S(=O)(=O)N2CC2,1-(4-Methylbenzenesulfonyl)aziridine
+CID9994,,,CC(=O)N1CC1,1-Acetylaziridine;

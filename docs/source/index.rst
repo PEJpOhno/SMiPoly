@@ -25,6 +25,12 @@ About SMiPoly
 
 **Project Link** https://github.com/PEJpOhno/SMiPoly  
 
+**Demo video**  
+
+.. image:: ./_static/SMiPoly_movie1.jpg
+   :target: https://youtu.be/ilzYwNWvTeQ
+   :alt: Demo video
+   :width: 300px
    
 .. toctree::
    :maxdepth: 2
@@ -41,7 +47,6 @@ About SMiPoly
    41_MonomerDefiner
    42_Ps_rxnL
    43_Ps_GenL
-   5_Directory_config
-   6_Postface
+   5_Postface
 
 

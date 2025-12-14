@@ -9,7 +9,7 @@ When using Jupyter Notebook, also refer to "sample_script/sample_smip_demo4.ipyn
 For quick start, the following sampl script and dataset are available.  
 
 **Sample script**  
-Download './sample_script/sample_smip_demo4.ipynb' from [SMiPoly repository](https://github.com/PEJpOhno/SMiPoly).  
+Download ['./sample_script/sample_smip_demo4.ipynb'](https://github.com/PEJpOhno/SMiPoly/blob/main/sample_script/sample_smip_demo4.ipynb) from [SMiPoly repository](https://github.com/PEJpOhno/SMiPoly.git).  
 To run this demo script, Jupyter Notebook is required.
 
 **Sample data**  
