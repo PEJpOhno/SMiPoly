@@ -43,8 +43,6 @@ SMiPoly
 │           └── ps.rxn.pkl
 ├── LICENSE
 ├── pyproject.toml
-├── setup.py
-├── setup.cfg
 ├── README.md
 ├── sample_data
 │   |── 202207_smip_monset.csv
