@@ -49,7 +49,25 @@
 <li class="toctree-l1"><a class="reference internal" href="3_Modules_Overview.html">3. Modules Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.monc.html">smipoly.smip.monc module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.polg.html">smipoly.smip.polg module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">smipoly.smip.funclib module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">smipoly.smip.funclib module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.bipolymA"><code class="docutils literal notranslate"><span class="pre">bipolymA()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.coord_polym"><code class="docutils literal notranslate"><span class="pre">coord_polym()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.count_fg"><code class="docutils literal notranslate"><span class="pre">count_fg()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.diene_12to14"><code class="docutils literal notranslate"><span class="pre">diene_12to14()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.diene_14"><code class="docutils literal notranslate"><span class="pre">diene_14()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.genc_smi"><code class="docutils literal notranslate"><span class="pre">genc_smi()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.genmol"><code class="docutils literal notranslate"><span class="pre">genmol()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.homopolymA"><code class="docutils literal notranslate"><span class="pre">homopolymA()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.monomer_sel_mfg"><code class="docutils literal notranslate"><span class="pre">monomer_sel_mfg()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.monomer_sel_pfg"><code class="docutils literal notranslate"><span class="pre">monomer_sel_pfg()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.ole_cru_gen"><code class="docutils literal notranslate"><span class="pre">ole_cru_gen()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.ole_rxnsmarts_gen"><code class="docutils literal notranslate"><span class="pre">ole_rxnsmarts_gen()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.ole_sel_cru"><code class="docutils literal notranslate"><span class="pre">ole_sel_cru()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.seq_chain"><code class="docutils literal notranslate"><span class="pre">seq_chain()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.seq_successive"><code class="docutils literal notranslate"><span class="pre">seq_successive()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.funclib.update_nested_dict"><code class="docutils literal notranslate"><span class="pre">update_nested_dict()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="4_utilities.html">4. utilities; Rule Modification Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="41_MonomerDefiner.html">4-1. 1_MonomerDefiner.ipynb</a></li>
 <li class="toctree-l1"><a class="reference internal" href="42_Ps_rxnL.html">4-2. 2_Ps_rxnL.ipynb</a></li>
@@ -81,8 +99,469 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="smipoly-smip-funclib-module">
-<h1>smipoly.smip.funclib module<a class="headerlink" href="#smipoly-smip-funclib-module" title="Link to this heading"></a></h1>
+  <section id="module-smipoly.smip.funclib">
+<span id="smipoly-smip-funclib-module"></span><h1>smipoly.smip.funclib module<a class="headerlink" href="#module-smipoly.smip.funclib" title="Link to this heading"></a></h1>
+<p>functions for MonomerClassifier (monc.py) and
+PolymerGenerator (polyg.py).</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.bipolymA">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">bipolymA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reactant</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targ_rxn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ps_rxnL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P_class</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.bipolymA" title="Link to this definition"></a></dt>
+<dd><p>Generates a polymer CRU formed from two monomers by iteratively reacting
+a monomer until no further reactions are possible.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reactant</strong> (<em>tuple</em>) – A tuple of reactant molecules
+to be used in the reaction.</p></li>
+<li><p><strong>targ_rxn</strong> (<em>rdkit.Chem.rdChemReactions.ChemicalReaction</em>) – The target chemical reaction to apply.</p></li>
+<li><p><strong>monL</strong> (<em>list</em>) – A list of monomer SMARTS patterns indexed by integers.</p></li>
+<li><p><strong>Ps_rxnL</strong> (<em>dict</em>) – A list of monomer SMARTS patterns indexed by integers.</p></li>
+<li><p><strong>P_class</strong> (<em>type</em>) – A class type used for polymer processing.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of SMILES strings representing
+the generated polymer products.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.coord_polym">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">coord_polym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targ_rxn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.coord_polym" title="Link to this definition"></a></dt>
+<dd><p>Generate a list of CRUs for olefin copolymer polymers from
+the input SMILES string with a target reaction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>smi</strong> (<em>str</em>) – The SMILES string of the input molecule.</p></li>
+<li><p><strong>targ_rxn</strong> (<em>rdkit.Chem.rdChemReactions.ChemicalReaction</em>) – The target reaction
+to apply to the input molecule.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of unique SMILES strings representing
+the products of the reaction.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.count_fg">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">count_fg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.count_fg" title="Link to this definition"></a></dt>
+<dd><p>Counts the number of functional groups (FG) in a molecule
+based on a given pattern.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>m</strong> (<em>rdkit.Chem.Mol</em>) – The molecule object to search
+for substructure matches.</p></li>
+<li><p><strong>patt</strong> (<em>rdkit.Chem.Mol</em>) – The pattern molecule used
+to identify substructure matches.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The number of functional groups identified in the molecule.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.diene_12to14">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">diene_12to14</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rxn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.diene_12to14" title="Link to this definition"></a></dt>
+<dd><p>Convert the structure of the 1,2-adducted CRU to a 1,4-adduct.
+Place this function right before def diene_14() so that
+it can be used within the function diene_14.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>smi</strong> (<em>str</em>) – The input SMILES string containing
+asterisks (*) as placeholders.</p></li>
+<li><p><strong>rxn</strong> (<em>rdkit.Chem.rdChemReactions.ChemicalReaction</em>) – Ps_rxnL[209] was applied.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The resulting SMILES string after the reaction,
+with placeholders
+replaced back to asterisks (*).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>rdkit.Chem.rdchem.KekulizeException</strong> – </p></li>
+<li><p><strong>If the molecule sanitization fails.</strong> – </p></li>
+<li><p><strong>IndexError</strong> – If the reaction does not produce any products.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.diene_14">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">diene_14</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rxn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.diene_14" title="Link to this definition"></a></dt>
+<dd><p>Generate 1,4-addition CRU from  a conjugated diene monomer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>dict</em>) – The results of olefin classification and
+the chemical structure of these CRU generated by ole_sel_cru.</p></li>
+<li><p><strong>rxn</strong> (<em>rdkit.Chem.rdChemReactions.ChemicalReaction</em>) – Ps_rxnL[209] was applied.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The modified dictionary <cite>x</cite> with the transformed SMILES string in
+<cite>x[‘conjdiene’][2]</cite>, if applicable. If <cite>‘conjdiene’</cite> is not present or
+empty, the dictionary is returned unchanged.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.genc_smi">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">genc_smi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.genc_smi" title="Link to this definition"></a></dt>
+<dd><p>Generates a RDkit canonical SMILES string from a molecule object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>m</strong> (<em>rdkit.Chem.Mol</em>) – A molecule object, from the RDKit library.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The SMILES string representation of the molecule if successful,
+otherwise returns np.nan.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str or np.nan</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.genmol">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">genmol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.genmol" title="Link to this definition"></a></dt>
+<dd><p>Generates a molecular object from a SMILES string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – A SMILES (Simplified Molecular Input Line Entry System) string
+representing the molecular structure.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A molecular object if the SMILES string
+is valid, otherwise returns numpy.nan.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>rdkit.Chem.Mol or numpy.nan</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.homopolymA">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">homopolymA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mon1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targ_mon1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ps_rxnL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mon_dic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.homopolymA" title="Link to this definition"></a></dt>
+<dd><p>Generates a polymer CRU formed from a single monomer by
+iteratively reacting a monomer until no further reactions are possible.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mon1</strong> (<em>rdkit.Chem.Mol</em>) – The initial monomer
+to start the polymerization process.</p></li>
+<li><p><strong>mons</strong> (<em>list</em>) – A list of SMARTS strings representing monomer patterns to
+match against the molecule.</p></li>
+<li><p><strong>excls</strong> (<em>list</em>) – A list of SMARTS strings representing exclusion patterns
+to check against the molecule.</p></li>
+<li><p><strong>targ_mon1</strong> (<em>object</em>) – The target monomer class for
+the polymerization process.</p></li>
+<li><p><strong>Ps_rxnL</strong> (<em>list</em>) – A dictionary of polymerization reaction objects
+indexed by integers.</p></li>
+<li><p><strong>mon_dic</strong> (<em>dict</em>) – A dictionary containing monomer class.</p></li>
+<li><p><strong>monL</strong> (<em>list</em>) – A list of monomer SMARTS patterns indexed by integers.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of SMILES strings representing the generated homopolymers.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.monomer_sel_mfg">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">monomer_sel_mfg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excls</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.monomer_sel_mfg" title="Link to this definition"></a></dt>
+<dd><p>Determining whether the given small molecule compound
+qualifies as a self-polymerizable monomer and
+categolize it into a monomer class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>m</strong> (<em>rdkit.Chem.Mol</em>) – The molecule to be analyzed.
+If None or NaN, the function returns default values.</p></li>
+<li><p><strong>mons</strong> (<em>list</em><em> of </em><em>str</em>) – A list of SMARTS strings representing
+monomer patterns to match against the molecule.</p></li>
+<li><p><strong>excls</strong> (<em>list</em><em> of </em><em>str</em>) – A list of SMARTS strings representing
+exclusion patterns to check against the molecule.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl>
+<dt>A list containing:</dt><dd><ul class="simple">
+<li><p>fchk (bool): True if the molecule matches any monomer pattern</p></li>
+</ul>
+<dl class="simple">
+<dt>and does not match any exclusion pattern,</dt><dd><p>otherwise False.</p>
+</dd>
+</dl>
+<ul class="simple">
+<li><p>fchk_c (int): The total count of substructure matches</p></li>
+</ul>
+<p>for all monomer patterns.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.monomer_sel_pfg">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">monomer_sel_pfg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minFG</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxFG</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.monomer_sel_pfg" title="Link to this definition"></a></dt>
+<dd><p>Determining whether the given small molecule compound qualifies as
+a monomer or not. If so, count a number of polymerizeble
+functional group and categolize it into a monomer class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>m</strong> (<em>rdkit.Chem.Mol</em>) – The monomer molecule to evaluate.</p></li>
+<li><p><strong>mons</strong> (<em>list</em><em> of </em><em>str</em>) – A list of SMARTS patterns representing the
+functional groups to count in the monomer.</p></li>
+<li><p><strong>excls</strong> (<em>list</em><em> of </em><em>str</em>) – A list of SMARTS patterns representing the
+exclusion patterns to check against the monomer.</p></li>
+<li><p><strong>minFG</strong> (<em>int</em>) – The minimum number of functional groups required.</p></li>
+<li><p><strong>maxFG</strong> (<em>int</em>) – The maximum number of functional groups allowed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl>
+<dt>A list containing:</dt><dd><ul class="simple">
+<li><p>fchk (bool): True if the monomer satisfies the conditions,</p></li>
+</ul>
+<p>False otherwise.
+- fchk_c (int): The total count of functional groups found in
+the monomer.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.ole_cru_gen">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">ole_cru_gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mon</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.ole_cru_gen" title="Link to this definition"></a></dt>
+<dd><p>Generates a CRU from olefinic monomer by applying a reaction
+iteratively until no further reactions are possible.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>m</strong> (<em>rdkit.Chem.Mol</em>) – The input molecule to which
+the reaction will be applied.</p></li>
+<li><p><strong>mon</strong> (<em>str</em>) – A SMARTS string representing the monomer pattern.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list containing:</dt><dd><ul class="simple">
+<li><p>rdkit.Chem.Mol: The final CRU after all reactions.</p></li>
+<li><p>list of str: A list of SMILES strings for CRUs.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – If there is an issue with sanitizing the molecule</p></li>
+<li><p><strong>during reaction processing.</strong> – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.ole_rxnsmarts_gen">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">ole_rxnsmarts_gen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reactant</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.ole_rxnsmarts_gen" title="Link to this definition"></a></dt>
+<dd><p>Generates a polymerization reaction SMARTS string
+for a given olefinic monomer. Place this function
+right before def ole_cru_gen() so that it can be used
+within the function ole_cru_gen.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>reactant</strong> (<em>str</em>) – The input reactant string in SMARTS format.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The reaction SMARTS string representing the transformation
+from the reactant to the product.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.ole_sel_cru">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">ole_sel_cru</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minFG</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxFG</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.ole_sel_cru" title="Link to this definition"></a></dt>
+<dd><p>Selects and processes a molecule based on specific criteria and
+generates a SMILES representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>m</strong> (<em>rdkit.Chem.Mol</em>) – The molecule to be processed.</p></li>
+<li><p><strong>mons</strong> (<em>list</em><em> of </em><em>str</em>) – A list of SMARTS patterns representing
+the functional groups to count in the monomer.</p></li>
+<li><p><strong>excls</strong> (<em>list</em><em> of </em><em>str</em>) – A list of SMARTS patterns representing
+the exclusion patterns to check against the monomer.</p></li>
+<li><p><strong>minFG</strong> (<em>int</em>) – The minimum number of olefinic polymerizable site
+required.</p></li>
+<li><p><strong>maxFG</strong> (<em>int</em>) – The maximum number of olefinic polymerizable site allowed.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>A list containing:</dt><dd><ul class="simple">
+<li><p>The result of the <cite>monomer_sel_pfg</cite> function
+(list of bool and other values).</p></li>
+<li><p>The SMILES representation of the processed molecule (str).</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.seq_chain">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">seq_chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prod_P</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targ_mon1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ps_rxnL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mon_dic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monL</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.seq_chain" title="Link to this definition"></a></dt>
+<dd><p>This function applied to multifunctional monomers
+for chain polymerization except polyolefine.
+Processes a molecular structure by applying a sequential reactions
+based on specific substructure matches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prod_P</strong> (<em>rdkit.Chem.Mol</em>) – The input molecule to be processed.</p></li>
+<li><p><strong>targ_mon1</strong> (<em>str</em>) – Target monomer type, used to
+determine processing logic.</p></li>
+<li><p><strong>Ps_rxnL</strong> (<em>dict</em>) – A dictionary of polymerization reaction objects
+indexed by integers.</p></li>
+<li><p><strong>mon_dic</strong> (<em>dict</em>) – A dictionary containing monomer class
+(not used in this function).</p></li>
+<li><p><strong>monL</strong> (<em>list</em>) – A list of monomer SMARTS patterns indexed by integers.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The processed molecule after applying the reactions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>rdkit.Chem.Mol</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.seq_successive">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">seq_successive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prod_P</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targ_rxn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Ps_rxnL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P_class</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.seq_successive" title="Link to this definition"></a></dt>
+<dd><p>This function applied to multifunctional monomers for
+successive polymerization.
+Processes a molecular structure by applying a sequential reactions
+based on specific substructure matches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prod_P</strong> (<em>rdkit.Chem.Mol</em>) – The product molecule to be processed.</p></li>
+<li><p><strong>targ_rxn</strong> (<em>Any</em>) – Target reaction
+(not used in the current implementation).</p></li>
+<li><p><strong>monL</strong> (<em>list</em>) – A list containing SMARTS patterns for functional groups.</p></li>
+<li><p><strong>Ps_rxnL</strong> (<em>list</em>) – A list of polymerization reaction objects
+to be applied to the product molecule.</p></li>
+<li><p><strong>P_class</strong> (<em>str</em>) – The polymer class of the product molecule,
+which determines the reaction sequence.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The processed product molecule
+after applying the reaction sequence.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>rdkit.Chem.Mol</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The function uses substructure matching to determine
+which reactions to apply.</p></li>
+<li><p>The behavior of the function depends on the <cite>P_class</cite>
+of the molecule.</p></li>
+<li><p>Specific reaction sequences are applied for classes
+such as ‘polyolefin’, ‘polyoxazolidone’, ‘polyimide’,
+and ‘polyester’.</p></li>
+<li><p>If the <cite>P_class</cite> is not recognized,
+the product molecule is returned unchanged.</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.funclib.update_nested_dict">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.funclib.</span></span><span class="sig-name descname"><span class="pre">update_nested_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">row</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dict_col</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updated_k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.funclib.update_nested_dict" title="Link to this definition"></a></dt>
+<dd><p>Used in the function ‘olecls’. If the classification result for
+the olefin class is True, writes the number of functional groups and
+the SMILES notation of the CRU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>row</strong> (<em>dict</em>) – The dictionary representing a row of data.</p></li>
+<li><p><strong>dict_col</strong> (<em>str</em>) – The key in the row that contains
+the nested dictionary to be updated.</p></li>
+<li><p><strong>new_val</strong> (<em>str</em>) – The key in the row whose value will be assigned to
+the nested dictionary.</p></li>
+<li><p><strong>updated_k</strong> (<em>str</em>) – The key in the nested dictionary to be updated.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The updated row with the modified nested dictionary.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 

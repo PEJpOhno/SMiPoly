@@ -48,7 +48,11 @@
 <li class="toctree-l1"><a class="reference internal" href="2_Getting_start.html">2. Getting Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_Modules_Overview.html">3. Modules Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.monc.html">smipoly.smip.monc module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">smipoly.smip.polg module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">smipoly.smip.polg module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.polg.biplym"><code class="docutils literal notranslate"><span class="pre">biplym()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.polg.ole_copolym"><code class="docutils literal notranslate"><span class="pre">ole_copolym()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.funclib.html">smipoly.smip.funclib module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_utilities.html">4. utilities; Rule Modification Utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="41_MonomerDefiner.html">4-1. 1_MonomerDefiner.ipynb</a></li>
@@ -81,8 +85,127 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="smipoly-smip-polg-module">
-<h1>smipoly.smip.polg module<a class="headerlink" href="#smipoly-smip-polg-module" title="Link to this heading"></a></h1>
+  <section id="module-smipoly.smip.polg">
+<span id="smipoly-smip-polg-module"></span><h1>smipoly.smip.polg module<a class="headerlink" href="#module-smipoly.smip.polg" title="Link to this heading"></a></h1>
+<p>polymer generator from classfied monomers.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.polg.biplym">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.polg.</span></span><span class="sig-name descname"><span class="pre">biplym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp_rsl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.polg.biplym" title="Link to this definition"></a></dt>
+<dd><p>Generates polymers based on the input DataFrame and
+specified target polymer classes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – Input DataFrame containing monomer information.
+Must include a column named ‘smip_cand_mons’.</p></li>
+<li><p><strong>targ</strong> (<em>list</em><em>, </em><em>optional</em>) – List of targetted polymer classes to
+generate. Defaults to [‘all’, ] to include all available
+classes. Use [‘exc_ole’] to exclude polyolefins.</p></li>
+<li><p><strong>dsp_rsl</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to display the results summary.
+Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>A DataFrame containing the generated polymers
+with the following columns:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>’mon1’: First monomer.</p></li>
+<li><p>’mon2’: Second monomer (if applicable).</p></li>
+<li><p>’polym’: Generated polymer.</p></li>
+<li><p>’polymer_class’: Class of the polymer.</p></li>
+<li><p>’Ps_rxnL’: Reaction key for the polymerization.</p></li>
+</ul>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The function filters and processes the input DataFrame
+to identify valid monomers.</p></li>
+<li><p>Polymers are generated based on predefined polymerization rules
+and target classes.</p></li>
+<li><p>Duplicate polymerization reactions are removed,
+and the resulting DataFrame is adjusted.</p></li>
+<li><p>If <cite>dsp_rsl</cite> is True, the function prints the number
+of polymerization reactions and generated polymers.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If an invalid polymer class is specified in <cite>targ</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.polg.ole_copolym">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.polg.</span></span><span class="sig-name descname"><span class="pre">ole_copolym</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncomp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp_rsl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drop_dupl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.polg.ole_copolym" title="Link to this definition"></a></dt>
+<dd><p>Generates a DataFrame of copolymers based on the provided
+olefin classes and parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – Input DataFrame containing olefin classification
+and candidate monomers.</p></li>
+<li><p><strong>targ</strong> (<em>list</em><em>, </em><em>optional</em>) – List of target olefin classes.
+Must be provided as a list. Defaults to None.</p></li>
+<li><p><strong>ncomp</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of components for copolymerization.
+Defaults to 1.</p></li>
+<li><p><strong>dsp_rsl</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, displays the number of
+generated copolymers. Defaults to False.</p></li>
+<li><p><strong>drop_dupl</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, drops duplicate copolymers
+from the resulting DataFrame. Defaults to True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>A DataFrame containing the generated copolymers
+with columns:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>’mon1’: First monomer (if applicable).</p></li>
+<li><p>’mon2’: Second monomer (if applicable).</p></li>
+<li><p>’polym’: Polymer structure.</p></li>
+<li><p>’polymer_class’: Polymer classification.</p></li>
+<li><p>’Ps_rxnL’: Reaction conditions or initiators.</p></li>
+<li><p>’reactset’: Reactant set.</p></li>
+</ul>
+</div></blockquote>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If <cite>targ</cite> is not provided or is not a list.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>targ</cite> contains invalid olefin classes.</p></li>
+<li><p><strong>ValueError</strong> – If <cite>ncomp</cite> is less than the number of components in <cite>targ</cite>.</p></li>
+<li><p><strong>ValueError</strong> – If incompatible olefin classes are used together
+    (e.g., ROMP with other classes).</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<ul class="simple">
+<li><p>Add procedure to removing some remaining duplicates in ROMP(H).</p></li>
+<li><p>Add cationic polymerization via non-classical cations.</p></li>
+</ul>
+</div>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>Valid olefin classes are displayed when the function is
+called without valid <cite>targ</cite>.</p></li>
+<li><p>Special handling is applied for ROMP, ROMPH, and COC classes.</p></li>
+<li><p>The function may take longer to execute if the input DataFrame
+is large and <cite>drop_dupl</cite> is True.</p></li>
+</ul>
+</dd></dl>
+
 </section>
 
 

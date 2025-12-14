@@ -47,7 +47,11 @@
 <li class="toctree-l1"><a class="reference internal" href="1_Installing_SMiPoly.html">1. Installing SMiPoly</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_Getting_start.html">2. Getting Start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_Modules_Overview.html">3. Modules Overview</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">smipoly.smip.monc module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">smipoly.smip.monc module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.monc.moncls"><code class="docutils literal notranslate"><span class="pre">moncls()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#smipoly.smip.monc.olecls"><code class="docutils literal notranslate"><span class="pre">olecls()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.polg.html">smipoly.smip.polg module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="smipoly.smip.funclib.html">smipoly.smip.funclib module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_utilities.html">4. utilities; Rule Modification Utilities</a></li>
@@ -81,8 +85,94 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="smipoly-smip-monc-module">
-<h1>smipoly.smip.monc module<a class="headerlink" href="#smipoly-smip-monc-module" title="Link to this heading"></a></h1>
+  <section id="module-smipoly.smip.monc">
+<span id="smipoly-smip-monc-module"></span><h1>smipoly.smip.monc module<a class="headerlink" href="#module-smipoly.smip.monc" title="Link to this heading"></a></h1>
+<p>Monomer categolization system of the compound list in SMILES.</p>
+<p>Classifies monomers based on functional groups and other criteria.
+This function processes a DataFrame containing SMILES strings,
+extracts and classifies  monomers, and appends the results
+to the DataFrame. It also supports optional
+display of classification results.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.monc.moncls">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.monc.</span></span><span class="sig-name descname"><span class="pre">moncls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smiColn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minFG</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxFG</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp_rsl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.monc.moncls" title="Link to this definition"></a></dt>
+<dd><p>Select monomers from given dataset of small molecule compounds and
+categolize them into a monomer class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – Input DataFrame containing chemical data.
+smiColn (str): Column name in the DataFrame containing
+SMILES strings.</p></li>
+<li><p><strong>minFG</strong> (<em>int</em><em>, </em><em>optional</em>) – Minimum number of functional groups
+for poly-functionalized monomers. Defaults to 2.</p></li>
+<li><p><strong>maxFG</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of functional groups
+for poly-functionalized monomers. Defaults to 4.</p></li>
+<li><p><strong>dsp_rsl</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to display classification
+results. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A modified DataFrame with classification
+results appended.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the specified SMILES column name is invalid.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>This function forcibly adds CO for carbonate synthesis
+and HCHO for future works.”</p></li>
+</ul>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="smipoly.smip.monc.olecls">
+<span class="sig-prename descclassname"><span class="pre">smipoly.smip.monc.</span></span><span class="sig-name descname"><span class="pre">olecls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smiColn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minFG</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxFG</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dsp_rsl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smipoly.smip.monc.olecls" title="Link to this definition"></a></dt>
+<dd><p>Select olefinic monomers from given dataset of small molecule
+compounds and categolize them into a olefinic monomer class.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>pd.DataFrame</em>) – The input DataFrame containing chemical data.
+Must include the structure of a compound written in SMILES.</p></li>
+<li><p><strong>smiColn</strong> (<em>str</em>) – The column name in the DataFrame containing
+SMILES strings.</p></li>
+<li><p><strong>minFG</strong> (<em>int</em><em>, </em><em>optional</em>) – Minimum number of functional groups
+to consider. Defaults to 1.</p></li>
+<li><p><strong>maxFG</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of functional groups
+to consider. Defaults to 4.</p></li>
+<li><p><strong>dsp_rsl</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to display results
+during processing. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The updated DataFrame with olefin classification
+results.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<ul class="simple">
+<li><p>The function assumes the existence of several global
+variables such as <cite>monLg</cite>, <cite>exclLg</cite>,
+<cite>mon_vals</cite>, <cite>mon_dic_inv</cite>, and <cite>Ps_rxnL</cite>.</p></li>
+<li><p>The function modifies the input DataFrame by adding
+new columns for olefin classification.</p></li>
+<li><p>The <cite>genmol</cite>, <cite>genc_smi</cite>, <cite>ole_sel_cru</cite>,
+<cite>update_nested_dict</cite> and <cite>diene_14</cite> functions
+are defined in ‘funclib.py’.</p></li>
+<li><p>The <cite>ole_cls</cite> column is refined for conjugated
+diene classification using a specific reaction.</p></li>
+</ul>
+</dd></dl>
+
 </section>
 
 
