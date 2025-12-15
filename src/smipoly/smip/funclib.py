@@ -108,10 +108,11 @@ def monomer_sel_mfg(m, mons, excls):
             exclusion patterns to check against the molecule.
 
     Returns:
-        list: A list containing:
+        list: A list containing:  
+
             - fchk (bool): True if the molecule matches any monomer pattern 
-            and does not match any exclusion pattern, 
-              otherwise False.
+            and does not match any exclusion pattern, otherwise False.  
+
             - fchk_c (int): The total count of substructure matches 
             for all monomer patterns.
 
@@ -168,9 +169,11 @@ def monomer_sel_pfg(m, mons, excls, minFG, maxFG):
         maxFG (int): The maximum number of functional groups allowed.
 
     Returns:
-        list: A list containing:
+        list: A list containing:  
+        
             - fchk (bool): True if the monomer satisfies the conditions,
-            False otherwise.
+            False otherwise.  
+            
             - fchk_c (int): The total count of functional groups found in
             the monomer.
 

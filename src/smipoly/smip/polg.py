@@ -67,7 +67,8 @@ def biplym(df, targ=None, dsp_rsl=None):
 
     Returns:
         pd.DataFrame: A DataFrame containing the generated polymers 
-        with the following columns:
+        with the following columns:  
+
             - 'mon1': First monomer.
             - 'mon2': Second monomer (if applicable).
             - 'polym': Generated polymer.
@@ -261,7 +262,8 @@ def ole_copolym(df, targ=None, ncomp=None, dsp_rsl=None, drop_dupl=None):
 
     Returns:
         pd.DataFrame: A DataFrame containing the generated copolymers 
-        with columns:
+        with columns:  
+            
             - 'mon1': First monomer (if applicable).
             - 'mon2': Second monomer (if applicable).
             - 'polym': Polymer structure.
